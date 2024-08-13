@@ -1,16 +1,31 @@
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 #navbar {
+
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(to right, #ffffff, rgb(1, 26, 100)); /* De celeste a azul */
+  background: linear-gradient(to right, #ffffff, rgb(1, 26, 100)); /* De blanco a azul oscuro */
+  background-size: 200% 100%; /* Asegura que el gradiente cubra el área y permita la animación */
+  animation: gradientAnimation 10s ease infinite; /* Aplica la animación del gradiente */
   transition: all 0.3s ease; /* Suaviza la transición al hacer scroll */
   padding: 0.8rem 1.0rem; /* Padding inicial del navbar */
 
   .navbar-brand,
   .nav-link {
-    color: #706f6f; /* Gris claro */
-    transition: transform 0.3s ease, color 0.3s ease; /* Añadir transición de color */
+    color: black; /* Color de texto inicial */
+    transition: color 0.3s ease; /* Suaviza la transición del color */
     
     &:hover {
       color: #ffffff; /* Blanco al pasar el mouse */
@@ -32,11 +47,4 @@
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
   }
-
-  .dropdown-menu {
-    background-color: rgba(130, 142, 197, 0.7); /* Fondo del dropdown */
-    color: rgb(210, 207, 207); /* Color del texto del dropdown */
-  }
 }
-
-  

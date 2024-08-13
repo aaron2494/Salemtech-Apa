@@ -1,23 +1,12 @@
 #banner {
   position: relative;
   width: 100%;
-  height: 500px; /* Ajusta la altura según sea necesario */
+  height: 600px; /* Ajusta la altura según sea necesario */
   background: url('../../../assets/mano-humana-escribiendo-teclado-computadora-noche-generada-ai.jpg') no-repeat center center;
   background-size: cover;
   padding-top: 20px; /* Añade un padding superior para mover el banner hacia abajo */
   box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del elemento */
 
-  /* Difuminado en el borde inferior */
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px; /* Ajusta la altura del difuminado para un efecto más gradual */
-    background: linear-gradient(to top, rgb(255, 255, 255), rgba(2, 4, 46, 0.858) 20%, transparent); /* Transición más gradual */
-    z-index: 1;
-  }
 
   .banner-content {
     position: absolute; /* Cambiado a absolute para ajustar la posición del contenido dentro del banner */

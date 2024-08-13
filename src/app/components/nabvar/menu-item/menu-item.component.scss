@@ -1,4 +1,59 @@
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Puedes ajustar la posición inicial si quieres */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 #presentation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 20px; /* Aumenta el padding-top para mover todo hacia abajo */
+  background: linear-gradient(to right, #ffffff, rgb(1, 26, 100));
+  background-size: 200% 100%; /* Asegura que el gradiente cubra el área y permita la animación */
+  animation: gradientAnimation 10s ease infinite; /* Aplica la animación */
+  min-height: 100vh; /* Asegura que el fondo ocupe toda la pantalla */
+  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+  box-sizing: border-box; /* Asegura que padding y border no afecten el tamaño */
+  overflow-x: hidden; /* Evita desplazamiento horizontal */
+}
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Reduce el espacio entre el título y las tarjetas */
+  
+}
+
+.card-container {
+  display: flex;
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  align-items: center; /* Centra las tarjetas verticalmente */
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si es necesario */
+  gap: 20px; /* Espacio entre las tarjetas */
+  width: 100%;
+  
+ 
+}
   .card {
     border-radius: 20px;
     overflow: hidden;
@@ -13,5 +68,5 @@
       color: white;
     }
   }
-}
+
 
