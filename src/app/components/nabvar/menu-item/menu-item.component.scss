@@ -1,0 +1,17 @@
+#presentation {
+  .card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    box-shadow: 0 8px 16px rgba(1, 26, 100, 0.982) !important;
+    background: white;
+
+    &:hover {
+      transform: scale(1.05); /* Escala la tarjeta al 105% */
+      box-shadow: 0 6px 12px rgba(3, 3, 3, 0.5) !important; /* Aumenta la sombra al pasar el mouse */
+      background: linear-gradient(to right, rgba(77, 114, 201, 0.7), rgba(1, 26, 100, 0.9)); /* Fondo más transparente */
+      color: white;
+    }
+  }
+}
+
