@@ -3,10 +3,11 @@ import { BannerComponent } from '../banner/banner.component';
 import { MenuItemComponent } from '../nabvar/menu-item/menu-item.component';
 import { NabvarComponent } from '../nabvar/nabvar.component';
 
+
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [  NabvarComponent,
+  imports: [NabvarComponent,
     BannerComponent,
     MenuItemComponent],
   templateUrl: './main.component.html',

@@ -1,4 +1,4 @@
- /* Animación de gradiente para el fondo */
+/* Animación de gradiente para el fondo */
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -15,7 +15,9 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Puedes ajustar la posición inicial si quieres */
+    transform: translateY(
+      20px
+    ); /* Puedes ajustar la posición inicial si quieres */
   }
   to {
     opacity: 1;
@@ -29,42 +31,46 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px 20px;
-  background: linear-gradient(to right, #ffffff, rgb(1, 26, 100));
+  background: linear-gradient(to right, #000000, rgb(2, 65, 255));
   background-size: 200% 100%; /* Asegura que el gradiente cubra el área y permita la animación */
   animation: gradientAnimation 10s ease infinite; /* Aplica la animación */
   min-height: 100vh; /* Asegura que el fondo ocupe toda la pantalla */
   width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
   box-sizing: border-box; /* Asegura que padding y border no afecten el tamaño */
-   /* Evita desplazamiento horizontal */
+  overflow-x: hidden; /* Evita desplazamiento horizontal */
 }
 
 /* Título */
 h2 {
   text-align: center;
-  
+  color: white;
 }
 
 /* Contenedor de las tarjetas */
 .card-container {
   display: flex;
-  justify-content: center; /* Centra las tarjetas horizontalmente */
-  align-items: center; /* Centra las tarjetas verticalmente */
+ 
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si es necesario */
   gap: 20px; /* Espacio entre las tarjetas */
-  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 /* Estilos de la tarjeta */
 .card {
   opacity: 0;
   border-radius: 20px;
-  transform: translateY(0); /* Posición inicial */
+  transform: translateY(0);
+  /*Posicióninicial*/
   overflow: auto;
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
-  box-shadow: 0 8px 16px rgba(1, 26, 100, 0.982) !important;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+  box-shadow: 0 2px 2px rgba(2, 65, 255, 0.5) !important;
   background: white;
   animation: fadeIn 3s ease-in-out forwards;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }
 .card.show {
   opacity: 1; /* Asegura que se muestren con animación */
@@ -72,11 +78,13 @@ h2 {
   animation: fadeIn 4s ease-in-out forwards;
 }
 
-
 .card:hover {
   transform: scale(1.05);
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); /* Ajusta el alfa para la transparencia */
-  box-shadow: 0 12px 24px rgba(1, 26, 100, 0.8);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.1)
+  ); /* Ajusta el alfa para la transparencia */
   color: white;
 }
 /* Animación secuencial: Añadiendo retrasos */
@@ -92,5 +100,59 @@ h2 {
   animation-delay: 5s; /* 0.4 segundos de retraso */
 }
 
-/* Efecto al pasar el mouse */
+/* Ajustes para la tarjeta descriptiva */
+.content-wrapper {
+  
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
 
+/* Imagen personalizada */
+.custom-img {
+  width: 50%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Contenedor de texto */
+.text-content {
+  color: white;
+  max-width: 600px;
+}
+
+/* Título de la sección */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Texto de la sección */
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* Añadir sombra al texto para mejorar la legibilidad */
+.section-title,
+.section-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Apila el contenido en dispositivos más pequeños */
+    align-items: flex-start;
+  }
+
+  .custom-img {
+    width: 100%;
+  }
+
+  .text-content {
+    text-align: center; /* Centra el texto en dispositivos más pequeños */
+  }
+}

@@ -1,31 +1,41 @@
 #banner {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
   height: 600px; /* Ajusta la altura según sea necesario */
-  background: url('../../../assets/mano-humana-escribiendo-teclado-computadora-noche-generada-ai.jpg') no-repeat center center;
-  background-size: cover;
-  padding-top: 20px; /* Añade un padding superior para mover el banner hacia abajo */
-  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del elemento */
+  overflow: hidden; /* Asegura que el video no sobresalga del contenedor */
+  
+}
 
+#banner-video {
+  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo el banner */
+  z-index: -1; /* Coloca el video detrás del contenido del banner */
+}
 
-  .banner-content {
-    position: absolute; /* Cambiado a absolute para ajustar la posición del contenido dentro del banner */
-    z-index: 2; /* Asegura que el contenido esté encima del difuminado */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centra vertical y horizontalmente */
-    
-    h1 {
-      font-size: 3rem; /* Ajusta el tamaño del texto según sea necesario */
-      margin: 0;
-    }
-    
-    p {
-      font-size: 1.5rem; /* Ajusta el tamaño del texto según sea necesario */
-      margin: 0;
-    }
-  }
+#banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* Ajusta el color del texto según sea necesario */
+  z-index: 2; /* Asegura que el contenido esté sobre el overlay */
+ 
+}
+
+#banner-logo {
+  max-width: 100%; /* Ajusta el tamaño del logo si es necesario */
+  height: auto;
+}
+
+#banner-text {
+  margin-top: 20px; /* Ajusta el espacio entre el logo y el texto descriptivo */
+  font-size: 1.2rem; /* Ajusta el tamaño del texto según sea necesario */
 }
