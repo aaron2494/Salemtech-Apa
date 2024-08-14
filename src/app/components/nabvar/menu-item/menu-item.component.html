@@ -1,33 +1,13 @@
-<!-- Presentation Section -->
 <section id="presentation" class="py-5">
   <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
-  <div class="row">
-    <div class="col-md-4 mb-4">
+  <div class="row show-cards">
+    <div class="col-md-4 mb-4" *ngFor="let card of cards; let i = index">
       <div class="card border-0 shadow-sm">
         <div class="card-body">
-          <h5 class="card-title">Experiencia en Procesos</h5>
-          <p class="card-text">Contamos con la experiencia en procesos, automatización, tecnología de operación y de información para integrar las necesidades de los clientes del mercado energético en forma efectiva.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="card border-0 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">Estándares de Calidad</h5>
-          <p class="card-text">Seguimos los más altos estándares en ejecución de proyectos de ingeniería y consultoría del mercado. Alineamos los equipos de trabajo a las necesidades del proyecto en forma escalable y flexible.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="card border-0 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">Soporte de Clase Mundial</h5>
-          <p class="card-text">Proveemos un soporte de posventa de clase mundial. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más.</p>
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-  

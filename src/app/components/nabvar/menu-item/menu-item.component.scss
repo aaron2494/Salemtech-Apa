@@ -1,3 +1,4 @@
+ /* Animación de gradiente para el fondo */
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -9,6 +10,8 @@
     background-position: 0% 50%;
   }
 }
+
+/* Animación de aparición */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -19,15 +22,14 @@
     transform: translateY(0);
   }
 }
-
-
+/* Sección de presentación */
 #presentation {
   flex: 1;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px 20px; /* Aumenta el padding-top para mover todo hacia abajo */
+  padding: 40px 20px 20px;
   background: linear-gradient(to right, #ffffff, rgb(1, 26, 100));
   background-size: 200% 100%; /* Asegura que el gradiente cubra el área y permita la animación */
   animation: gradientAnimation 10s ease infinite; /* Aplica la animación */
@@ -37,13 +39,13 @@
   overflow-x: hidden; /* Evita desplazamiento horizontal */
 }
 
-
+/* Título */
 h2 {
   text-align: center;
   margin-bottom: 20px; /* Reduce el espacio entre el título y las tarjetas */
-  
 }
 
+/* Contenedor de las tarjetas */
 .card-container {
   display: flex;
   justify-content: center; /* Centra las tarjetas horizontalmente */
@@ -51,22 +53,44 @@ h2 {
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si es necesario */
   gap: 20px; /* Espacio entre las tarjetas */
   width: 100%;
-  
- 
 }
-  .card {
-    border-radius: 20px;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
-    box-shadow: 0 8px 16px rgba(1, 26, 100, 0.982) !important;
-    background: white;
 
-    &:hover {
-      transform: scale(1.05); /* Escala la tarjeta al 105% */
-      box-shadow: 0 6px 12px rgba(3, 3, 3, 0.5) !important; /* Aumenta la sombra al pasar el mouse */
-      background: linear-gradient(to right, rgba(77, 114, 201, 0.7), rgba(1, 26, 100, 0.9)); /* Fondo más transparente */
-      color: white;
-    }
-  }
+/* Estilos de la tarjeta */
+.card {
+  opacity: 0;
+  border-radius: 20px;
+  transform: translateY(0); /* Posición inicial */
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  box-shadow: 0 8px 16px rgba(1, 26, 100, 0.982) !important;
+  background: white;
+  animation: fadeIn 3s ease-in-out forwards;
+}
+.card.show {
+  opacity: 1; /* Asegura que se muestren con animación */
+  transform: translateY(0); /* Asegura que se muestren con animación */
+  animation: fadeIn 4s ease-in-out forwards;
+}
 
+
+.card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); /* Ajusta el alfa para la transparencia */
+  box-shadow: 0 12px 24px rgba(1, 26, 100, 0.8);
+  color: white;
+}
+/* Animación secuencial: Añadiendo retrasos */
+.card:nth-child(1) {
+  animation-delay: 2s; /* Sin retraso para la primera card */
+}
+
+.card:nth-child(2) {
+  animation-delay: 3s; /* 0.2 segundos de retraso */
+}
+
+.card:nth-child(3) {
+  animation-delay: 5s; /* 0.4 segundos de retraso */
+}
+
+/* Efecto al pasar el mouse */
 
