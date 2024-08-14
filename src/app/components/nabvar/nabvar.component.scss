@@ -11,7 +11,6 @@
 }
 
 #navbar {
-
   position: fixed;
   top: 0;
   width: 100%;
@@ -19,32 +18,18 @@
   background: linear-gradient(to right, #ffffff, rgb(1, 26, 100)); /* De blanco a azul oscuro */
   background-size: 200% 100%; /* Asegura que el gradiente cubra el área y permita la animación */
   animation: gradientAnimation 10s ease infinite; /* Aplica la animación del gradiente */
-  transition: all 0.3s ease; /* Suaviza la transición al hacer scroll */
-  padding: 0.8rem 1.0rem; /* Padding inicial del navbar */
-
   .navbar-brand,
   .nav-link {
     color: black; /* Color de texto inicial */
     transition: color 0.3s ease; /* Suaviza la transición del color */
-    
     &:hover {
       color: #ffffff; /* Blanco al pasar el mouse */
     }
   }
-
-  &.scrolled {
-    padding: 0.2rem 0.4rem; /* Reducir el padding al hacer scroll */
-    .navbar-brand,
-    .nav-link {
-      transform: scale(0.9); /* Escala los elementos del navbar */
-    }
-  }
-
   .navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.3); /* Fondo del toggler */
-  
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
+    background-color: rgba(16, 23, 240, 0.3); /* Fondo del toggler */
   }
+}
+.img{
+  height: 60px;
 }

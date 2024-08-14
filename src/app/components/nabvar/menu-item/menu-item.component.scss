@@ -36,13 +36,13 @@
   min-height: 100vh; /* Asegura que el fondo ocupe toda la pantalla */
   width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
   box-sizing: border-box; /* Asegura que padding y border no afecten el tamaño */
-  overflow-x: hidden; /* Evita desplazamiento horizontal */
+   /* Evita desplazamiento horizontal */
 }
 
 /* Título */
 h2 {
   text-align: center;
-  margin-bottom: 20px; /* Reduce el espacio entre el título y las tarjetas */
+  
 }
 
 /* Contenedor de las tarjetas */
@@ -60,7 +60,7 @@ h2 {
   opacity: 0;
   border-radius: 20px;
   transform: translateY(0); /* Posición inicial */
-  overflow: hidden;
+  overflow: auto;
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
   box-shadow: 0 8px 16px rgba(1, 26, 100, 0.982) !important;
   background: white;
