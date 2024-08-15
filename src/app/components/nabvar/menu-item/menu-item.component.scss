@@ -24,6 +24,7 @@
     transform: translateY(0);
   }
 }
+
 /* Sección de presentación */
 #presentation {
   flex: 1;
@@ -31,25 +32,50 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to right, #000000, rgb(2, 65, 255));
-  background-size: 200% 100%; /* Asegura que el gradiente cubra el área y permita la animación */
-  animation: gradientAnimation 10s ease infinite; /* Aplica la animación */
-  min-height: 100vh; /* Asegura que el fondo ocupe toda la pantalla */
-  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
-  box-sizing: border-box; /* Asegura que padding y border no afecten el tamaño */
-  overflow-x: hidden; /* Evita desplazamiento horizontal */
+  background: linear-gradient(to right, #000000, rgb(2, 65, 255,0.5));
+  background-size: 200% 100%;
+  /*Aseguraqueelgradientecubraeláreaypermitalaanimación*/animation: gradientAnimation 20s ease infinite;
+  /*Aplicalaanimación*/min-height: 100vh;
+  /*Aseguraqueelfondoocupetodalapantalla*/width: 100%;
+  /*Aseguraqueocupetodoelanchodelapantalla*/box-sizing: border-box;
+  /*Aseguraquepaddingybordernoafecteneltamaño*/overflow-x: hidden;
+   /* Evita desplazamiento horizontal */;
+  -webkit-animation: gradientAnimation 10s ease infinite;
 }
 
 /* Título */
-h2 {
+h2.text-center {
   text-align: center;
-  color: white;
+  color: #e0c097; /* Un dorado claro elegante */
+  font-family: 'Merriweather', serif; /* Fuente serif para un toque formal */
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+  text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
+  margin-bottom: 30px; /* Espacio inferior ajustado */
+  position: relative;
+  display: inline-block;
+}
+
+h2.text-center::after {
+  content: '';
+  width: 60px;
+  /*Longituddelalínea*/height: 4px;
+  /*Grosordelalínea*/background-color: #e0c097;
+  /*Colordelalíneacoincidente*/position: absolute;
+  bottom: -10px;
+  /*Espaciadodesdeeltexto*/left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 /* Contenedor de las tarjetas */
 .card-container {
   display: flex;
- 
+  justify-content: center;
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si es necesario */
   gap: 20px; /* Espacio entre las tarjetas */
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
@@ -60,17 +86,20 @@ h2 {
   opacity: 0;
   border-radius: 20px;
   transform: translateY(0);
-  /*Posicióninicial*/
-  overflow: auto;
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
-    background-color 0.5s ease-in-out;
-  box-shadow: 0 2px 2px rgba(2, 65, 255, 0.5) !important;
-  background: white;
+  /*Posicióninicial*/overflow: auto;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(224, 192, 151, 0.9);
   animation: fadeIn 3s ease-in-out forwards;
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
+  -webkit-transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
+  -ms-transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
+  -webkit-animation: fadeIn 3s ease-in-out forwards;
 }
 .card.show {
   opacity: 1; /* Asegura que se muestren con animación */
@@ -85,7 +114,7 @@ h2 {
     rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.1)
   ); /* Ajusta el alfa para la transparencia */
-  color: white;
+  color: #e0c097;
 }
 /* Animación secuencial: Añadiendo retrasos */
 .card:nth-child(1) {
@@ -99,7 +128,12 @@ h2 {
 .card:nth-child(3) {
   animation-delay: 5s; /* 0.4 segundos de retraso */
 }
-
+.divider {
+  width: 80%;
+  height: 2px;
+  background-color: rgba(224, 192, 151, 0.6); /* Color dorado claro para la línea */
+  margin: 40px auto; /* Espacio alrededor de la línea y centrado horizontal */
+}
 /* Ajustes para la tarjeta descriptiva */
 .content-wrapper {
   
@@ -116,19 +150,29 @@ h2 {
   max-width: 600px;
   height: auto;
   object-fit: cover;
+  border: 4px solid rgba(224, 192, 151, 0.6); /* Borde del mismo color que la línea */
+  border-radius: 15px; /* Bordes redondeados */
 }
 
 /* Contenedor de texto */
 .text-content {
-  color: white;
+  color: #e0c097;
   max-width: 600px;
 }
 
 /* Título de la sección */
 .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  color: #e0c097; /* Un dorado claro elegante */
+  font-family: 'Merriweather', serif; /* Fuente serif para un toque formal */
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+  text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
+  margin-bottom: 30px; /* Espacio inferior ajustado */
+  position: relative;
+  display: inline-block;
 }
+
 
 /* Texto de la sección */
 .section-text {
@@ -143,16 +187,54 @@ h2 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 @media (max-width: 768px) {
+  #presentation {
+    padding: 20px;
+  }
+
+  h2.text-center {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  h2.text-center::after {
+    width: 40px;
+    height: 3px;
+    bottom: -8px;
+  }
+
+  .card-container {
+    flex-direction:column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%; /* Ajusta el tamaño de las tarjetas */
+    margin-bottom: 20px; /* Añade espacio entre las tarjetas */
+  }
+
   .content-wrapper {
-    flex-direction: column; /* Apila el contenido en dispositivos más pequeños */
-    align-items: flex-start;
+    flex-direction: column;
+    align-items:center;
   }
 
   .custom-img {
+    
     width: 100%;
+    max-width: none;
   }
 
   .text-content {
-    text-align: center; /* Centra el texto en dispositivos más pequeños */
+    text-align: center;
+  }
+
+  .section-title {
+    padding-top: 20px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .section-text {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }

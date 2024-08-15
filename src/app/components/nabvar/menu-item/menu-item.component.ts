@@ -25,7 +25,7 @@ export class MenuItemComponent implements OnInit, OnDestroy {
     },
     {
       title: 'Soporte de Clase Mundial',
-      text: 'Proveemos un soporte de posventa de clase mundial. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más.'
+      text: 'Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más.'
     }
   ];
 

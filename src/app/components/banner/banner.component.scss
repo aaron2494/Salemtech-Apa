@@ -1,24 +1,18 @@
 #banner {
+  flex: 1;
   background: url('../../../assets/mano-humana-escribiendo-teclado-computadora-noche-generada-ai.jpg') no-repeat center center;
+  background-size: cover; /* Asegura que la imagen cubra todo el área del banner */
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  width: 100%; /* Ancho completo de la ventana */
   height: 600px; /* Ajusta la altura según sea necesario */
-  overflow: hidden; /* Asegura que el video no sobresalga del contenedor */
-  
-}
+  overflow: hidden;
+  object-fit: cover;
+  z-index: -1;
+  }
 
-#banner-video {
-  flex: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Asegura que el video cubra todo el banner */
-  z-index: -1; /* Coloca el video detrás del contenido del banner */
-}
+
 
 #banner-content {
   position: absolute;
