@@ -17,10 +17,8 @@
   z-index: 1000;
   background: linear-gradient(to right, #000000, rgb(2, 65, 255,0.5));
   background-size: 200% 100%;
-  /*Aseguraqueelgradientecubraeláreaypermitalaanimación*/animation: gradientAnimation 20s ease infinite;
-
-   /* Evita desplazamiento horizontal */;
-  -webkit-animation: gradientAnimation 20s ease infinite;
+  animation: gradientAnimation 22s ease infinite;
+  -webkit-animation: gradientAnimation 22s ease infinite;
   .navbar-brand,
   .nav-link {
     color: #e0c097; /* Color de texto inicial */

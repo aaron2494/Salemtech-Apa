@@ -45,7 +45,7 @@
 h2.text-center {
   text-align: center;
   color: #e0c097; /* Un dorado claro elegante */
-  
+  text-shadow: #000000 0 4px 4px;
   font-size: 2.5rem; /* Tamaño de fuente más grande */
   font-weight: bold;
   letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
@@ -86,18 +86,18 @@ h2.text-center::after {
   transform: translateY(0);
   /*Posicióninicial*/overflow: auto;
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5) !important;
-  background-color: rgba(224, 192, 151, 0.9);
-  animation: fadeIn 3s ease-in-out forwards;
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  -webkit-transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
-  -moz-transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
-  -ms-transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
-  -o-transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,    background-color 0.5s ease-in-out;
-  -webkit-animation: fadeIn 3s ease-in-out forwards;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8) !important;
+  background: url(../../../../assets/fondo-card.jpg);
+  background-size: cover;
+  animation: fadeIn 5s ease-in-out forwards;
+  
+}
+.card-title{
+  text-shadow:#000000 0 0.5px 0.5px ;
+}
+.card-text{
+  font-size: 1rem;
+  text-shadow:#000000 0 0.5px 0.5px ;
 }
 .card.show {
   opacity: 1; /* Asegura que se muestren con animación */
@@ -144,6 +144,7 @@ h2.text-center::after {
 
 /* Imagen personalizada */
 .custom-img {
+  
   width: 50%;
   max-width: 600px;
   height: auto;
@@ -156,6 +157,7 @@ h2.text-center::after {
 .text-content {
   color: #e0c097;
   max-width: 600px;
+  
 }
 
 /* Título de la sección */
@@ -169,6 +171,7 @@ h2.text-center::after {
   margin-bottom: 30px; /* Espacio inferior ajustado */
   position: relative;
   display: inline-block;
+  
 }
 
 
@@ -182,7 +185,7 @@ h2.text-center::after {
 /* Añadir sombra al texto para mejorar la legibilidad */
 .section-title,
 .section-text {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: #000000 0 1px 1px;
 }
 @media (max-width: 768px) {
   #presentation {
