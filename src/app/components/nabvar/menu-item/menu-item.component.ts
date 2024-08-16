@@ -1,8 +1,10 @@
-import {  Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import {  AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { filter, Observable } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
 import { AnimationServiceService } from '../../../animation-service.service';
 import { CommonModule } from '@angular/common';
+import  { Carousel } from 'bootstrap';
+
 
 @Component({
   selector: 'app-menu-item',
@@ -11,9 +13,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.scss']
 })
-export class MenuItemComponent implements OnInit, OnDestroy {
+export class MenuItemComponent implements OnInit,AfterViewInit, OnDestroy {
   private routerSubscription: any;
   showAnimation$!: Observable<boolean>;
+  @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
+  images = [
+    '../../../../assets/calidad.jpg',
+    '../../../../assets/concepto-control-calidad-estandar-m.jpg',
+    '../../../../assets/concepto-collage-control-calidad-estandar.jpg'
+  ];
   cards = [
     {
       title: 'Experiencia en Procesos',
@@ -25,7 +33,7 @@ export class MenuItemComponent implements OnInit, OnDestroy {
     },
     {
       title: 'Soporte de Clase Mundial',
-      text: 'Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más.'
+      text: 'Contamos con un sopote de elite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más.'
     }
   ];
 
@@ -37,18 +45,29 @@ export class MenuItemComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.showAnimation$ = this.animationService.showAnimation$;
 
-    // Detectar navegación hacia la sección 'presentation'
-    this.routerSubscription = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      if (this.router.url.includes('presentation')) {
-        this.resetAndTriggerAnimation();
-      }
-    });
   }
+ngAfterViewInit(): void {
+  this.showAnimation$ = this.animationService.showAnimation$;
 
+  // Detectar navegación hacia la sección 'presentation'
+  this.routerSubscription = this.router.events.pipe(
+    filter(event => event instanceof NavigationEnd)
+  ).subscribe(() => {
+    if (this.router.url.includes('presentation')) {
+      this.resetAndTriggerAnimation();
+    }
+  });
+  setTimeout(() => {
+    if (this.carouselElement) {
+      const bootstrapCarousel = new Carousel(this.carouselElement.nativeElement, {
+        interval: 5000,
+        ride: 'carousel'
+      });
+    }
+  }, 0);
+
+}
   ngOnDestroy(): void {
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
@@ -68,4 +87,6 @@ export class MenuItemComponent implements OnInit, OnDestroy {
       }, 10);
     });
   }
+  
+  
 }

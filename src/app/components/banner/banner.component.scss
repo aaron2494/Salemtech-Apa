@@ -20,17 +20,39 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white; /* Ajusta el color del texto según sea necesario */
+  color: #e0c097; /* Ajusta el color del texto según sea necesario */
   z-index: 2; /* Asegura que el contenido esté sobre el overlay */
  
 }
+#animatedText span {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+  text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
+  position: relative;
+  display: inline-block;
 
-#banner-logo {
-  max-width: 100%; /* Ajusta el tamaño del logo si es necesario */
-  height: auto;
+}
+
+#animatedText div {
+  text-align: center; /* Centra las líneas si es necesario */
+  margin-bottom: 10px; /* Espacio entre las líneas */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 #banner-text {
-  margin-top: 20px; /* Ajusta el espacio entre el logo y el texto descriptivo */
-  font-size: 1.2rem; /* Ajusta el tamaño del texto según sea necesario */
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+  text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
+  margin-bottom: 30px; /* Espacio inferior ajustado */
+  position: relative;
+  display: inline-block;
 }

@@ -1,36 +1,42 @@
-<section id="presentation" class="py-5">
-  <h2 class="text-center  mb-4">¿Por qué elegirnos?</h2>
-  <div class="row justify-content-center show-cards">
-    <div class="col-md-3 mb-4" *ngFor="let card of cards; let i = index">
-      <div class="card border-0 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">{{ card.title }}</h5>
-          <p class="card-text">{{ card.text }}</p>
+  <section id="presentation" class="py-5">
+    <h2 class="text-center  mb-4">¿Por qué elegirnos?</h2>
+    <div class="row justify-content-center show-cards">
+      <div class="col-md-3 mb-4" *ngFor="let card of cards; let i = index">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">{{ card.text }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="divider"></div>
-  <div class="content-wrapper ">
-    <img
-      src="../../../../assets/equipos-de-trabajo.jpg"
-      alt="Imagen Vertical"
-      class="img-fluid custom-img"
-    />
-    <div class="text-content ms-5">
-      <h2 class="section-title">Nuestro Equipo</h2>
-      <p class="section-text">
-        Contamos con una amplia red de profesionales internos y externos que
-        nos permite integrar soluciones en todos los ámbitos de la
-        automatización y control, como en integraciones a la capa intermedia
-        entre el piso de planta y los ERPs.
-        <br/><br/>
-        Realizamos implementaciones tecnológicas en control de procesos,
-        excelencia operacional, optimización de plantas de procesos de la
-        industria mediana, pesada y desarrollo de sistemas informáticos.
-      </p>
+    <div class="divider"></div>
+      <div class="content-wrapper ">
+        <div #carouselExample class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+            <div
+              class="carousel-item"
+              *ngFor="let image of images; let i = index"
+              [class.active]="i === 0"
+            >
+              <img [src]="image" class="d-block w-100 custom-img" [alt]="'Imagen ' + (i + 1)" />
+            </div>
+          </div>
+        </div>
+      <div class="text-content ms-5">
+        <h2 class="section-title">Nuestro Equipo</h2>
+        <p class="section-text">
+          Contamos con una amplia red de profesionales internos y externos que
+          nos permite integrar soluciones en todos los ámbitos de la
+          automatización y control, como en integraciones a la capa intermedia
+          entre el piso de planta y los ERPs.
+          <br/><br/>
+          Realizamos implementaciones tecnológicas en control de procesos,
+          excelencia operacional, optimización de plantas de procesos de la
+          industria mediana, pesada y desarrollo de sistemas informáticos.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 

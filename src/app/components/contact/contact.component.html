@@ -1,0 +1,27 @@
+<section id="contacto" class="contact-section">
+    <h2>Contacto</h2>
+    <form (submit)="enviarConsulta()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="consulta.nombre" >
+      </div>
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email"name="email" [(ngModel)]="consulta.email" >
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono (Opcional)</label>
+        <input type="tel" id="telefono" name="telefono"[(ngModel)]="consulta.telefono">
+      </div>
+      <div class="form-group">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto" [(ngModel)]="consulta.asunto" >
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="5" name="mensaje" [(ngModel)]="consulta.mensaje" ></textarea>
+      </div>
+      <button type="submit" class="btn-enviar">Enviar Consulta</button>
+    </form>
+  </section>
+  

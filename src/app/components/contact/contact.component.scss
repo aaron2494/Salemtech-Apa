@@ -1,0 +1,47 @@
+.contact-section {
+    padding: 2rem;
+    background-color: #f8f9fa;
+  
+    h2 {
+      font-family: 'Merriweather', serif;
+      color: #343a40;
+      margin-bottom: 1.5rem;
+    }
+  
+    .form-group {
+      margin-bottom: 1.5rem;
+  
+      label {
+        font-weight: bold;
+        margin-bottom: .5rem;
+        display: block;
+      }
+  
+      input, textarea {
+        width: 100%;
+        padding: .75rem;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        font-family: 'Merriweather', serif;
+  
+        &:focus {
+          border-color: #007bff;
+          box-shadow: 0 0 5px rgba(0, 123, 255, .5);
+        }
+      }
+    }
+  
+    .btn-enviar {
+      background-color: #007bff;
+      color: white;
+      padding: .75rem 1.5rem;
+      border: none;
+      border-radius: .25rem;
+      cursor: pointer;
+      font-family: 'Merriweather', serif;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
