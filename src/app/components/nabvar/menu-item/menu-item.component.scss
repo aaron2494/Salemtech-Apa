@@ -106,7 +106,7 @@ h2.text-center::after {
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) ;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.2),
@@ -187,6 +187,73 @@ h2.text-center::after {
 .section-text {
   text-shadow: #000000 0 1px 1px;
 }
+
+/*SECCION NUESTRAS FORMAS*/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  .container{
+    margin-top: -50px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #e0c097;
+  }
+
+  .icon-wrapper {
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.2) rotateY(180deg ) ;
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  h2 {
+    color: #e0c097; /* Un dorado claro elegante */
+    font-family: 'Merriweather', serif; /* Fuente serif para un toque formal */
+    font-size: 2.5rem; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+    text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
+    margin-bottom: 30px; /* Espacio inferior ajustado */
+    position: relative;
+    display: inline-block;
+  }
+
+  h4 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    
+  }
+
+  p {
+    
+    font-size: 0.9rem;
+  }
+
+
+
+
+
 @media (max-width: 768px) {
   #presentation {
     padding: 20px;
@@ -238,5 +305,12 @@ h2.text-center::after {
   .section-text {
     font-size: 1rem;
     line-height: 1.6;
+  }
+  .icon-wrapper img {
+    max-width: 100px; /* Reducir el tamaño en tablets */
+    max-height: 100%;
+  }
+  .icon-wrapper:hover {
+    transform: scale(0.8) rotateY(180deg 0.10s); /* Mantener el hover más pequeño en móviles */
   }
 }

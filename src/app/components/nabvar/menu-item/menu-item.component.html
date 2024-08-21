@@ -10,7 +10,9 @@
           </div>
         </div>
       </div>
+
     <div class="divider"></div>
+
       <div class="content-wrapper ">
         <div #carouselExample class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
           <div class="carousel-inner">
@@ -37,6 +39,21 @@
         </p>
       </div>
     </div>
+    <div class="divider"></div>
+    <div class="container text-center py-5">
+      <h2>Nuestra manera</h2>
+      <div class="row justify-content-center">
+        <div class="col-6 col-md-2 col-lg-2" *ngFor="let item of items">
+          <div class="icon-wrapper">
+            <img src="{{item.icon}}" alt="{{item.title}}">
+          </div>
+          <h4>{{item.title}}</h4>
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+    </div>
+    
+    
   </section>
 
 

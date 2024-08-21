@@ -13,7 +13,13 @@ import  { Carousel } from 'bootstrap';
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.scss']
 })
-export class MenuItemComponent implements OnInit,AfterViewInit, OnDestroy {
+export class MenuItemComponent implements AfterViewInit, OnDestroy {
+  items = [
+    { icon: '../../../../assets/iconos_datos.png', title: 'Relevamiento de datos', description: '' },
+    { icon: '../../../../assets/iconos_performance.png', title: 'Mejora de performance', description: '' },
+    { icon: '../../../../assets/iconos_procesos.png', title: 'Automatizacion de procesos', description: '' },
+    { icon: '../../../../assets/iconos_tecno.png', title: 'Implementacion de Tecnologias', description: '' },
+  ];
   private routerSubscription: any;
   showAnimation$!: Observable<boolean>;
   @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
@@ -44,9 +50,7 @@ export class MenuItemComponent implements OnInit,AfterViewInit, OnDestroy {
     private animationService: AnimationServiceService
   ) {}
 
-  ngOnInit(): void {
-
-  }
+ 
 ngAfterViewInit(): void {
   this.showAnimation$ = this.animationService.showAnimation$;
 
@@ -66,7 +70,7 @@ ngAfterViewInit(): void {
       });
     }
   }, 0);
-
+ this.animateIcons();
 }
   ngOnDestroy(): void {
     if (this.routerSubscription) {
@@ -87,6 +91,12 @@ ngAfterViewInit(): void {
       }, 10);
     });
   }
-  
+  private animateIcons() {
+    const icons = this.el.nativeElement.querySelectorAll('.icon-wrapper');
+    icons.forEach((icon: HTMLElement, index: number) => {
+      this.renderer.setStyle(icon, 'opacity', '1');
+      this.renderer.setStyle(icon, 'animation', `fadeInUp 0.5s ease-in-out ${index * 0.2}s forwards`);
+    });
+  }
   
 }
