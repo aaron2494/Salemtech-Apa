@@ -57,3 +57,13 @@
   position: relative;
   display: inline-block;
 }
+@media (max-width: 768px) {
+  #banner{
+    height: 300px;
+  }
+  #animatedText span,
+  #banner-text {
+    font-size: 1.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+    letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+  }
+  }

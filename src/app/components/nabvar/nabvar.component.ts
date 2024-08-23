@@ -10,13 +10,19 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './nabvar.component.html',
   styleUrl: './nabvar.component.scss'
 })
-export class NabvarComponent implements OnInit {
+export class NabvarComponent  {
 
   constructor( private router:Router) { }
-  ngOnInit(): void {
-   
-  }
 
+  isNavbarCollapsed = true;
+
+  toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+    const navbar = document.getElementById('navbarNav');
+    if (navbar) {
+      navbar.classList.remove('show'); // Cierra el navbar
+    }
+  }
   
   onNavigate(sectionId: string): void {
     this.router.navigate([], { fragment: sectionId }).then(() => {

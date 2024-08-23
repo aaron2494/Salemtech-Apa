@@ -1,34 +1,26 @@
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 #navbar {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(to right, #000000, rgb(2, 65, 255,0.5));
-  background-size: 200% 100%;
-  animation: gradientAnimation 22s ease infinite;
-  -webkit-animation: gradientAnimation 22s ease infinite;
+  background-color: #000000 !important; /* Fondo negro sólido */
+  
   .navbar-brand,
   .nav-link {
-    color: #e0c097; /* Color de texto inicial */
-    transition: color 0.3s ease; /* Suaviza la transición del color */
+    color: #e0c097;
+    transition: color 0.3s ease;
     &:hover {
-      color: #000000; /* Blanco al pasar el mouse */
+      color: #ffffff;
     }
   }
+
   .navbar-toggler {
-    background-color: rgba(16, 23, 240, 0.3); /* Fondo del toggler */
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .dropdown-menu,.dropdown-item{
+    background-color: #000000;
+    color: #e0c097;
+    
   }
 }
 .img{

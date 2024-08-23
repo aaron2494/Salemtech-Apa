@@ -50,7 +50,6 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     private animationService: AnimationServiceService
   ) {}
 
- 
 ngAfterViewInit(): void {
   this.showAnimation$ = this.animationService.showAnimation$;
 
