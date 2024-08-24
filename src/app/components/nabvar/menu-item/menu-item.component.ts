@@ -53,6 +53,11 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
 ngAfterViewInit(): void {
   this.showAnimation$ = this.animationService.showAnimation$;
 
+  // Verifica la URL actual en la carga inicial
+  if (this.router.url.includes('presentation')) {
+    this.resetAndTriggerAnimation();
+  }
+
   // Detectar navegación hacia la sección 'presentation'
   this.routerSubscription = this.router.events.pipe(
     filter(event => event instanceof NavigationEnd)
@@ -61,6 +66,7 @@ ngAfterViewInit(): void {
       this.resetAndTriggerAnimation();
     }
   });
+
   setTimeout(() => {
     if (this.carouselElement) {
       const bootstrapCarousel = new Carousel(this.carouselElement.nativeElement, {
@@ -69,33 +75,37 @@ ngAfterViewInit(): void {
       });
     }
   }, 0);
- this.animateIcons();
-}
-  ngOnDestroy(): void {
-    if (this.routerSubscription) {
-      this.routerSubscription.unsubscribe();
-    }
-  }
 
-  private resetAndTriggerAnimation() {
-    const cards = this.el.nativeElement.querySelectorAll('.card');
-    cards.forEach((card: HTMLElement, index: number) => {
-      this.renderer.removeClass(card, 'show'); // Elimina la clase 'show'
-      // Forzamos el navegador a aplicar los estilos iniciales
-      this.renderer.setStyle(card, 'animation', 'none');
-      // Un pequeño retraso para reiniciar la animación
-      setTimeout(() => {
-        this.renderer.addClass(card, 'show'); // Vuelve a agregar la clase 'show'
-        this.renderer.setStyle(card, 'animation', `fadeIn 4s ease-in-out ${index * 0.1}s forwards`); // Aplica la animación
-      }, 10);
-    });
+  this.animateIcons();
+}
+
+ngOnDestroy(): void {
+  if (this.routerSubscription) {
+    this.routerSubscription.unsubscribe();
   }
-  private animateIcons() {
-    const icons = this.el.nativeElement.querySelectorAll('.icon-wrapper');
-    icons.forEach((icon: HTMLElement, index: number) => {
-      this.renderer.setStyle(icon, 'opacity', '1');
-      this.renderer.setStyle(icon, 'animation', `fadeInUp 0.5s ease-in-out ${index * 0.2}s forwards`);
-    });
-  }
+}
+
+private resetAndTriggerAnimation() {
+  const cards = this.el.nativeElement.querySelectorAll('.card');
+  cards.forEach((card: HTMLElement, index: number) => {
+    this.renderer.removeClass(card, 'show'); // Elimina la clase 'show'
+    // Forzamos el navegador a aplicar los estilos iniciales
+    this.renderer.setStyle(card, 'animation', 'none');
+    // Un pequeño retraso para reiniciar la animación
+    setTimeout(() => {
+      this.renderer.addClass(card, 'show'); // Vuelve a agregar la clase 'show'
+      this.renderer.setStyle(card, 'animation', `fadeIn 4s ease-in-out ${index * 0.1}s forwards`); // Aplica la animación
+    }, 10);
+  });
+}
+
+private animateIcons() {
+  const icons = this.el.nativeElement.querySelectorAll('.icon-wrapper');
+  icons.forEach((icon: HTMLElement, index: number) => {
+    this.renderer.setStyle(icon, 'opacity', '1');
+    this.renderer.setStyle(icon, 'animation', `fadeInUp 0.5s ease-in-out ${index * 0.2}s forwards`);
+  });
+}
+
   
 }

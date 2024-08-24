@@ -1,16 +1,39 @@
     <section id="presentation" class="py-5">
-      <h2 class="text-center  mb-4">¿Por qué elegirnos?</h2>
-      <div class="row justify-content-center show-cards">
-        <div class="col-md-3 mb-4" *ngFor="let card of cards; let i = index">
-          <div class="card border-0 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">{{ card.title }}</h5>
-              <p class="card-text">{{ card.text }}</p>
-            </div>
+      <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
+      <!-- Vista en pantallas grandes -->
+  <div class="row justify-content-center d-none d-md-flex">
+    <div class="col-md-3 mb-4" *ngFor="let card of cards; let i = index">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Carrusel para pantallas pequeñas -->
+  <div id="cardsCarousel" class="carousel slide d-block d-md-none" data-bs-ride="carousel"data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let card of cards; let i = index" [class.active]="i === 0">
+        <div class="card border-0 shadow-sm mx-auto" style="width: 100%;">
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">{{ card.text }}</p>
           </div>
         </div>
       </div>
-
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#cardsCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon visually-hidden" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#cardsCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon visually-hidden" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+      
     <div class="divider"></div>
 
       <div id="manera" class="content-wrapper ">

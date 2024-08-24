@@ -25,6 +25,7 @@
   }
 }
 
+
 /* Sección de presentación */
 #presentation {
   flex: 1;
@@ -83,15 +84,20 @@ h2.text-center::after {
 .card {
   opacity: 0;
   border-radius: 20px;
-  transform: translateY(0);
+  transform: translateY(20px);
   /*Posicióninicial*/overflow: auto;
-  transition: transform 1s ease-in-out, box-shadow 1s ease-in-out,background-color 1.5s ease-in-out;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8) !important;
-  background:#e0c097;
-  animation: fadeIn 5s ease-in-out forwards;
-  
-  
+  transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
+  background: #e0c097;
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  -webkit-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
+  -moz-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
+  -ms-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
+  -o-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
 }
+
 .card-title{
   text-shadow:#000000 0 0.5px 0.5px ;
 }
@@ -100,18 +106,15 @@ h2.text-center::after {
   text-shadow:#000000 0 0.5px 0.5px ;
 }
 .card.show {
-  opacity: 1; /* Asegura que se muestren con animación */
-  transform: translateY(0); /* Asegura que se muestren con animación */
-  animation: fadeIn 4s ease-in-out forwards;
+  opacity: 1!important;
+  /*Aseguraquesemuestrenconanimación*/transform: translateY(0);
+  /*Aseguraquesemuestrenconanimación*/animation: fadeIn 4s ease-in-out forwards;
+  -webkit-animation: fadeIn 4s ease-in-out forwards;
 }
 
 .card:hover {
   transform: scale(1.05) ;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.1)
-  ); /* Ajusta el alfa para la transparencia */
+  background: black !important; /* Ajusta el alfa para la transparencia */
   color: #e0c097;
   border: 1.5px solid rgba(224, 192, 151, 0.6)!important; /* Borde del mismo color que la línea */
   border-radius: 20px !important; /* Bordes redondeados */
@@ -149,23 +152,25 @@ h2.text-center::after {
   
   width: 50%;
   max-width: 600px;
-  height: auto;
+  height: auto ;
   object-fit: cover;
   border: 4px solid rgba(224, 192, 151, 0.6); /* Borde del mismo color que la línea */
   border-radius: 15px; /* Bordes redondeados */
 }
+
 
 /* Contenedor de texto */
 .text-content {
   color: #e0c097;
   max-width: 600px;
   
+  
 }
 
 /* Título de la sección */
 .section-title {
   color: #e0c097; /* Un dorado claro elegante */
-  font-family: 'Merriweather', serif; /* Fuente serif para un toque formal */
+ /* Fuente serif para un toque formal */
   font-size: 2.5rem; /* Tamaño de fuente más grande */
   font-weight: bold;
   letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
@@ -185,10 +190,7 @@ h2.text-center::after {
 }
 
 /* Añadir sombra al texto para mejorar la legibilidad */
-.section-title,
-.section-text {
-  text-shadow: #000000 0 1px 1px;
-}
+
 
 /*SECCION NUESTRAS FORMAS*/
 @keyframes fadeInUp {
@@ -231,7 +233,7 @@ h2.text-center::after {
 
   h2 {
     color: #e0c097; /* Un dorado claro elegante */
-    font-family: 'Merriweather', serif; /* Fuente serif para un toque formal */
+/* Fuente serif para un toque formal */
     font-size: 2.5rem; /* Tamaño de fuente más grande */
     font-weight: bold;
     letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
@@ -254,7 +256,12 @@ h2.text-center::after {
 
 
 
-
+  @media (min-width: 768px) {
+    .row .card {
+      animation: fadeInUp 5s ease-in-out forwards;
+      -webkit-animation: fadeInUp 5s ease-in-out forwards;
+}
+  }
 
 @media (max-width: 768px) {
   #presentation {
@@ -278,10 +285,20 @@ h2.text-center::after {
   }
 
   .card {
-    width: 100%; /* Ajusta el tamaño de las tarjetas */
-    margin-bottom: 20px; /* Añade espacio entre las tarjetas */
-  }
+    width: 100%;
+    /*Ajustaeltamañodelastarjetas*/margin-bottom: 20px;
+    /*Añadeespacioentrelastarjetas*/animation: fadeIn 2s ease-in-out forwards;
+    -webkit-animation: fadeIn 2s ease-in-out forwards;
+}
 
+.card:hover {
+  transform: scale(0.85) ;
+  background: black !important;
+  /*Ajustaelalfaparalatransparencia*/color: #e0c097;
+  border: 1.5px solid rgba(224, 192, 151, 0.6)!important;
+  /*Bordedelmismocolorquelalínea*/border-radius: 20px !important;
+  
+}
   .content-wrapper {
     flex-direction: column;
     align-items:center;
