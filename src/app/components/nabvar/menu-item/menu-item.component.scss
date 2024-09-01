@@ -154,17 +154,20 @@ h2.text-center::after {
   max-width: 600px;
   height: auto ;
   object-fit: cover;
-  border: 4px solid rgba(224, 192, 151, 0.6); /* Borde del mismo color que la línea */
+  border: 2px solid rgba(224, 192, 151, 0.6); /* Borde del mismo color que la línea */
   border-radius: 15px; /* Bordes redondeados */
 }
-
+#imagescarousel {
+  width: 50%; /* Este valor debe coincidir con el ancho de .custom-img */
+  max-width: 600px;
+  min-height: 400px; /* Ajusta este valor según la altura de tus imágenes */
+  overflow: hidden;
+}
 
 /* Contenedor de texto */
-.text-content {
+.text-content { 
   color: #e0c097;
-  max-width: 600px;
-  
-  
+  max-width: 600px; 
 }
 
 /* Título de la sección */
@@ -297,7 +300,16 @@ h2.text-center::after {
   /*Ajustaelalfaparalatransparencia*/color: #e0c097;
   border: 1.5px solid rgba(224, 192, 151, 0.6)!important;
   /*Bordedelmismocolorquelalínea*/border-radius: 20px !important;
-  
+  -webkit-transform: scale(0.85) ;
+  -moz-transform: scale(0.85) ;
+  -ms-transform: scale(0.85) ;
+  -o-transform: scale(0.85) ;
+}
+/* seccion 2*/
+.custom-img, #imagescarousel {
+  width: 100%; /* La imagen y el carrusel ocupan el ancho completo */
+  max-width: 100%; /* Sin límite máximo de ancho */
+  min-height: auto; /* Permite que la altura sea flexible */
 }
   .content-wrapper {
     flex-direction: column;
@@ -312,18 +324,20 @@ h2.text-center::after {
 
   .text-content {
     text-align: center;
-   
+    max-width: 100%;
   }
 
   .section-title {
     padding-top: 20px;
     font-size: 2rem;
     margin-bottom: 20px;
+    margin-right: 30px;
   }
 
   .section-text {
     font-size: 1rem;
     line-height: 1.6;
+    margin-right: 20px;
   }
   .icon-wrapper img {
     max-width: 100px; /* Reducir el tamaño en tablets */

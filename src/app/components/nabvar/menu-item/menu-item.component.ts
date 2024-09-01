@@ -1,4 +1,4 @@
-import {  AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {  AfterViewInit, Component, ElementRef,  OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { filter, Observable } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
 import { AnimationServiceService } from '../../../animation-service.service';
@@ -53,12 +53,10 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
 ngAfterViewInit(): void {
   this.showAnimation$ = this.animationService.showAnimation$;
 
-  // Verifica la URL actual en la carga inicial
   if (this.router.url.includes('presentation')) {
     this.resetAndTriggerAnimation();
   }
 
-  // Detectar navegación hacia la sección 'presentation'
   this.routerSubscription = this.router.events.pipe(
     filter(event => event instanceof NavigationEnd)
   ).subscribe(() => {
@@ -67,16 +65,28 @@ ngAfterViewInit(): void {
     }
   });
 
+  this.animateIcons();
+
   setTimeout(() => {
-    if (this.carouselElement) {
-      const bootstrapCarousel = new Carousel(this.carouselElement.nativeElement, {
+    // Inicializa el carrusel de tarjetas
+    const cardsCarouselElement = this.el.nativeElement.querySelector('#cardsCarousel');
+    if (cardsCarouselElement) {
+      new Carousel(cardsCarouselElement, {
         interval: 5000,
         ride: 'carousel'
       });
     }
-  }, 0);
 
-  this.animateIcons();
+    // Inicializa el carrusel de imágenes
+    const imagesCarouselElement = this.el.nativeElement.querySelector('#imagescarousel');
+    if (imagesCarouselElement) {
+      new Carousel(imagesCarouselElement, {
+        interval: 5000, // tiempo entre slides
+        ride: 'carousel' // asegura que el carousel inicie automáticamente
+      });
+    }
+  }, 0);
+ 
 }
 
 ngOnDestroy(): void {
