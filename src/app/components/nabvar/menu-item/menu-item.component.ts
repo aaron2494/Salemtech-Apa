@@ -14,15 +14,18 @@ import  { Carousel } from 'bootstrap';
   styleUrls: ['./menu-item.component.scss']
 })
 export class MenuItemComponent implements AfterViewInit, OnDestroy {
+  
+  private routerSubscription: any;
+  showAnimation$!: Observable<boolean>;
+  @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
+  private intersectionObserver!: IntersectionObserver;
   items = [
     { icon: '../../../../assets/iconos_datos.png', title: 'Relevamiento de datos', description: '' },
     { icon: '../../../../assets/iconos_performance.png', title: 'Mejora de performance', description: '' },
     { icon: '../../../../assets/iconos_procesos.png', title: 'Automatizacion de procesos', description: '' },
     { icon: '../../../../assets/iconos_tecno.png', title: 'Implementacion de Tecnologias', description: '' },
   ];
-  private routerSubscription: any;
-  showAnimation$!: Observable<boolean>;
-  @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
+
   images = [
     '../../../../assets/calidad.jpg',
     '../../../../assets/concepto-control-calidad-estandar-m.jpg',
@@ -47,75 +50,103 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     private router: Router,
     private renderer: Renderer2,
     private el: ElementRef,
-    private animationService: AnimationServiceService
   ) {}
 
-ngAfterViewInit(): void {
-  this.showAnimation$ = this.animationService.showAnimation$;
-
-  if (this.router.url.includes('presentation')) {
+  ngAfterViewInit(): void {
+    this.handleNavigation();
+    this.initializeIntersectionObserver();
+    
+    // Trigger animation for icons
+    this.animateIcons();
+    
+    // Ensure the animations are applied initially
     this.resetAndTriggerAnimation();
+    
+    setTimeout(() => {
+      this.initializeCarousels();
+    }, 0);
   }
-
-  this.routerSubscription = this.router.events.pipe(
-    filter(event => event instanceof NavigationEnd)
-  ).subscribe(() => {
+  
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  
+    if (this.intersectionObserver) {
+      this.intersectionObserver.disconnect();
+    }
+  }
+  
+  private handleNavigation() {
     if (this.router.url.includes('presentation')) {
       this.resetAndTriggerAnimation();
     }
+  
+    this.routerSubscription = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      if (this.router.url.includes('presentation')) {
+        this.resetAndTriggerAnimation();
+      }
+    });
+  }
+  
+  private initializeIntersectionObserver() {
+    const options = {
+      threshold: 0.1 // Trigger animation when 10% of the card is visible
+    };
+    
+    this.intersectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement;
+          this.renderer.addClass(target, 'show');
+          observer.unobserve(target); // Stop observing once the animation is triggered
+        }
+      });
+    }, options);
+
+    // Observe all cards on initialization
+     const cards = this.el.nativeElement.querySelectorAll('.card');
+  cards.forEach((card: Element) => {
+    this.intersectionObserver.observe(card);
   });
-
-  this.animateIcons();
-
-  setTimeout(() => {
-    // Inicializa el carrusel de tarjetas
+}
+  
+  private resetAndTriggerAnimation() {
+    const cards = this.el.nativeElement.querySelectorAll('.card');
+    cards.forEach((card: HTMLElement, index: number) => {
+      this.renderer.removeClass(card, 'show');
+      this.renderer.setStyle(card, 'animation', 'none');
+      setTimeout(() => {
+        this.renderer.addClass(card, 'show');
+        this.renderer.setStyle(card, 'animation', `fadeIn 4s ease-in-out ${index * 0.1}s forwards`);
+      }, 10);
+    });
+  }
+  
+  private animateIcons() {
+    const icons = this.el.nativeElement.querySelectorAll('.icon-wrapper');
+    icons.forEach((icon: HTMLElement, index: number) => {
+      this.renderer.setStyle(icon, 'opacity', '1');
+      this.renderer.setStyle(icon, 'animation', `fadeInUp 5s ease-in-out ${index * 0.2}s forwards`);
+    });
+  }
+    private initializeCarousels() {
     const cardsCarouselElement = this.el.nativeElement.querySelector('#cardsCarousel');
     if (cardsCarouselElement) {
       new Carousel(cardsCarouselElement, {
-        interval: 5000,
+        interval: 7000,
         ride: 'carousel'
       });
     }
 
-    // Inicializa el carrusel de imágenes
     const imagesCarouselElement = this.el.nativeElement.querySelector('#imagescarousel');
     if (imagesCarouselElement) {
       new Carousel(imagesCarouselElement, {
-        interval: 5000, // tiempo entre slides
-        ride: 'carousel' // asegura que el carousel inicie automáticamente
+        interval: 7000,
+        ride: 'carousel'
       });
     }
-  }, 0);
- 
-}
-
-ngOnDestroy(): void {
-  if (this.routerSubscription) {
-    this.routerSubscription.unsubscribe();
   }
-}
-
-private resetAndTriggerAnimation() {
-  const cards = this.el.nativeElement.querySelectorAll('.card');
-  cards.forEach((card: HTMLElement, index: number) => {
-    this.renderer.removeClass(card, 'show'); // Elimina la clase 'show'
-    // Forzamos el navegador a aplicar los estilos iniciales
-    this.renderer.setStyle(card, 'animation', 'none');
-    // Un pequeño retraso para reiniciar la animación
-    setTimeout(() => {
-      this.renderer.addClass(card, 'show'); // Vuelve a agregar la clase 'show'
-      this.renderer.setStyle(card, 'animation', `fadeIn 4s ease-in-out ${index * 0.1}s forwards`); // Aplica la animación
-    }, 10);
-  });
-}
-
-private animateIcons() {
-  const icons = this.el.nativeElement.querySelectorAll('.icon-wrapper');
-  icons.forEach((icon: HTMLElement, index: number) => {
-    this.renderer.setStyle(icon, 'opacity', '1');
-    this.renderer.setStyle(icon, 'animation', `fadeInUp 0.5s ease-in-out ${index * 0.2}s forwards`);
-  });
-}
-
-  
 }

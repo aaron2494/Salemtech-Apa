@@ -1,28 +1,34 @@
+/* nabvar.component.scss */
 #navbar {
-  position: fixed;
-  top: 0;
+  position: fixed ;
+  padding-right: 20px;
   width: 100%;
-  z-index: 1000;
-  background-color: #000000 !important; /* Fondo negro sólido */
-  
-  .navbar-brand,
-  .nav-link {
-    color: #e0c097;
-    transition: color 0.3s ease;
-    &:hover {
-      color: #ffffff;
-    }
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+  z-index: 1000  ; /* Asegúrate de que esté por encima de otros elementos */
+  transition: all 0.3s ease ; /* Suaviza la transición del tamaño */
   }
 
-  .navbar-toggler {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  .dropdown-menu,.dropdown-item{
-    background-color: #000000;
-    color: #e0c097;
-    
-  }
+.navbar-brand,
+.nav-link {
+
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
-.img{
+
+.navbar-brand:hover,
+.nav-link:hover {
+ 
+  color: #b3b3b3;
+}
+
+
+
+.dropdown-menu,
+.dropdown-item {
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo negro con 80% de opacidad */
+  color: #c0c0c0;
+}
+
+.img {
   height: 60px;
 }

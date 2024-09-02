@@ -33,8 +33,6 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #000000;
-  background-size: 200% 100%;
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
@@ -45,7 +43,7 @@
 h2.text-center {
 
   text-align: center;
-  color: #e0c097; /* Un dorado claro elegante */
+  color: #c0c0c0; 
   text-shadow: #000000 0 4px 4px;
   font-size: 2.5rem; /* Tamaño de fuente más grande */
   font-weight: bold;
@@ -60,7 +58,7 @@ h2.text-center::after {
   content: '';
   width: 60px;
   /*Longituddelalínea*/height: 4px;
-  /*Grosordelalínea*/background-color: #e0c097;
+  /*Grosordelalínea*/background-color: #c0c0c0;
   /*Colordelalíneacoincidente*/position: absolute;
   bottom: -10px;
   /*Espaciadodesdeeltexto*/left: 50%;
@@ -78,16 +76,18 @@ h2.text-center::after {
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si es necesario */
   gap: 20px; /* Espacio entre las tarjetas */
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+ overflow:  hidden ;
 }
 
 /* Estilos de la tarjeta */
 .card {
   opacity: 0;
   border-radius: 20px;
-  transform: translateY(20px);
-  /*Posicióninicial*/overflow: auto;
+  transform: translateY(20px) rotateX(0) rotateY(0);
+  /*Posicióninicial*/overflow: hidden;
   transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
-  background: #e0c097;
+  background: #c0c0c0;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5) !important; /* Sombra para efecto de profundidad */
   -webkit-transform: translateY(20px);
   -moz-transform: translateY(20px);
   -ms-transform: translateY(20px);
@@ -97,6 +97,11 @@ h2.text-center::after {
   -ms-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
   -o-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
 }
+.card.show {
+  opacity: 1 ;
+  transform: translateY(0) rotateX(0) rotateY(0); /* Asegura que las tarjetas se muestren sin rotación */
+  animation: fadeIn 8s ease-in-out forwards;
+}
 
 .card-title{
   text-shadow:#000000 0 0.5px 0.5px ;
@@ -105,19 +110,15 @@ h2.text-center::after {
   font-size: 1rem;
   text-shadow:#000000 0 0.5px 0.5px ;
 }
-.card.show {
-  opacity: 1!important;
-  /*Aseguraquesemuestrenconanimación*/transform: translateY(0);
-  /*Aseguraquesemuestrenconanimación*/animation: fadeIn 4s ease-in-out forwards;
-  -webkit-animation: fadeIn 4s ease-in-out forwards;
-}
 
 .card:hover {
-  transform: scale(1.05) ;
-  background: black !important; /* Ajusta el alfa para la transparencia */
-  color: #e0c097;
-  border: 1.5px solid rgba(224, 192, 151, 0.6)!important; /* Borde del mismo color que la línea */
+  transform: translateY(-10px) rotateX(10deg) rotateY(10deg) scale(1.05) ;
+  
+  background: black; /* Ajusta el alfa para la transparencia */
+  color: #c0c0c0;
+  border: 1.5px solid rgba(214, 214, 214, 0.6)!important; /* Borde del mismo color que la línea */
   border-radius: 20px !important; /* Bordes redondeados */
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.81)!important; /* Sombra más pronunciada */
 }
 /* Animación secuencial: Añadiendo retrasos */
 .card:nth-child(1) {
@@ -134,8 +135,9 @@ h2.text-center::after {
 .divider {
   width: 80%;
   height: 2px;
-  background-color: rgba(224, 192, 151, 0.6); /* Color dorado claro para la línea */
+  background-color: rgba(232, 232, 232, 0.6); /* Color dorado claro para la línea */
   margin: 40px auto; /* Espacio alrededor de la línea y centrado horizontal */
+  
 }
 /* Ajustes para la tarjeta descriptiva */
 .content-wrapper {
@@ -149,30 +151,45 @@ h2.text-center::after {
 
 /* Imagen personalizada */
 .custom-img {
-  
   width: 50%;
   max-width: 600px;
   height: auto ;
   object-fit: cover;
-  border: 2px solid rgba(224, 192, 151, 0.6); /* Borde del mismo color que la línea */
+  border: 2px solid rgba(232, 232, 232, 0.6); /* Borde del mismo color que la línea */
   border-radius: 15px; /* Bordes redondeados */
+  transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 #imagescarousel {
   width: 50%; /* Este valor debe coincidir con el ancho de .custom-img */
   max-width: 600px;
   min-height: 400px; /* Ajusta este valor según la altura de tus imágenes */
   overflow: hidden;
+
+}
+.carousel-item-next .custom-img,
+.carousel-item-prev .custom-img {
+  transform: translateX(5%) scale(0.7); /* Mueve y reduce ligeramente la imagen durante la transición */
+}
+
+.carousel-item.active .custom-img {
+  transform: translateX(0) scale(1); /* Restaura la imagen cuando está activa */
+}
+
+
+.carousel-item {
+transition: transform 3s ease-in-out !important;
 }
 
 /* Contenedor de texto */
 .text-content { 
-  color: #e0c097;
+  color: #c0c0c0	;
   max-width: 600px; 
+  margin-bottom: 50px;
 }
 
 /* Título de la sección */
 .section-title {
-  color: #e0c097; /* Un dorado claro elegante */
+  color: #c0c0c0	; 
  /* Fuente serif para un toque formal */
   font-size: 2.5rem; /* Tamaño de fuente más grande */
   font-weight: bold;
@@ -214,7 +231,7 @@ h2.text-center::after {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    color: #e0c097;
+    color: #c0c0c0	;
   }
 
   .icon-wrapper {
@@ -235,7 +252,7 @@ h2.text-center::after {
   }
 
   h2 {
-    color: #e0c097; /* Un dorado claro elegante */
+    color: #c0c0c0	; 
 /* Fuente serif para un toque formal */
     font-size: 2.5rem; /* Tamaño de fuente más grande */
     font-weight: bold;
@@ -281,24 +298,29 @@ h2.text-center::after {
     height: 3px;
     bottom: -8px;
   }
-
+  .carousel-item {
+    transition: transform 3s ease-in-out !important;
+  }
   .card-container {
     flex-direction:column;
     align-items: center;
   }
 
   .card {
-    width: 100%;
-    /*Ajustaeltamañodelastarjetas*/margin-bottom: 20px;
+    width: 90%;
+    /*Ajustaeltamañodelastarjetas*/margin-bottom: 10px;
     /*Añadeespacioentrelastarjetas*/animation: fadeIn 2s ease-in-out forwards;
     -webkit-animation: fadeIn 2s ease-in-out forwards;
+}
+.card-text{
+  font-size: 1.2rem;
 }
 
 .card:hover {
   transform: scale(0.85) ;
   background: black !important;
-  /*Ajustaelalfaparalatransparencia*/color: #e0c097;
-  border: 1.5px solid rgba(224, 192, 151, 0.6)!important;
+  /*Ajustaelalfaparalatransparencia*/color: #c0c0c0	;
+  border: 1.5px solid rgba(232, 232, 232, 0.6)!important;
   /*Bordedelmismocolorquelalínea*/border-radius: 20px !important;
   -webkit-transform: scale(0.85) ;
   -moz-transform: scale(0.85) ;
@@ -307,19 +329,23 @@ h2.text-center::after {
 }
 /* seccion 2*/
 .custom-img, #imagescarousel {
-  width: 100%; /* La imagen y el carrusel ocupan el ancho completo */
-  max-width: 100%; /* Sin límite máximo de ancho */
+  width: 90%; /* La imagen y el carrusel ocupan el ancho completo */
   min-height: auto; /* Permite que la altura sea flexible */
+  transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1); /* Transición suave en el cambio de imágenes */
+
 }
   .content-wrapper {
     flex-direction: column;
     align-items:center;
   }
 
-  .custom-img {
-    
-    width: 100%;
-    max-width: none;
+  .carousel-item-next .custom-img,
+  .carousel-item-prev .custom-img {
+    transform: translateX(10%) scale(0.5); /* Desplaza la imagen y la reduce ligeramente durante la transición */
+  }
+  
+  .carousel-item.active .custom-img {
+    transform: translateX(0) scale(1); /* Restaura la imagen a su tamaño original cuando está activa */
   }
 
   .text-content {
@@ -335,8 +361,8 @@ h2.text-center::after {
   }
 
   .section-text {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1;
     margin-right: 20px;
   }
   .icon-wrapper img {

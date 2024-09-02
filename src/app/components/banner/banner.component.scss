@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 #banner {
   flex: 1;
   background: url('../../../assets/mano-humana-escribiendo-teclado-computadora-noche-generada-ai.jpg') no-repeat center center;
@@ -21,51 +21,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #e0c097; /* Ajusta el color del texto según sea necesario */
+  color: #c0c0c0; /* Ajusta el color del texto según sea necesario */
   z-index: 2; /* Asegura que el contenido esté sobre el overlay */
  
 }
-#animatedText span {
-  text-shadow: #000000 0 4px 4px;
-  opacity: 0;
-  animation: fadeIn 3s forwards;
-  font-size: 2.5rem; /* Tamaño de fuente más grande */
-  font-weight: bold;
-  letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
-  text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
-  position: relative;
-  display: inline-block;
 
-}
 
-#animatedText div {
-  text-align: center; /* Centra las líneas si es necesario */
-  margin-bottom: 10px; /* Espacio entre las líneas */
-}
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 
-#banner-text {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 2.5rem; /* Tamaño de fuente más grande */
-  font-weight: bold;
-  letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
-  text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
-  margin-bottom: 30px; /* Espacio inferior ajustado */
-  position: relative;
-  display: inline-block;
-}
 @media (max-width: 768px) {
   #banner{
     height: 300px;
-  }
-  #animatedText span,
-  #banner-text {
-    font-size: 1.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
-    letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
   }
   }
