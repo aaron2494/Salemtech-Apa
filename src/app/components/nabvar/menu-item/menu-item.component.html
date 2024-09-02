@@ -29,53 +29,7 @@
     <button class="carousel-control-next" type="button" data-bs-target="#cardsCarousel" data-bs-slide="next">     
     </button>
   </div>
-  
-      
-    <div class="divider"></div>
 
-      <div id="manera" class="content-wrapper ">
-        <div id="imagescarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
-          <div class="carousel-inner">
-            <div
-              class="carousel-item"
-              *ngFor="let image of images; let i = index"
-              [class.active]="i === 0"
-            >
-              <img [src]="image" class="d-block w-100 custom-img" [alt]="'Imagen ' + (i + 1)" />
-            </div>
-          </div>
-        </div>
-      <div class="text-content ms-5">
-        <h2 class="section-title">Nuestro Equipo</h2>
-        <p class="section-text">
-          Contamos con una amplia red de profesionales internos y externos que
-          nos permite integrar soluciones en todos los ámbitos de la
-          automatización y control, como en integraciones a la capa intermedia
-          entre el piso de planta y los ERPs.
-          <br/><br/>
-          Realizamos implementaciones tecnológicas en control de procesos,
-          excelencia operacional, optimización de plantas de procesos de la
-          industria mediana, pesada y desarrollo de sistemas informáticos.
-        </p>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-    
-    <div class="container text-center py-5">
-      <h2>Nuestra manera</h2>
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-2 col-lg-2" *ngFor="let item of items">
-          <div class="icon-wrapper">
-            <img src="{{item.icon}}" alt="{{item.title}}">
-          </div>
-          <h4>{{item.title}}</h4>
-          <p>{{item.description}}</p>
-        </div>
-      </div>
-    </div>
-    
-    
   </section>
 
 

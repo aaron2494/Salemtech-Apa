@@ -1,0 +1,82 @@
+.divider {
+    width: 80%;
+    height: 2px;
+    background-color: rgba(232, 232, 232, 0.6); /* Color dorado claro para la línea */
+    margin: 40px auto; /* Espacio alrededor de la línea y centrado horizontal */
+  
+  }
+.container{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff	;
+  }
+
+  .icon-wrapper {
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.2) rotateY(180deg ) ;
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  h2 {
+    color: #ffffff	; 
+/* Fuente serif para un toque formal */
+    font-size: 2.5rem; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    text-shadow: #000000 0 4px 4px;
+    letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+    text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
+    margin-bottom: 30px; /* Espacio inferior ajustado */
+    position: relative;
+    display: inline-block;
+    transition: color 0.5s ease-in-out; /* Transición suave del color */
+
+    &:hover {
+      color: #000000; /* Color al hacer hover */
+      text-shadow: #ffffff 0 1px 1px;
+    }
+}
+
+  h4 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    
+  }
+
+  p {
+    
+    font-size: 0.9rem;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media (max-width: 768px) {
+    .icon-wrapper img {
+        max-width: 100px; /* Reducir el tamaño en tablets */
+        max-height: 100%;
+      }
+      .icon-wrapper:hover {
+        transform: scale(0.8) rotateY(180deg 0.10s); /* Mantener el hover más pequeño en móviles */
+      }
+   }
