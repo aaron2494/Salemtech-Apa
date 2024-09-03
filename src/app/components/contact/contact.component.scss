@@ -1,47 +1,68 @@
-.contact-section {
-    padding: 2rem;
-    background-color: #f8f9fa;
-  
-    h2 {
-      font-family: 'Merriweather', serif;
-      color: #343a40;
-      margin-bottom: 1.5rem;
-    }
-  
-    .form-group {
-      margin-bottom: 1.5rem;
-  
-      label {
-        font-weight: bold;
-        margin-bottom: .5rem;
-        display: block;
-      }
-  
-      input, textarea {
-        width: 100%;
-        padding: .75rem;
-        border: 1px solid #ced4da;
-        border-radius: .25rem;
-        font-family: 'Merriweather', serif;
-  
-        &:focus {
-          border-color: #007bff;
-          box-shadow: 0 0 5px rgba(0, 123, 255, .5);
-        }
-      }
-    }
-  
-    .btn-enviar {
-      background-color: #007bff;
-      color: white;
-      padding: .75rem 1.5rem;
-      border: none;
-      border-radius: .25rem;
-      cursor: pointer;
-      font-family: 'Merriweather', serif;
-  
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
-  }
+/* Estilo del contenido del modal */
+.modal-content {
+  color: #fff;
+  border-radius: 10px; /* Reduce el radio del borde */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Menor sombra */
+  padding: 15px ; /* Menos padding */
+  background-color: rgba(25, 21, 76, 0.3); /* Fondo con opacidad */
+}
+
+/* Color del texto de las etiquetas */
+.modal-body label {
+  color: white; /* Cambia el color del texto de las etiquetas a blanco */
+}
+
+/* Ajusta el espaciado entre los campos */
+.form-group {
+  margin-bottom: 0.5rem ; /* Espacio reducido entre los campos */
+}
+
+.modal-dialog.modal-sm {
+  max-width: 500px; /* Tamaño del modal */
+}
+
+/* Ajusta el tamaño del área de texto */
+textarea.form-control {
+  resize: vertical; /* Permite el ajuste vertical */
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.6); /* Fondo igual al del modal */
+  color: white; /* Texto dentro del área de texto en blanco */
+  border-color: transparent; /* Opcional: para asegurar que no haya bordes visibles */
+}
+
+/* Estilo para los campos de entrada */
+input.form-control {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo igual al del modal */
+  color: rgb(0, 0, 0); /* Texto dentro del campo en blanco */
+  border-color: transparent; /* Opcional: para asegurar que no haya bordes visibles */
+}
+
+/* Placeholder en blanco */
+input::placeholder, textarea::placeholder {
+  color: white; /* Color del texto del placeholder en blanco */
+}
+
+/* Estilo del botón de contacto */
+.btn-contacto {
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 50px;
+  background-color: #007bff;
+  border: none;
+  color: white; /* Color del texto del botón en blanco */
+}
+
+.btn-contacto:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Color del borde para campos válidos e inválidos */
+input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+input.ng-touched.ng-valid, textarea.ng-touched.ng-valid {
+  border-color: green;
+}
