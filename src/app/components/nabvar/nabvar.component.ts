@@ -1,5 +1,5 @@
 
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import {  Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { NavigationEnd, Router } from '@angular/router';
   standalone: true,
   templateUrl: './nabvar.component.html',
   styleUrls: ['./nabvar.component.scss'],
-  imports: [NgIf] // Asegúrate de que NgIf esté aquí
+  imports: [NgIf,NgClass] // Asegúrate de que NgIf esté aquí
 })
 export class NabvarComponent implements OnInit{
   isNavbarCollapsed = true;
@@ -28,17 +28,17 @@ export class NabvarComponent implements OnInit{
   }
   
   
-
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
-    // No need for DOM manipulation as Bootstrap handles it
   }
 
   handleNavClick(section: string): void {
     this.router.navigate(['/'], { fragment: section });
+    this.isNavbarCollapsed = true; // Cierra el navbar después de la navegación
   }
 
-  navigateToSeccion2() {
+  navigateToSeccion2(): void {
     this.router.navigate(['/seccion2']);
+    this.isNavbarCollapsed = true; // Cierra el navbar después de la navegación
   }
 }
