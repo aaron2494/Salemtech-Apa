@@ -1,66 +1,44 @@
 
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
+import {  Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-nabvar',
   standalone: true,
   templateUrl: './nabvar.component.html',
-  styleUrls: ['./nabvar.component.scss']
+  styleUrls: ['./nabvar.component.scss'],
+  imports: [NgIf] // Asegúrate de que NgIf esté aquí
 })
-export class NabvarComponent implements OnInit,OnDestroy {
-  private scrollThreshold = 50;
-  private scrollEvent!: () => void;
+export class NabvarComponent implements OnInit{
   isNavbarCollapsed = true;
+  public isInSeccion2: boolean = false;
+   public router:Router;
+  constructor( router: Router) {
+    this.router=router
+  }
 
-  constructor(private router: Router) {}
   ngOnInit(): void {
-    this.scrollEvent = this.handleScroll.bind(this);
-    window.addEventListener('scroll', this.scrollEvent);
-  }
-
-  ngOnDestroy(): void {
-    window.removeEventListener('scroll', this.scrollEvent);
-  }
-
-  handleScroll(): void {
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-      if (window.scrollY > this.scrollThreshold) {
-        navbar.classList.add('navbar-shrink');
-      } else {
-        navbar.classList.remove('navbar-shrink');
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isInSeccion2 = event.urlAfterRedirects === '/seccion2';
       }
-    }
+    });
   }
+  
+  
 
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
-    const navbar = document.getElementById('navbarNav');
-    if (navbar) {
-      if (this.isNavbarCollapsed) {
-        navbar.classList.remove('show');
-      } else {
-        navbar.classList.add('show');
-      }
-    }
+    // No need for DOM manipulation as Bootstrap handles it
   }
 
-  handleNavClick(sectionId: string): void {
-    this.isNavbarCollapsed = true;
-    const navbar = document.getElementById('navbarNav');
-    if (navbar) {
-      navbar.classList.remove('show');
-    }
-    this.onNavigate(sectionId);
+  handleNavClick(section: string): void {
+    this.router.navigate(['/'], { fragment: section });
   }
 
-  onNavigate(sectionId: string): void {
-    this.router.navigate([], { fragment: sectionId }).then(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+  navigateToSeccion2() {
+    this.router.navigate(['/seccion2']);
   }
 }

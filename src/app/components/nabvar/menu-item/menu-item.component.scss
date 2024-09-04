@@ -115,10 +115,9 @@ h2.text-center::after {
   font-size: 1rem;
   text-shadow:#000000 0 0.5px 0.5px ;
 }
-
 .card:hover {
+  z-index: 1;
   transform: translateY(-10px) rotateX(10deg) rotateY(10deg) scale(1.05) ;
-  
   background:rgba(0, 0, 0, 0.8); /* Ajusta el alfa para la transparencia */
   color: #ffffff;
   border: 1.5px solid rgba(214, 214, 214, 0.6)!important; /* Borde del mismo color que la línea */

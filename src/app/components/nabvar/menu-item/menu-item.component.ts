@@ -31,7 +31,7 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: 'Soporte de Clase Mundial',
-      text: 'Contamos con un sopote de elite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más.'
+      text: 'Contamos con un sopote de elite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más,incredibilis no? pues si!.'
     }
   ];
 

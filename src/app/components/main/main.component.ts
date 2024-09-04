@@ -5,6 +5,7 @@ import { NabvarComponent } from '../nabvar/nabvar.component';
 import { NosotrosComponent } from "../nabvar/nosotros/nosotros.component";
 import { NuestraManeraComponent } from "../nabvar/nuestra-manera/nuestra-manera.component";
 import { ContactComponent } from "../contact/contact.component";
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -17,5 +18,13 @@ import { ContactComponent } from "../contact/contact.component";
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
+  constructor(private route: ActivatedRoute) {}
 
+  ngAfterViewInit() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 }

@@ -2,9 +2,9 @@
 .modal-content {
   color: #fff;
   border-radius: 10px; /* Reduce el radio del borde */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Menor sombra */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8); /* Menor sombra */
   padding: 15px ; /* Menos padding */
-  background-color: rgba(25, 21, 76, 0.3); /* Fondo con opacidad */
+  background-color: rgba(7, 5, 40, 0.4); /* Fondo con opacidad */
 }
 
 /* Color del texto de las etiquetas */
@@ -56,6 +56,10 @@ input::placeholder, textarea::placeholder {
 .btn-contacto:hover {
   background-color: #0056b3;
   color: #fff;
+}
+.btn-close{
+  color: #fff;
+  background-color: #fff;
 }
 
 /* Color del borde para campos válidos e inválidos */

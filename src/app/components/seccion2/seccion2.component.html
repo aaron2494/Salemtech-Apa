@@ -1,0 +1,21 @@
+<app-nabvar/>
+<section id="equipo">
+  <h2>Nuestro Equipo</h2>
+  <p>Nuestro equipo está formado por personal multidisciplinario...</p>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let miembro of miembros">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="{{ miembro.imagen }}" class="card-img-top" alt="{{ miembro.nombre }}">
+          </div>
+          <div class="card-back">
+            <h5 class="card-title">{{ miembro.nombre }}</h5>
+            <p class="card-text">{{ miembro.cargo }}</p>
+            <p class="card-text">{{ miembro.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
