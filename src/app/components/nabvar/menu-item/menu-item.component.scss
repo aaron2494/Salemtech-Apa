@@ -41,22 +41,22 @@
 /* Título */
 h2.text-center {
 
-  text-align: center;
-  color: #ffffff; 
-  text-shadow: #000000 0 4px 4px;
-  font-size: 2.5rem; /* Tamaño de fuente más grande */
-  font-weight: bold;
-  letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
-  text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
-  margin-bottom: 30px; /* Espacio inferior ajustado */
-  position: relative;
-  display: inline-block;
-  transition: color 0.5s ease-in-out; /* Transición suave del color */
+    text-align: center;
+    color: #ffffff; 
+    text-shadow: #000000 0 4px 4px;
+    font-size: 2.5rem; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+    text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
+    margin-bottom: 30px; /* Espacio inferior ajustado */
+    position: relative;
+    display: inline-block;
+    transition: color 0.5s ease-in-out; /* Transición suave del color */
 
-    &:hover {
-      color: #000000; /* Color al hacer hover */
-      text-shadow: #ffffff 0 1px 1px;
-    }
+      &:hover {
+        color: #000000; /* Color al hacer hover */
+        text-shadow: #ffffff 0 1px 1px;
+      }
 }
 
 h2.text-center::after {

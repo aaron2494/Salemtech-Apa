@@ -1,81 +1,259 @@
 /* Estilos generales para la sección */
 #equipo {
-    padding: 2rem 0;
-    text-align: center;
-    margin-top: 80px;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 80px;
+  overflow-x: hidden;
+ }
+  h2 {
+      text-align: center;
+      color: #ffffff; 
+      text-shadow: #000000 0 4px 4px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+      transition: color 0.5s ease-in-out;
+
+      &:hover {
+          color: #00c2f3;
+          text-shadow: #ffffff 0 1px 1px;
+      }
+  }
+
+  .container{
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding-top: 10px;
+    width: 100%;
+
+  }
+  .intro-text {
+    font-size: 1.2rem;
+    color: #00c2f3;
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .team-details {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    color: #ffffff ;
     
-    h2 {
-      margin-bottom: 1rem;
-    }
+    li {
+      display: flex;
+      align-items: baseline; // Alinea el texto del título con el texto de la descripción
+      margin-bottom: 0.5rem; // Espaciado entre elementos
+        text-align: left;
+      strong {
+        color: #00c2f3;
+        min-width: 200px; // Ajusta el ancho mínimo del título para alinear los textos
+        display: inline-block; // Asegura que todos los títulos ocupen el mismo ancho
+        text-align: left; // Alinea el texto a la izquierda
+      }
   
-    .row {
+      p {
+        flex-grow: 1; // Permite que el texto ocupe el resto del espacio disponible
+        margin-left: 0.5rem; // Añade un pequeño espacio entre el título y la descripción
+     
+      }
+    }
+  }
+  
+
+  .row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center; /* Centra horizontalmente */
       align-items: center; /* Centra verticalmente */
-    }
-  
-    .card {
-      width: 200px; // Ajusta el tamaño según lo necesites
-      height: 300px; // Ajusta el tamaño según lo necesites
+  }
+
+  .col-md-4 {
+      display: flex;
+      justify-content: center; /* Centra las cartas dentro de la columna */
+      transition: transform 0.3s ease-in-out;
+  }
+
+  .card {
+      width: 200px; /* Tamaño por defecto */
+      height: 300px; /* Tamaño por defecto */
       margin: 1rem;
       perspective: 1000px;
-    }
-  
-    .card-inner {
+      background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .card-inner {
       position: relative;
       width: 100%;
       height: 100%;
       transition: transform 0.6s;
       transform-style: preserve-3d;
+      transform-origin: center;
       cursor: pointer;
-    }
-  
-    .card:hover .card-inner {
+  }
+
+  .card:hover .card-inner {
       transform: rotateY(180deg);
-    }
-  
-    .card-front,
-    .card-back {
+  }
+
+  .card-front, .card-back {
       position: absolute;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-    }
-  
-    .card-front {
+  }
+
+  .card-front {
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid #ddd;
       border-radius: 8px;
       overflow: hidden;
-    }
-  
-    .card-front img {
+  }
+
+  .card-front img {
       width: 100%;
       height: auto;
       object-fit: cover;
-    }
-  
-    .card-back {
+  }
+
+  .card-back {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #f8f9fa;
+      background-color: rgba(255, 255, 255, 0.9);
       border: 1px solid #ddd;
       border-radius: 8px;
       transform: rotateY(180deg);
       padding: 1rem;
+  }
+
+  .card-back h5 {
+      margin: 0.2rem 0;
+      color: #00c2f3;
+  }
+ 
+
+  .card-back p {
+    font-size: 1rem !important;
+      margin: 0.2rem 0;
+      color: #000000;
+  }
+
+
+  .container2 {
+    background-color: rgba(0, 0, 0, 0.7) !important; // Fondo negro con 0.7 de transparencia
+    color: white !important; // Texto en blanco
+    padding: 50px 0; // Añade algo de padding para espaciar el contenido
+    text-align: center;
+    border-radius: 20px;
+}
+    h2, p {
+      color: white; // Asegura que el texto dentro del h2 y p sea blanco
+      text-align: center;
     }
   
-    .card-back h5 {
-      margin: 0.5rem 0;
+    h2 {
+      font-size: 2.5rem; // Ajusta el tamaño del título
     }
   
-    .card-back p {
-      margin: 0.5rem 0;
+    p {
+      font-size: 1.2rem; // Ajusta el tamaño del párrafo
+      margin-top: 15px;
     }
+    @media (min-width: 769px) {
+        #read-more-btn {
+          display: none;
+        }
+ }
+
+  @media (max-width: 768px) {
+    
+   
+        .card {
+            width: 150px; /* Tamaño reducido para pantallas más pequeñas */
+            height: 250px;
+        }
+  
+        .row {
+            justify-content: space-around;
+        }
+      .container-card {
+          display: grid; /* Cambia a grid para mayor control */
+          grid-template-columns: repeat(2, 1fr); /* Dos cartas por fila */
+          gap: 1rem; /* Espacio entre cartas */
+          max-width: 100%;
+      }
+
+      .card {
+          width: 140px; /* Ajuste adicional en pantallas más pequeñas */
+          height: 220px;
+      }
+      .intro-text {
+        font-size: 15px;
+        line-height: 1.5em;
+        margin-bottom: 15px;
+        color: #ffffff; /* Ajusta el color según tu esquema de colores */
+      }
+    
+      .team-details {
+        list-style: none;
+        padding-left: 0;
+        font-size: 14px;
+      }
+    
+      .team-details li {
+        margin-bottom: 15px; /* Añade espacio entre los ítems */
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil para separar los ítems */
+      }
+    
+      .team-details li strong {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px; /* Asegura que el título y la descripción no se amontonen */
+        color: #00ccff; /* Color más destacado para los títulos */
+      }
+    
+      .team-details li span {
+        display: block;
+        color: #ffffff; /* Ajusta el color de la descripción */
+      }
+    
+      #read-more-btn {
+        display: inline-block;
+        margin-top: 10px;
+        background-color: #0066cc;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    
+      .show-content .hidden-content {
+        display: block;
+      }
+      .team-details .hidden-content {
+        display: none; /* Oculta inicialmente el contenido adicional */
+      }
+    
+      #read-more-btn {
+        display: inline-block;
+        margin-top: 10px;
+      }
+    
+      .show-content .hidden-content {
+        display: list-item; /* Muestra los elementos ocultos cuando se expande */
+      }
+    
   }

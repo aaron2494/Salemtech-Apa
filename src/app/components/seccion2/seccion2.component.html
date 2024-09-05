@@ -1,9 +1,36 @@
 <app-nabvar/>
 <section id="equipo">
-  <h2>Nuestro Equipo</h2>
-  <p>Nuestro equipo está formado por personal multidisciplinario...</p>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let miembro of miembros">
+  
+  
+  <!-- Sección de descripción del equipo -->
+  <div class="container">
+    <div class="row">
+      <h2>Nuestro Equipo</h2>
+      <div class="col-md-6">
+        <p class="intro-text">
+          Nuestro equipo está formado por personal multidisciplinario experimentado y dotados de una fuerte orientación al Cliente sobre una cultura de trabajo bajo normas internacionales de Calidad, Seguridad, Salud y Ambiente.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="team-details" [ngClass]="{'show-content': isExpanded}">
+          <li class="hidden-content"><strong>Ingenieros Químicos</strong> con experiencia en simulación dinámica de procesos fisicoquímicos y modelamiento avanzado.</li>
+          <li class="hidden-content"><strong>Ingenieros de control</strong> de procesos fisicoquímicos con experiencia en optimización en tiempo real de procesos.</li>
+          <li class="hidden-content"><strong>Ingenieros Electrónicos</strong> orientados a redes industriales y empresariales con conocimiento en soluciones de integración de datos.</li>
+          <li class="hidden-content"><strong>Ingenieros informáticos</strong> con conocimientos en data analytics y big data focalizados en plataformas de gestión integradas.</li>
+          <li class="hidden-content"><strong>Personal dedicado</strong> para la ejecución de programas de gestión de cambio.</li>
+          <button id="read-more-btn" class="btn btn-primary" (click)="toggleContent()" *ngIf="isMobile">
+            {{ isExpanded ? 'Leer menos' : 'Leer más' }}
+          </button>
+        </ul>
+        
+     </div>
+    </div>
+  </div>
+  
+
+  <!-- Sección de las tarjetas del equipo -->
+  <div class="row container-card">
+    <div class="col-md-3" *ngFor="let miembro of miembros">
       <div class="card">
         <div class="card-inner">
           <div class="card-front">
@@ -18,4 +45,12 @@
       </div>
     </div>
   </div>
+  <div class="container2">
+    <h2 class="text-center">Podés formar parte de nosotros</h2>
+    <p class="text-center parrafo2">Si te interesa formar parte de nuestro equipo, envíanos un mensaje con tus datos y nos pondremos en contacto.</p>
+    <app-contact></app-contact>
+  </div>
+  
 </section>
+
+
