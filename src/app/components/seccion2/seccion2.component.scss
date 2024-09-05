@@ -73,10 +73,11 @@
       align-items: center; /* Centra verticalmente */
   }
 
-  .col-md-4 {
-      display: flex;
-      justify-content: center; /* Centra las cartas dentro de la columna */
-      transition: transform 0.3s ease-in-out;
+  .col-md-2 {
+    display: flex;
+    justify-content: center; /* Centra las cartas dentro de la columna */
+    margin: 0 10px; /* Añade un poco de margen lateral para que las columnas no se agrupen */
+    transition: transform 0.3s ease-in-out;
   }
 
   .card {
@@ -183,9 +184,7 @@
             height: 250px;
         }
   
-        .row {
-            justify-content: space-around;
-        }
+      
       .container-card {
           display: grid; /* Cambia a grid para mayor control */
           grid-template-columns: repeat(2, 1fr); /* Dos cartas por fila */
