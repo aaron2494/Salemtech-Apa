@@ -2,15 +2,17 @@
 #equipo {
     padding: 2rem 0;
     text-align: center;
+    margin-top: 80px;
     
     h2 {
       margin-bottom: 1rem;
     }
   
     .row {
-      display: flex !important;
+      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
     }
   
     .card {

@@ -2,17 +2,17 @@
   <div class="container-fluid">
     <!-- Navbar a la izquierda -->
     <img src="../../../assets/salem_final.png" class="navbar-brand me-auto img" alt="Brand Logo">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" aria-controls="navbarNav" aria-expanded="!isNavbarCollapsed" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end" [ngClass]="{'show': !isNavbarCollapsed}" id="navbarNav">
       <!-- Items alineados a la derecha -->
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <button class="nav-link" (click)="handleNavClick('home')">Home</button>
+          <button class="nav-link" (click)="scrollToSection('home')"(click)="handleNavClick('home')">Home</button>
         </li>
         <li class="nav-item" *ngIf="!router.url.includes('/seccion2')">
-          <button class="nav-link" (click)="handleNavClick('presentation')">¿Por qué elegirnos?</button>
+          <button class="nav-link"(click)="scrollToSection('presentation')" (click)="handleNavClick('presentation')">¿Por qué elegirnos?</button>
         </li>
         <li class="nav-item dropdown" *ngIf="!router.url.includes('/seccion2')">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,7 +25,7 @@
           </ul>
         </li>
         <li class="nav-item" *ngIf="!router.url.includes('/seccion2')">
-          <button class="nav-link" (click)="handleNavClick('contact')">Contáctanos</button>
+          <button class="nav-link"(click)="scrollToSection('contact')" (click)="handleNavClick('contact')">Contáctanos</button>
         </li>
       </ul>
     </div>
