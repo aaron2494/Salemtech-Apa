@@ -81,11 +81,12 @@
   }
 
   .card {
-      width: 200px; /* Tamaño por defecto */
+      width: 300px; /* Tamaño por defecto */
       height: 300px; /* Tamaño por defecto */
       margin: 1rem;
       perspective: 1000px;
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.8)
+      
   }
 
   .card-inner {
@@ -96,10 +97,12 @@
       transform-style: preserve-3d;
       transform-origin: center;
       cursor: pointer;
+      transition: 1.5s ease-in-out; 
   }
 
   .card:hover .card-inner {
       transform: rotateY(180deg);
+      
   }
 
   .card-front, .card-back {
@@ -111,13 +114,20 @@
 
   .card-front {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid #ddd;
+      background-color: rgba(0, 0, 0, 0.1);
+      border:1px  #000000;
       border-radius: 8px;
       overflow: hidden;
   }
+  .card-front h5 {
+    margin: 1rem 2rem 1rem;
+    color: #00c2f3;
+    text-shadow: #ffffff   0 0.5px 0.5px;
+}
+
 
   .card-front img {
       width: 100%;
@@ -130,23 +140,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: rgba(255, 255, 255, 0.9);
-      border: 1px solid #ddd;
+      background-color: rgba(0, 0, 0, 0.0);
+    
       border-radius: 8px;
       transform: rotateY(180deg);
       padding: 1rem;
   }
 
-  .card-back h5 {
-      margin: 0.2rem 0;
-      color: #00c2f3;
-  }
- 
-
   .card-back p {
     font-size: 1rem !important;
       margin: 0.2rem 0;
-      color: #000000;
+      color: #ffffff;
   }
 
 
@@ -200,36 +204,40 @@
         font-size: 15px;
         line-height: 1.5em;
         margin-bottom: 15px;
-        color: #ffffff; /* Ajusta el color según tu esquema de colores */
+        color: #ffffff;
       }
-    
+      
       .team-details {
         list-style: none;
         padding-left: 0;
         font-size: 14px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 3s ease, opacity 3s ease;
       }
-    
+      
       .team-details li {
-        margin-bottom: 15px; /* Añade espacio entre los ítems */
+        margin-bottom: 15px;
         padding: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil para separar los ítems */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
-    
+      
       .team-details li strong {
         display: block;
         font-weight: bold;
-        margin-bottom: 5px; /* Asegura que el título y la descripción no se amontonen */
-        color: #00ccff; /* Color más destacado para los títulos */
+        margin-bottom: 5px;
+        color: #00ccff;
       }
-    
+      
       .team-details li span {
         display: block;
-        color: #ffffff; /* Ajusta el color de la descripción */
+        color: #ffffff;
       }
-    
+      
       #read-more-btn {
         display: inline-block;
-        margin-top: 10px;
+        margin-bottom: 10px;
         background-color: #0066cc;
         color: #ffffff;
         border: none;
@@ -238,21 +246,10 @@
         cursor: pointer;
         border-radius: 5px;
       }
-    
-      .show-content .hidden-content {
-        display: block;
+      
+      .show-content {
+        max-height: 650px; /* Ajusta este valor según el contenido */
+        opacity: 1;
       }
-      .team-details .hidden-content {
-        display: none; /* Oculta inicialmente el contenido adicional */
-      }
-    
-      #read-more-btn {
-        display: inline-block;
-        margin-top: 10px;
-      }
-    
-      .show-content .hidden-content {
-        display: list-item; /* Muestra los elementos ocultos cuando se expande */
-      }
-    
+      
   }

@@ -6,6 +6,7 @@ import { NosotrosComponent } from "../nabvar/nosotros/nosotros.component";
 import { NuestraManeraComponent } from "../nabvar/nuestra-manera/nuestra-manera.component";
 import { ContactComponent } from "../contact/contact.component";
 import { ActivatedRoute } from '@angular/router';
+import { FooterComponent } from "../footer/footer.component";
 
 
 @Component({
@@ -13,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [NabvarComponent,
     BannerComponent,
-    MenuItemComponent, NosotrosComponent, NuestraManeraComponent, ContactComponent],
+    MenuItemComponent, NosotrosComponent, NuestraManeraComponent, ContactComponent, FooterComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

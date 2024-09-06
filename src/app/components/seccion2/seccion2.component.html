@@ -18,15 +18,14 @@
           <li class="hidden-content"><strong>Ingenieros Electrónicos</strong> orientados a redes industriales y empresariales con conocimiento en soluciones de integración de datos.</li>
           <li class="hidden-content"><strong>Ingenieros informáticos</strong> con conocimientos en data analytics y big data focalizados en plataformas de gestión integradas.</li>
           <li class="hidden-content"><strong>Personal dedicado</strong> para la ejecución de programas de gestión de cambio.</li>
-          <button id="read-more-btn" class="btn btn-primary" (click)="toggleContent()" *ngIf="isMobile">
-            {{ isExpanded ? 'Leer menos' : 'Leer más' }}
-          </button>
+          
         </ul>
-        
+        <button id="read-more-btn" class="btn btn-primary" (click)="toggleContent()" *ngIf="isMobile">
+          {{ isExpanded ? 'Leer menos' : 'Leer más' }}
+        </button>
      </div>
     </div>
   </div>
-  
 
   <!-- Sección de las tarjetas del equipo -->
   <div class="row container-card">
@@ -34,10 +33,10 @@
       <div class="card">
         <div class="card-inner">
           <div class="card-front">
+            <h5 class="card-title">{{ miembro.nombre }}</h5>
             <img src="{{ miembro.imagen }}" class="card-img-top" alt="{{ miembro.nombre }}">
           </div>
           <div class="card-back">
-            <h5 class="card-title">{{ miembro.nombre }}</h5>
             <p class="card-text">{{ miembro.cargo }}</p>
             <p class="card-text">{{ miembro.descripcion }}</p>
           </div>
@@ -54,3 +53,4 @@
 </section>
 
 
+<app-footer/>

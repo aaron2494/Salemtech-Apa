@@ -3,6 +3,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
 import { NabvarComponent } from "../nabvar/nabvar.component";
 import { ContactComponent } from '../contact/contact.component';
+import { FooterComponent } from "../footer/footer.component";
 
 interface MiembroEquipo {
   id:number;
@@ -15,7 +16,7 @@ interface MiembroEquipo {
 @Component({
   selector: 'app-seccion2',
   standalone: true,
-  imports: [CommonModule, NabvarComponent, NgFor,ContactComponent],
+  imports: [CommonModule, NabvarComponent, NgFor, ContactComponent, FooterComponent],
   templateUrl: './seccion2.component.html',
   styleUrls: ['./seccion2.component.scss']
 })
