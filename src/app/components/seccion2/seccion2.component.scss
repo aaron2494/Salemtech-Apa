@@ -81,11 +81,13 @@
   }
 
   .card {
-      width: 300px; /* Tamaño por defecto */
+      width: 400px; /* Tamaño por defecto */
       height: 300px; /* Tamaño por defecto */
       margin: 1rem;
       perspective: 1000px;
-      background-color: rgba(0, 0, 0, 0.8)
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9), 0 6px 20px rgba(0, 0, 0, 0.9) ; /* Añade sombra para más profundidad */
+      border-radius: 10px; /* Mejora las esquinas redondeadas */
       
   }
 
@@ -123,34 +125,41 @@
       overflow: hidden;
   }
   .card-front h5 {
-    margin: 1rem 2rem 1rem;
+    margin: 2rem 2rem 1rem;
     color: #00c2f3;
-    text-shadow: #ffffff   0 0.5px 0.5px;
+    text-shadow: #ffffff   0 0.3px 0.3px;
 }
 
 
   .card-front img {
+    margin-top: auto;
       width: 100%;
       height: auto;
+      border-bottom-left-radius: 8px; /* Coincide con las esquinas redondeadas */
+      border-bottom-right-radius: 8px;
       object-fit: cover;
   }
 
   .card-back {
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       background-color: rgba(0, 0, 0, 0.0);
-    
       border-radius: 8px;
       transform: rotateY(180deg);
       padding: 1rem;
   }
 
-  .card-back p {
-    font-size: 1rem !important;
+  .cargo {
+    justify-content: flex-start; /* Coloca el contenido al principio */
+    font-size: 1.3rem !important;
       margin: 0.2rem 0;
-      color: #ffffff;
+      color: #00c2f3;
+  }
+  .descripcion{
+    justify-content: center;
+    font-size: 1rem ;
   }
 
 
