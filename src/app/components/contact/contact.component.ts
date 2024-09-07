@@ -1,18 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import {  FormsModule } from '@angular/forms';
+
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule,HttpClientModule],
+  imports: [FormsModule, CommonModule,HttpClientModule,],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {
-  constructor(private http: HttpClient) { }
+export class ContactComponent{
+  constructor(private http: HttpClient ) { }
+  
 
     consulta = {
       nombre: '',
@@ -22,6 +24,7 @@ export class ContactComponent {
       mensaje: ''
     };
 
+    
     enviarConsulta(form: any) {
       if (form.valid) {
         this.http.post<{ message: string }>('https://backend-email.vercel.app/send-email', this.consulta)

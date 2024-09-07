@@ -1,11 +1,5 @@
 /* Estilo del contenido del modal */
-.divider {
-  width: 80%;
-  height: 2px;
-  background-color: rgba(232, 232, 232, 0.6); /* Color dorado claro para la línea */
-  margin: 40px auto; /* Espacio alrededor de la línea y centrado horizontal */
-  
-}
+
 .modal-content {
   color: #00ccff;;
   border-radius: 10px; /* Reduce el radio del borde */
@@ -60,24 +54,44 @@ input::placeholder, textarea::placeholder {
   font-size: 1.25rem;
   font-weight: bold;
   border-radius: 50px;
-  background-color:#024083; 
+  background-color:#000000; 
   border: none;
   color: white; /* Color del texto del botón en blanco */
 }
 
 .btn-contacto:hover {
-  background-color: #007bff;
-  color: #fff;
-  transition: background-color 3s ease, color 3s ease;
-  -webkit-transition: background-color 3s ease, color 3s ease;
-  -moz-transition: background-color 3s ease, color 3s ease;
-  -ms-transition: background-color 3s ease, color 3s ease;
-  -o-transition: background-color 3s ease, color 3s ease;
+  background-color: #00ccff;
+  color: #000000;
+  transition: background-color 1s ease, color 1s ease;
+  -webkit-transition: background-color 1s ease, color 1s ease;
+  -moz-transition: background-color 1s ease, color 1s ease;
+  -ms-transition: background-color 1s ease, color 1s ease;
+  -o-transition: background-color 1s ease, color 1s ease;
 }
 .btn-close{
   color: #fff;
   background-color: #fff;
 }
+.container2 {
+  background-color: rgba(0, 0, 0, 0.3) !important; // Fondo negro con 0.7 de transparencia
+  color: white !important; // Texto en blanco
+  padding: 50px 0; // Añade algo de padding para espaciar el contenido
+  text-align: center;
+  border-radius: 20px;
+}
+  h2, p {
+    color: white; // Asegura que el texto dentro del h2 y p sea blanco
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.5rem; // Ajusta el tamaño del título
+  }
+
+  p {
+    font-size: 1.2rem; // Ajusta el tamaño del párrafo
+    margin-top: 15px;
+  }
 
 /* Color del borde para campos válidos e inválidos */
 input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
