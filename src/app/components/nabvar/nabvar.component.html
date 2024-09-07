@@ -14,15 +14,8 @@
         <li class="nav-item" *ngIf="!router.url.includes('/seccion2')">
           <button class="nav-link"(click)="scrollToSection('presentation')" (click)="handleNavClick('presentation')">¿Por qué elegirnos?</button>
         </li>
-        <li class="nav-item dropdown" *ngIf="!router.url.includes('/seccion2')">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Más info
-          </a>
-          <ul class="dropdown-menu mt-3">
-            <li><button class="dropdown-item" (click)="navigateToSeccion2()">Trabaja con nosotros</button></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+        <li class="nav-item" *ngIf="!router.url.includes('/seccion2')">
+          <button class="nav-link"(click)="scrollToSection('seccion2')" (click)="navigateToSeccion2()">Trabaja con nosotros</button>
         </li>
         <li class="nav-item" *ngIf="!router.url.includes('/seccion2')">
           <button class="nav-link"(click)="scrollToSection('contact')" (click)="handleNavClick('contact')">Contáctanos</button>

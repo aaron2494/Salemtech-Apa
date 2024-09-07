@@ -2,7 +2,7 @@ import {  AfterViewInit, Component, ElementRef,  OnDestroy, Renderer2, ViewChild
 import { filter, Observable } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
 
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import  { Carousel } from 'bootstrap';
 
 
@@ -19,17 +19,19 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
   showAnimation$!: Observable<boolean>;
   @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
   private intersectionObserver!: IntersectionObserver;
- 
   cards = [
     {
+      icon: '/iconos_procesos.png ',
       title: 'Experiencia en Procesos',
       text: 'Contamos con la experiencia en procesos, automatización, tecnología de operación y de información para integrar las necesidades de los clientes del mercado energético en forma efectiva y segura.         '
     },
     {
+      icon: '/iconos_performance.png',
       title: 'Estándares de Calidad',
       text: 'Seguimos los más altos estándares en ejecución de proyectos de ingeniería y consultoría del mercado. Alineamos los equipos de trabajo a las necesidades del proyecto en forma escalable y flexible.'
     },
     {
+      icon: '/iconos_tecno.png',
       title: 'Soporte de Clase Mundial',
       text: 'Contamos con un sopote de elite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más,incredibilis .'
     }

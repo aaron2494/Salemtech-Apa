@@ -42,7 +42,9 @@ export class NabvarComponent implements OnInit {
   }
 
   navigateToSeccion2() {
-    this.router.navigate(['/seccion2']);
+    this.router.navigate(['/seccion2']).then(() => {
+      window.scrollTo(0, 0); // Fuerza el scroll a la parte superior de la página
+    });
     this.isNavbarCollapsed = true; // Colapsa el navbar después de la navegación
   }
   // Método para manejar el scroll hacia una sección específica
