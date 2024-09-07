@@ -12,4 +12,13 @@
           <p>{{item.description}}</p>
         </div>
       </div>
+       <!-- Imagen y texto adicional -->
+  <div class="image-text-wrapper d-flex align-items-center mt-5">
+    <img src="/assets/salem_propuesta.jpg" alt="Imagen destacada" class="enlargable-image" (click)="toggleImageSize($event)">
+    <div class="text-content ms-4">
+      <h3>Texto a la derecha de la imagen</h3>
+      <p>Descripción o información adicional aquí. Este texto acompaña a la imagen y proporciona detalles adicionales.</p>
     </div>
+  </div>
+</div>
+   

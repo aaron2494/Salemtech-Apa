@@ -10,6 +10,7 @@ import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
 })
 export class NuestraManeraComponent implements AfterViewInit {
 constructor(private el:ElementRef, private renderer: Renderer2,) {};
+isImageExpanded = false;
   items = [
     { icon: '../../../../assets/iconos_datos.png', title: 'Relevamiento de datos', description: '' },
     { icon: '../../../../assets/iconos_performance.png', title: 'Mejora de performance', description: '' },
@@ -26,5 +27,14 @@ constructor(private el:ElementRef, private renderer: Renderer2,) {};
       this.renderer.setStyle(icon, 'opacity', '1');
       this.renderer.setStyle(icon, 'animation', `fadeInUp 5s ease-in-out ${index * 0.2}s forwards`);
     });
+  }
+  toggleImageSize(event: MouseEvent): void {
+    const image = event.target as HTMLImageElement;
+    if (this.isImageExpanded) {
+      image.classList.remove('expanded');
+    } else {
+      image.classList.add('expanded');
+    }
+    this.isImageExpanded = !this.isImageExpanded; // Cambia el estado de expansión
   }
 }

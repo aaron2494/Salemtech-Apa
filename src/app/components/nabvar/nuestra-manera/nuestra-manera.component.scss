@@ -60,7 +60,52 @@
     
     font-size: 0.9rem;
   }
+/* Estilos para la imagen y el texto */
+.image-text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Necesario para posicionar la imagen en primera plana */
+  padding: 0 1rem; /* Agrega un poco de relleno en pantallas pequeñas */
+ 
+}
 
+.image-container {
+ 
+  position: relative;
+  z-index: 1; /* Asegura que la imagen esté detrás del contenido expandido inicialmente */
+  max-width: 100%; /* Asegura que el contenedor no se desborde */
+}
+
+.enlargable-image {
+  border: 2px solid rgba(232, 232, 232, 0.6); /* Borde del mismo color que la línea */
+  border-radius: 15px; /* Bordes redondeados */
+  max-width: 450px;
+  /*Tamañoinicial*/transition: transform 0.5s ease-in-out, z-index 2s 0.5s;
+  /*Transicionessuaves*/cursor: pointer;
+  z-index: 1;
+  transform-origin: center center;
+ 
+   
+}
+
+.enlargable-image.expanded {
+  transform: scale(1.3) translateY(-35%) translateX(40%);
+  /*Agrandalaimagenalhacerclic*/z-index: 10;
+  /*Llevalaimagenalfrente*//*Posicionalaimagenabsolutamenteparaqueseexpandasobreelcontenido*/top: 50%;
+  /*Centralaimagenverticalmente*/left: 50%;
+  /*Centralaimagenhorizontalmente*/transform: translate(-50%, -50%) scale(1.5);
+  -webkit-transform: scale(1.3) translateY(-35%) translateX(40%);
+  -moz-transform: scale(1.3) translateY(-35%) translateX(40%);
+  -ms-transform: scale(1.3) translateY(-35%) translateX(40%);
+  -o-transform: scale(1.3) translateY(-35%) translateX(40%);
+  
+}
+
+.text-content {
+  max-width: 500px; /* Ajusta el ancho máximo del texto */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
   @keyframes fadeInUp {
     0% {
       opacity: 0;
@@ -79,4 +124,28 @@
       .icon-wrapper:hover {
         transform: scale(0.8) rotateY(180deg 0.10s); /* Mantener el hover más pequeño en móviles */
       }
-   }
+      
+      .enlargable-image.expanded {
+      transform: scale(1.3);
+      -webkit-transform: scale(1.3);
+      -moz-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      -o-transform: scale(1.3);
+}
+      .image-text-wrapper {
+        
+        flex-direction: column; /* Cambia la dirección de los elementos para pantallas más pequeñas */
+        align-items: center; /* Centra los elementos verticalmente */
+        padding: 0 0.5rem; /* Reduce el relleno */
+      }
+    
+      .enlargable-image {
+        max-width: 100%; /* Ajusta el ancho máximo de la imagen en pantallas más pequeñas */
+      }
+    
+      .text-content {
+        text-align: center; /* Centra el texto */
+        padding: 0.5rem; /* Reduce el relleno */
+      }
+    }
+    
