@@ -1,4 +1,11 @@
 /* Estilo del contenido del modal */
+.divider {
+  width: 80%;
+  height: 2px;
+  background-color: rgba(232, 232, 232, 0.6); /* Color dorado claro para la línea */
+  margin: 40px auto; /* Espacio alrededor de la línea y centrado horizontal */
+  
+}
 .modal-content {
   color: #00ccff;;
   border-radius: 10px; /* Reduce el radio del borde */
