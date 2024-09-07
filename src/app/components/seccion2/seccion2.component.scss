@@ -51,6 +51,7 @@
       margin-bottom: 0.5rem; // Espaciado entre elementos
         text-align: left;
       strong {
+        text-decoration: underline; 
         color: #00c2f3;
         min-width: 200px; // Ajusta el ancho mínimo del título para alinear los textos
         display: inline-block; // Asegura que todos los títulos ocupen el mismo ancho

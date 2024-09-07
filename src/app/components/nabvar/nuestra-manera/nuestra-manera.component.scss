@@ -1,101 +1,124 @@
 .divider {
-    width: 80%;
-    height: 2px;
-    background-color: rgba(232, 232, 232, 0.6); /* Color dorado claro para la línea */
-    margin: 40px auto; /* Espacio alrededor de la línea y centrado horizontal */
-  
-  }
-.container{
-    
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    color: #ffffff	;
-  }
+  width: 80%;
+  height: 2px;
+  background-color: rgba(232, 232, 232, 0.6);
+  /* Color dorado claro para la línea */
+  margin: 40px auto;
+  /* Espacio alrededor de la línea y centrado horizontal */
 
-  .icon-wrapper {
-    transition: transform 0.3s ease-in-out;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: fadeInUp 0.5s ease-in-out forwards;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    &:hover {
-      transform: scale(1.2) rotateY(180deg ) ;
-      transition: transform 0.5s ease-in-out;
-    }
-  }
-
-  h2 {
-    color: #ffffff	; 
-/* Fuente serif para un toque formal */
-    font-size: 2.5rem; /* Tamaño de fuente más grande */
-    font-weight: bold;
-    text-shadow: #000000 0 4px 4px;
-    letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
-    text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
-    margin-bottom: 30px; /* Espacio inferior ajustado */
-    position: relative;
-    display: inline-block;
-    transition: color 0.5s ease-in-out; /* Transición suave del color */
-
-    &:hover {
-      color: #000000; /* Color al hacer hover */
-      text-shadow: #ffffff 0 1px 1px;
-    }
 }
 
-  h4 {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    
+.container {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+}
+
+.icon-wrapper {
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInUp 0.5s ease-in-out forwards;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
-  p {
-    
-    font-size: 0.9rem;
+  &:hover {
+    transform: scale(1.2) rotateY(180deg);
+    transition: transform 0.5s ease-in-out;
   }
+}
+
+h2 {
+  color: #ffffff;
+  /* Fuente serif para un toque formal */
+  font-size: 2.5rem;
+  /* Tamaño de fuente más grande */
+  font-weight: bold;
+  text-shadow: #000000 0 4px 4px;
+  letter-spacing: 1px;
+  /* Espaciado entre letras para un efecto refinado */
+  text-transform: uppercase;
+  /* Todo en mayúsculas para un impacto visual mayor */
+  margin-bottom: 30px;
+  /* Espacio inferior ajustado */
+  position: relative;
+  display: inline-block;
+  transition: color 0.5s ease-in-out;
+  /* Transición suave del color */
+
+  &:hover {
+    color: #000000;
+    /* Color al hacer hover */
+    text-shadow: #ffffff 0 1px 1px;
+  }
+}
+
+h4 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+
+}
+
+p {
+
+  font-size: 0.9rem;
+}
+
 /* Estilos para la imagen y el texto */
 .image-text-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Necesario para posicionar la imagen en primera plana */
-  padding: 0 1rem; /* Agrega un poco de relleno en pantallas pequeñas */
- 
+  position: relative;
+  /* Necesario para posicionar la imagen en primera plana */
+  padding: 0 1rem;
+  /* Agrega un poco de relleno en pantallas pequeñas */
+
 }
 
 .image-container {
- 
+
   position: relative;
-  z-index: 1; /* Asegura que la imagen esté detrás del contenido expandido inicialmente */
-  max-width: 100%; /* Asegura que el contenedor no se desborde */
+  z-index: 1;
+  /* Asegura que la imagen esté detrás del contenido expandido inicialmente */
+  max-width: 100%;
+  /* Asegura que el contenedor no se desborde */
 }
 
 .enlargable-image {
-  box-shadow: 0 4px 6px rgba(124, 124, 124, 0.4), 0 2px 6px rgba(233, 233, 233, 0.4) !important ; 
-  border: 2px solid rgba(232, 232, 232, 0.6); /* Borde del mismo color que la línea */
-  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(124, 124, 124, 0.4), 0 2px 6px rgba(233, 233, 233, 0.4) !important;
+  border: 2px solid rgba(232, 232, 232, 0.6);
+  /* Borde del mismo color que la línea */
+  border-radius: 15px;
+  /* Bordes redondeados */
   max-width: 600px;
-  /*Tamañoinicial*/transition: transform 0.5s ease-in-out, z-index 2s 0.5s;
-  /*Transicionessuaves*/cursor: pointer;
+  /*Tamañoinicial*/
+  transition: transform 0.5s ease-in-out, z-index 2s 0.5s;
+  /*Transicionessuaves*/
+  cursor: pointer;
   z-index: 1;
   transform-origin: center center;
- 
-   
+
+
 }
 
 .enlargable-image.expanded {
   transform: scale(1.3) translateY(-15%) translateX(34%);
-  /*Agrandalaimagenalhacerclic*/z-index: 10;
-  /*Llevalaimagenalfrente*//*Posicionalaimagenabsolutamenteparaqueseexpandasobreelcontenido*/top: 50%;
-  /*Centralaimagenverticalmente*/left: 50%;
-  /*Centralaimagenhorizontalmente*/transform: translate(-50%, -50%) scale(1.5);
+  /*Agrandalaimagenalhacerclic*/
+  z-index: 10;
+  /*Llevalaimagenalfrente*/
+  /*Posicionalaimagenabsolutamenteparaqueseexpandasobreelcontenido*/
+  top: 50%;
+  /*Centralaimagenverticalmente*/
+  left: 50%;
+  /*Centralaimagenhorizontalmente*/
+  transform: translate(-50%, -50%) scale(1.5);
   -webkit-transform: scale(1.3) translateY(-15%) translateX(34%);
   -moz-transform: scale(1.3) translateY(-15%) translateX(34%);
   -ms-transform: scale(1.3) translateY(-15%) translateX(34%);
@@ -103,49 +126,90 @@
 }
 
 .text-content {
-  max-width: 500px; /* Ajusta el ancho máximo del texto */
-  text-align: left; /* Alinea el texto a la izquierda */
+  max-width: 500px;
+  /* Ajusta el ancho máximo del texto */
+  text-align: left;
+  /* Alinea el texto a la izquierda */
 }
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+.two-column-list {
+
+  padding: 0;
+  margin: 0;
+}
+
+.two-column-list li {
+  padding: 5px 0;
+  /* Espaciado entre ítems */
+}
+strong{
+  color: #00ccff;
+  text-decoration: underline; 
+  
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  @media (max-width: 768px) {
-    .icon-wrapper img {
-        max-width: 100px; /* Reducir el tamaño en tablets */
-        max-height: 100%;
-      }
-      .icon-wrapper:hover {
-        transform: scale(0.8) rotateY(180deg 0.10s); /* Mantener el hover más pequeño en móviles */
-      }
-      
-      .enlargable-image.expanded {
-      transform: scale(1.3);
-      -webkit-transform: scale(1.3);
-      -moz-transform: scale(1.3);
-      -ms-transform: scale(1.3);
-      -o-transform: scale(1.3);
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-      .image-text-wrapper {
-        
-        flex-direction: column; /* Cambia la dirección de los elementos para pantallas más pequeñas */
-        align-items: center; /* Centra los elementos verticalmente */
-        padding: 0 0.5rem; /* Reduce el relleno */
-      }
-    
-      .enlargable-image {
-        max-width: 100%; /* Ajusta el ancho máximo de la imagen en pantallas más pequeñas */
-      }
-    
-      .text-content {
-        text-align: center; /* Centra el texto */
-        padding: 0.5rem; /* Reduce el relleno */
-      }
-    }
-    
+
+@media (max-width: 768px) {
+  .icon-wrapper img {
+    max-width: 100px;
+    /* Reducir el tamaño en tablets */
+    max-height: 100%;
+  }
+
+  .icon-wrapper:hover {
+    transform: scale(0.8) rotateY(180deg 0.10s);
+    /* Mantener el hover más pequeño en móviles */
+  }
+
+  .two-column-list {
+    display: grid;
+    margin-bottom: 0.5rem; // Espaciado entre elementos
+    text-align: left;
+  }
+
+  .two-column-list li {
+    padding: 10px;
+    /* Opcional: Ajustar espaciado para móviles */
+  }
+
+  .enlargable-image.expanded {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+  }
+
+  .image-text-wrapper {
+
+    flex-direction: column;
+    /* Cambia la dirección de los elementos para pantallas más pequeñas */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    padding: 0 0.5rem;
+    /* Reduce el relleno */
+  }
+
+  .enlargable-image {
+    max-width: 100%;
+    /* Ajusta el ancho máximo de la imagen en pantallas más pequeñas */
+  }
+
+  .text-content {
+    text-align: center;
+    /* Centra el texto */
+    padding: 0.5rem;
+    /* Reduce el relleno */
+  }
+}
