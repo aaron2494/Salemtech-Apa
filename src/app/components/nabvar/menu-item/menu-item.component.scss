@@ -91,7 +91,7 @@ h2.text-center::after {
   transform: translateY(20px) rotateX(0) rotateY(0);
   /*Posicióninicial*/overflow: hidden;
   transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
-  background: #c0c0c0;
+  background: #ffffff;
   box-shadow: 0 4px 8px rgba(124, 124, 124, 0.4), 0 6px 10px rgba(233, 233, 233, 0.2) !important ; /* Sombra para efecto de profundidad */
   -webkit-transform: translateY(20px);
   -moz-transform: translateY(20px);
