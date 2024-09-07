@@ -1,15 +1,16 @@
 /* Estilo del contenido del modal */
 .modal-content {
-  color: #fff;
+  color: #00ccff;;
   border-radius: 10px; /* Reduce el radio del borde */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8); /* Menor sombra */
   padding: 15px ; /* Menos padding */
   background-color: rgba(0, 0, 0, 0.4); /* Fondo con opacidad */
+  border: 1px solid rgba(232, 232, 232, 0.6);
 }
 
 /* Color del texto de las etiquetas */
 .modal-body label {
-  color: white; /* Cambia el color del texto de las etiquetas a blanco */
+  color: #00ccff; /* Cambia el color del texto de las etiquetas a blanco */
 }
 
 /* Ajusta el espaciado entre los campos */
@@ -25,21 +26,25 @@
 textarea.form-control {
   resize: vertical; /* Permite el ajuste vertical */
   height: 50px;
-  background-color: rgba(255, 255, 255, 0.6); /* Fondo igual al del modal */
-  color: white; /* Texto dentro del área de texto en blanco */
+  background-color: rgba(255, 255, 255);  /* Fondo igual al del modal */
+  color: rgb(0, 0, 0); /* Texto dentro del área de texto en blanco */
   border-color: transparent; /* Opcional: para asegurar que no haya bordes visibles */
 }
 
 /* Estilo para los campos de entrada */
 input.form-control {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo igual al del modal */
+  background-color: rgba(255, 255, 255); /* Fondo igual al del modal */
   color: rgb(0, 0, 0); /* Texto dentro del campo en blanco */
   border-color: transparent; /* Opcional: para asegurar que no haya bordes visibles */
 }
 
 /* Placeholder en blanco */
 input::placeholder, textarea::placeholder {
-  color: white; /* Color del texto del placeholder en blanco */
+  color: rgb(0, 0, 0); /* Color del texto del placeholder en blanco */
+}
+.btn-primary {
+  color: white;
+  background-color: #00ccff;
 }
 
 /* Estilo del botón de contacto */
@@ -48,14 +53,19 @@ input::placeholder, textarea::placeholder {
   font-size: 1.25rem;
   font-weight: bold;
   border-radius: 50px;
-  background-color: #007bff;
+  background-color:#024083; 
   border: none;
   color: white; /* Color del texto del botón en blanco */
 }
 
 .btn-contacto:hover {
-  background-color: #0056b3;
+  background-color: #007bff;
   color: #fff;
+  transition: background-color 3s ease, color 3s ease;
+  -webkit-transition: background-color 3s ease, color 3s ease;
+  -moz-transition: background-color 3s ease, color 3s ease;
+  -ms-transition: background-color 3s ease, color 3s ease;
+  -o-transition: background-color 3s ease, color 3s ease;
 }
 .btn-close{
   color: #fff;
