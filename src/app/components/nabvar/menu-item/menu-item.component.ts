@@ -19,11 +19,12 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
   showAnimation$!: Observable<boolean>;
   @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
   private intersectionObserver!: IntersectionObserver;
+  private carouselInstance!: Carousel;
   cards = [
     {
       icon: '/iconos_procesos.png ',
       title: 'Experiencia en Procesos',
-      text: 'Contamos con la experiencia en procesos, automatización, tecnología de operación y de información para integrar las necesidades de los clientes del mercado energético en forma efectiva y segura.         '
+      text: 'Contamos con la experiencia en procesos, automatización, tecnología de operación y de información para integrar las necesidades de los clientes del mercado energético en forma efectiva y segura.'
     },
     {
       icon: '/iconos_performance.png',
@@ -33,7 +34,7 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     {
       icon: '/iconos_tecno.png',
       title: 'Soporte de Clase Mundial',
-      text: 'Contamos con un sopote de elite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más,incredibilis .'
+      text: 'Contamos con un soporte de elite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más.'
     }
   ];
 
@@ -46,14 +47,14 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.handleNavigation();
     this.initializeIntersectionObserver();
-    // Ensure the animations are applied initially
     this.resetAndTriggerAnimation();
     
     setTimeout(() => {
       this.initializeCarousels();
+      this.setupSwipeListeners();
     }, 0);
   }
-  
+
   ngOnDestroy(): void {
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
@@ -63,7 +64,7 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
       this.intersectionObserver.disconnect();
     }
   }
-  
+
   private handleNavigation() {
     if (this.router.url.includes('presentation')) {
       this.resetAndTriggerAnimation();
@@ -77,7 +78,7 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
       }
     });
   }
-  
+
   private initializeIntersectionObserver() {
     const options = {
       threshold: 0.1 // Trigger animation when 10% of the card is visible
@@ -94,12 +95,12 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     }, options);
 
     // Observe all cards on initialization
-     const cards = this.el.nativeElement.querySelectorAll('.card');
-  cards.forEach((card: Element) => {
-    this.intersectionObserver.observe(card);
-  });
-}
-  
+    const cards = this.el.nativeElement.querySelectorAll('.card');
+    cards.forEach((card: Element) => {
+      this.intersectionObserver.observe(card);
+    });
+  }
+
   private resetAndTriggerAnimation() {
     const cards = this.el.nativeElement.querySelectorAll('.card');
     cards.forEach((card: HTMLElement, index: number) => {
@@ -111,14 +112,41 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
       }, 10);
     });
   }
-  
- 
-    private initializeCarousels() {
+
+  private initializeCarousels() {
     const cardsCarouselElement = this.el.nativeElement.querySelector('#cardsCarousel');
     if (cardsCarouselElement) {
-      new Carousel(cardsCarouselElement, {
-        interval: 7000,
+      this.carouselInstance = new Carousel(cardsCarouselElement, {
+        interval: 7000, // Cambiar de tarjeta cada 7 segundos
         ride: 'carousel'
+      });
+    }
+  }
+
+  private setupSwipeListeners() {
+    const carouselElement = this.el.nativeElement.querySelector('#cardsCarousel');
+
+    if (carouselElement) {
+      let startX = 0;
+      let endX = 0;
+      const threshold = 100; // Umbral de sensibilidad para el swipe
+
+      carouselElement.addEventListener('touchstart', (event: TouchEvent) => {
+        startX = event.touches[0].clientX;
+      });
+
+      carouselElement.addEventListener('touchmove', (event: TouchEvent) => {
+        endX = event.touches[0].clientX;
+      });
+
+      carouselElement.addEventListener('touchend', () => {
+        if (startX - endX > threshold) {
+          // Deslizar hacia la izquierda
+          this.carouselInstance.next();
+        } else if (endX - startX > threshold) {
+          // Deslizar hacia la derecha
+          this.carouselInstance.prev();
+        }
       });
     }
   }
