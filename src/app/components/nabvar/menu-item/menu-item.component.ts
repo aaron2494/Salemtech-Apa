@@ -164,7 +164,7 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     this.cardsCarouselInstance.pause();
     setTimeout(() => {
       this.cardsCarouselInstance.cycle();  // Reanuda el carrusel automático después de 1 segundo
-    }, 1000);  // Temporizador más corto para el swipe manual
+    }, 300);  // Temporizador más corto para el swipe manual
   }
 
 }
