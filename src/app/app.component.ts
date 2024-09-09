@@ -6,6 +6,7 @@ import { MainComponent } from './components/main/main.component';
 import { Seccion2Component } from './components/seccion2/seccion2.component';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { NabvarComponent } from "./components/nabvar/nabvar.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 
 
@@ -13,7 +14,7 @@ import { NabvarComponent } from "./components/nabvar/nabvar.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MainComponent, ContactComponent, Seccion2Component, NabvarComponent],
+  imports: [CommonModule, RouterOutlet, MainComponent, ContactComponent, Seccion2Component, NabvarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [

@@ -19,7 +19,8 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
   showAnimation$!: Observable<boolean>;
   @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
   private intersectionObserver!: IntersectionObserver;
-  private carouselInstance!: Carousel;
+  private cardsCarouselInstance!: Carousel;
+  private swipeStartX: number | null = null;
   cards = [
     {
       icon: '/iconos_procesos.png ',
@@ -48,10 +49,11 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     this.handleNavigation();
     this.initializeIntersectionObserver();
     this.resetAndTriggerAnimation();
+    this.initializeCarousels();
+    this.addSwipeListeners(); // Añadir listeners para swipe
     
     setTimeout(() => {
       this.initializeCarousels();
-      this.setupSwipeListeners();
     }, 0);
   }
 
@@ -116,38 +118,53 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
   private initializeCarousels() {
     const cardsCarouselElement = this.el.nativeElement.querySelector('#cardsCarousel');
     if (cardsCarouselElement) {
-      this.carouselInstance = new Carousel(cardsCarouselElement, {
-        interval: 7000, // Cambiar de tarjeta cada 7 segundos
+      this.cardsCarouselInstance = new Carousel(cardsCarouselElement, {
+        interval: 5000, // Intervalo automático de 5 segundos
         ride: 'carousel'
       });
     }
   }
 
-  private setupSwipeListeners() {
+  // Detectar swipe y cambiar el slide manualmente con un intervalo más corto
+  private addSwipeListeners() {
     const carouselElement = this.el.nativeElement.querySelector('#cardsCarousel');
+    
+    // Detectar el inicio del swipe
+    this.renderer.listen(carouselElement, 'touchstart', (event: TouchEvent) => {
+      this.swipeStartX = event.touches[0].clientX;
+    });
 
-    if (carouselElement) {
-      let startX = 0;
-      let endX = 0;
-      const threshold = 100; // Umbral de sensibilidad para el swipe
+    // Detectar el final del swipe y determinar la dirección
+    this.renderer.listen(carouselElement, 'touchend', (event: TouchEvent) => {
+      if (this.swipeStartX !== null) {
+        const swipeEndX = event.changedTouches[0].clientX;
+        const swipeDistance = this.swipeStartX - swipeEndX;
+        
+        if (Math.abs(swipeDistance) > 50) {  // Detecta un swipe significativo
+          if (swipeDistance > 0) {
+            // Swipe hacia la izquierda, avanzar al siguiente
+            this.cardsCarouselInstance.next();
+          } else {
+            // Swipe hacia la derecha, retroceder al anterior
+            this.cardsCarouselInstance.prev();
+          }
 
-      carouselElement.addEventListener('touchstart', (event: TouchEvent) => {
-        startX = event.touches[0].clientX;
-      });
-
-      carouselElement.addEventListener('touchmove', (event: TouchEvent) => {
-        endX = event.touches[0].clientX;
-      });
-
-      carouselElement.addEventListener('touchend', () => {
-        if (startX - endX > threshold) {
-          // Deslizar hacia la izquierda
-          this.carouselInstance.next();
-        } else if (endX - startX > threshold) {
-          // Deslizar hacia la derecha
-          this.carouselInstance.prev();
+          // Cambiar más rápido después de un swipe manual
+          this.changeSlideQuickly();
         }
-      });
-    }
+      }
+
+      this.swipeStartX = null;
+    });
   }
+
+  // Cambiar el slide más rápido después de un swipe manual
+  private changeSlideQuickly() {
+    // Pausar y reiniciar el carrusel para evitar que se superponga el intervalo normal
+    this.cardsCarouselInstance.pause();
+    setTimeout(() => {
+      this.cardsCarouselInstance.cycle();  // Reanuda el carrusel automático después de 1 segundo
+    }, 1000);  // Temporizador más corto para el swipe manual
+  }
+
 }
