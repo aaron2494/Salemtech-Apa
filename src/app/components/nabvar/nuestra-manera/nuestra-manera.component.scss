@@ -76,55 +76,30 @@ p {
   align-items: center;
   justify-content: center;
   position: relative;
-  /* Necesario para posicionar la imagen en primera plana */
   padding: 0 1rem;
-  /* Agrega un poco de relleno en pantallas pequeñas */
-
 }
 
 .image-container {
-
   position: relative;
   z-index: 1;
-  /* Asegura que la imagen esté detrás del contenido expandido inicialmente */
   max-width: 100%;
-  /* Asegura que el contenedor no se desborde */
 }
 
 .enlargable-image {
   box-shadow: 0 4px 6px rgba(124, 124, 124, 0.4), 0 2px 6px rgba(233, 233, 233, 0.4) !important;
   border: 2px solid rgba(232, 232, 232, 0.6);
-  /* Borde del mismo color que la línea */
   border-radius: 15px;
-  /* Bordes redondeados */
   max-width: 600px;
-  /*Tamañoinicial*/
   transition: transform 0.5s ease-in-out, z-index 2s 0.5s;
-  /*Transicionessuaves*/
   cursor: pointer;
   z-index: 1;
   transform-origin: center center;
-
-
 }
 
 .enlargable-image.expanded {
   transform: scale(1.3) translateY(-15%) translateX(34%);
-  /*Agrandalaimagenalhacerclic*/
   z-index: 10;
-  /*Llevalaimagenalfrente*/
-  /*Posicionalaimagenabsolutamenteparaqueseexpandasobreelcontenido*/
-  top: 50%;
-  /*Centralaimagenverticalmente*/
-  left: 50%;
-  /*Centralaimagenhorizontalmente*/
-  transform: translate(-50%, -50%) scale(1.5);
-  -webkit-transform: scale(1.3) translateY(-15%) translateX(34%);
-  -moz-transform: scale(1.3) translateY(-15%) translateX(34%);
-  -ms-transform: scale(1.3) translateY(-15%) translateX(34%);
-  -o-transform: scale(1.3) translateY(-15%) translateX(34%);
 }
-
 .text-content {
   max-width: 500px;
   /* Ajusta el ancho máximo del texto */

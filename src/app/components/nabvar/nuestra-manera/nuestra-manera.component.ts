@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-nuestra-manera',
@@ -37,4 +37,17 @@ isImageExpanded = false;
     }
     this.isImageExpanded = !this.isImageExpanded; // Cambia el estado de expansión
   }
+  // Escucha eventos globales para detectar clics fuera de la imagen
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: MouseEvent): void {
+    const clickedElement = event.target as HTMLElement;
+    const image = this.el.nativeElement.querySelector('.enlargable-image');
+
+    // Si se hace clic fuera de la imagen y está expandida, la contrae
+    if (this.isImageExpanded && !image.contains(clickedElement)) {
+      this.renderer.removeClass(image, 'expanded');
+      this.isImageExpanded = false; // Cambia el estado de expansión
+    }
+  }
+  
 }
