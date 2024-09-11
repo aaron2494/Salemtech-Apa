@@ -199,7 +199,8 @@ h2.text-center {
 .card:hover {
   transform: scale(1.00) ;
   width: 90%;
-  background:rgba(0, 0, 0, 0.8) !important;
+  background: url('../../../../assets/leonardo-b-card.jpg') no-repeat center center;
+  background-size: cover; /* Ajusta la imagen al tamaño de la tarjeta */
   /*Ajustaelalfaparalatransparencia*/color: #c0c0c0	;
   border: 1.5px solid rgba(232, 232, 232, 0.6)!important;
   /*Bordedelmismocolorquelalínea*/border-radius: 20px !important;
