@@ -8,7 +8,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { NabvarComponent } from "./components/nabvar/nabvar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { Meta, Title } from '@angular/platform-browser';
-import { BannerComponent } from "./components/banner/banner.component";
+
 
 
 

@@ -11,29 +11,20 @@ import { AfterViewInit, Component, ElementRef, HostListener, Renderer2 } from '@
 export class NuestraManeraComponent implements AfterViewInit {
 constructor(private el:ElementRef, private renderer: Renderer2,) {};
 isImageExpanded = false;
-  items = [
-    { icon: '../../../../assets/iconos_datos.png', title: 'Relevamiento de datos', description: '' },
-    { icon: '../../../../assets/iconos_performance.png', title: 'Mejora de performance', description: '' },
-    { icon: '../../../../assets/iconos_procesos.png', title: 'Automatizacion de procesos', description: '' },
-    { icon: '../../../../assets/iconos_tecno.png', title: 'Implementacion de Tecnologias', description: '' },
-  ];
+
   ngAfterViewInit(): void {
-    // Trigger animation for icons
-    this.animateIcons();
-  }
-  private animateIcons() {
-    const icons = this.el.nativeElement.querySelectorAll('.icon-wrapper');
-    icons.forEach((icon: HTMLElement, index: number) => {
-      this.renderer.setStyle(icon, 'opacity', '1');
-      this.renderer.setStyle(icon, 'animation', `fadeInUp 5s ease-in-out ${index * 0.2}s forwards`);
-    });
+    
   }
   toggleImageSize(event: MouseEvent): void {
     const image = event.target as HTMLImageElement;
+    const overlay = this.el.nativeElement.querySelector('#imageOverlay');
     if (this.isImageExpanded) {
       image.classList.remove('expanded');
+      this.renderer.removeClass(overlay, 'show');
     } else {
       image.classList.add('expanded');
+        this.renderer.addClass(overlay, 'show');
+      
     }
     this.isImageExpanded = !this.isImageExpanded; // Cambia el estado de expansión
   }
@@ -42,11 +33,13 @@ isImageExpanded = false;
   clickOutside(event: MouseEvent): void {
     const clickedElement = event.target as HTMLElement;
     const image = this.el.nativeElement.querySelector('.enlargable-image');
+    const overlay = this.el.nativeElement.querySelector('#imageOverlay');
 
-    // Si se hace clic fuera de la imagen y está expandida, la contrae
+    // Si se hace clic fuera de la imagen y está expandida, la contrae y esconde el overlay
     if (this.isImageExpanded && !image.contains(clickedElement)) {
       this.renderer.removeClass(image, 'expanded');
-      this.isImageExpanded = false; // Cambia el estado de expansión
+      this.renderer.removeClass(overlay, 'show');
+      this.isImageExpanded = false;
     }
   }
   

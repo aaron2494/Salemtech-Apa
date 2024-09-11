@@ -9,71 +9,28 @@
 }
 
 .container {
-
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   color: #ffffff;
-
   max-width: 100%;
 }
 
-.icon-wrapper {
-  transition: transform 0.3s ease-in-out;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: fadeInUp 0.5s ease-in-out forwards;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  &:hover {
-    transform: scale(1.2) rotateY(180deg);
-    transition: transform 0.5s ease-in-out;
-  }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Fondo oscuro semi-transparente */
+  z-index: 10;
+  display: none; /* El overlay está oculto por defecto */
 }
 
-h2 {
-  color: #ffffff;
-  /* Fuente serif para un toque formal */
-  font-size: 2.5rem;
-  /* Tamaño de fuente más grande */
-  font-weight: bold;
-  text-shadow: #000000 0 4px 4px;
-  letter-spacing: 1px;
-  /* Espaciado entre letras para un efecto refinado */
-  text-transform: uppercase;
-  /* Todo en mayúsculas para un impacto visual mayor */
-  margin-bottom: 30px;
-  /* Espacio inferior ajustado */
-  position: relative;
-  display: inline-block;
-  transition: color 0.5s ease-in-out;
-  text-decoration:underline 1px ; 
-  text-underline-offset: 10px;
-
-
-  &:hover {
-    color:#00c2f3; /* Color al hacer hover */
-        text-shadow: #000000 0 5px 5px;
-        
-  }
+.overlay.show {
+  display: block; /* Muestra el overlay cuando la imagen se expande */
 }
-
-h4 {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-
-}
-
-p {
-
-  font-size: 0.9rem;
-}
-
 /* Estilos para la imagen y el texto */
 .image-text-wrapper {
   display: flex;
@@ -96,7 +53,7 @@ p {
   max-width: 600px;
   transition: transform 0.5s ease-in-out, z-index 2s 0.5s;
   cursor: pointer;
-  z-index: 1;
+  z-index: 11;
   transform-origin: center center;
 }
 
@@ -122,11 +79,7 @@ p {
   /* Espaciado entre ítems */
 }
 strong{
-  color: #00ccff;
-  text-decoration:underline 1px ; 
-  text-underline-offset: 5px;
-
-  
+  color: #000000;
 }
 
 @keyframes fadeInUp {

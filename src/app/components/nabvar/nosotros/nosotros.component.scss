@@ -56,31 +56,25 @@
   
   /* Título de la sección */
   .section-title {
-    color: #000000	; 
+    color: #ffffff	; 
     text-shadow: #000000 0 4px 4px;
    /* Fuente serif para un toque formal */
     font-size: 2.5rem; /* Tamaño de fuente más grande */
     font-weight: bold;
     letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
     text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
-    margin-bottom: 30px; /* Espacio inferior ajustado */
+  
     position: relative;
     display: inline-block;
-    transition: color 0.5s ease-in-out; /* Transición suave del color */
-    text-decoration:underline 1px ; 
-    text-underline-offset: 10px;
-
-
-    &:hover {
-      color:#00c2f3; /* Color al hacer hover */
-        text-shadow: #000000 0 5px 5px;
-    }
+    
   }
   
   
   /* Texto de la sección */
   .section-text {
-    font-size: 1.1rem;
+    padding-left: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
     line-height: 1.8;
     text-align: left;
   }

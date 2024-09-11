@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^18.2.3",
     "@angular/router": "^18.2.3",
     "@emailjs/browser": "^4.4.1",
+    "@ng-bootstrap/ng-bootstrap": "^17.0.1",
     "@types/bootstrap": "^5.2.10",
     "bootstrap": "^5.3.3",
     "emailjs-com": "^3.2.0",

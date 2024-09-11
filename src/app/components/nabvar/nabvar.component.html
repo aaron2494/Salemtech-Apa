@@ -1,7 +1,7 @@
 <nav id="navbar" class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <!-- Navbar a la izquierda -->
-    <img src="../../../assets/salem_final.png" class="navbar-brand me-auto img" alt="Brand Logo">
+    <img src="../../../assets/salem_final.png" (click)="scrollToSection('home')"(click)="handleNavClick('home')" class="navbar-brand me-auto img" alt="Brand Logo">
     <button class="navbar-toggler" type="button" (click)="toggleNavbar()" aria-controls="navbarNav" aria-expanded="!isNavbarCollapsed" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,16 +9,13 @@
       <!-- Items alineados a la derecha -->
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <button class="nav-link" (click)="scrollToSection('home')"(click)="handleNavClick('home')">Home</button>
+          <button class="nav-link"(click)="scrollToSection('contact')" (click)="handleNavClick('contact')">Contáctanos</button>
         </li>
-        <li class="nav-item" *ngIf="!router.url.includes('/seccion2')">
-          <button class="nav-link"(click)="scrollToSection('presentation')" (click)="handleNavClick('presentation')">¿Por qué elegirnos?</button>
-        </li>
-        <li class="nav-item" *ngIf="!router.url.includes('/seccion2')">
+        <li class="nav-item">
           <button class="nav-link"(click)="scrollToSection('seccion2')" (click)="navigateToSeccion2()">Trabaja con nosotros</button>
         </li>
-        <li class="nav-item" *ngIf="!router.url.includes('/seccion2')">
-          <button class="nav-link"(click)="scrollToSection('contact')" (click)="handleNavClick('contact')">Contáctanos</button>
+        <li class="nav-item">
+          <button class="nav-link" (click)="scrollToSection('home')"(click)="handleNavClick('home')">Home</button>
         </li>
       </ul>
     </div>

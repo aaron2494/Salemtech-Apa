@@ -53,15 +53,6 @@ h2.text-center {
     position: relative;
     display: inline-block;
     transition: color 0.5s ease-in-out; /* Transición suave del color */
-    text-decoration:underline 1px ; 
-        text-underline-offset: 10px;
-
-      &:hover {
-        color:#00c2f3; /* Color al hacer hover */
-        text-shadow: #000000 0 5px 5px;
-     
-        
-      }
 }
 
 
@@ -79,56 +70,25 @@ h2.text-center {
 /* Estilos de la tarjeta */
 .card {
   opacity: 0;
-  border-radius: 20px;
+  border-radius: 10px;
   transform: translateY(20px) rotateX(0) rotateY(0);
   /*Posicióninicial*/overflow: hidden;
-  transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
-  background: #ffffff;
-  box-shadow: 0 4px 8px rgba(124, 124, 124, 0.4), 0 6px 10px rgba(233, 233, 233, 0.2) !important ; /* Sombra para efecto de profundidad */
-  -webkit-transform: translateY(20px);
-  -moz-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  -o-transform: translateY(20px);
-  -webkit-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
-  -moz-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
-  -ms-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
-  -o-transition: transform 1s ease-in-out,opacity 1s ease-in-out, box-shadow 1s ease-in-out ;
+  background: url('../../../../assets/leonardo-background-white.jpg') no-repeat center center;
+  background-size: cover; /* Ajusta la imagen al tamaño de la tarjeta */
 }
 .card.show {
   opacity: 1 ;
   transform: translateY(0) rotateX(0) rotateY(0); /* Asegura que las tarjetas se muestren sin rotación */
-  animation: fadeIn 8s ease-in-out forwards;
+  animation: fadeIn 3s ease-in-out forwards;
 }
 
 .card-title{
-  
-  color: #00c2f3;
-  text-shadow:#000000 0 0.5px 1px ;
-  text-decoration:underline 1px ; 
-  text-underline-offset: 10px;
-
+  color: #000000;
 }
 .card-text{
   font-size: 1rem;
-  text-shadow:#000000 0 0.5px 0.5px ;
 }
-.card:hover {
-  z-index: 1;
-  transform: translateY(-10px) rotateX(10deg) rotateY(10deg) scale(1.05) ;
-  background: url('../../../../assets/leonardo-b-card.jpg') no-repeat center center;
-  background-size: cover; /* Ajusta la imagen al tamaño de la tarjeta */
-  color: #ffffff;
-  border: 1.5px solid rgba(214, 214, 214, 0.6)!important; /* Borde del mismo color que la línea */
-  border-radius: 20px !important; /* Bordes redondeados */
-  box-shadow: 0 3px 8px rgba(6, 10, 41, 0.81)!important; /* Sombra más pronunciada */
-  transition: all 0.6s ease-in-out; /* Transición suave para los efectos del hover */
-}
-.card-body {
-  transition: opacity 0.6s ease-in-out; /* Transición más suave para el contenido */
-}
-.card:hover .card-body {
-  opacity: 0; /* Desaparece el contenido cuando está en hover */
-}
+
 /* Animación secuencial: Añadiendo retrasos */
 .card:nth-child(1) {
   animation-delay: 2s; /* Sin retraso para la primera card */
@@ -174,11 +134,6 @@ h2.text-center {
     margin-bottom: 20px;
   }
 
-  h2.text-center::after {
-    width: 40px;
-    height: 3px;
-    bottom: -8px;
-  }
   .carousel-item {
     transition: transform 3s ease-in-out !important;
   }
@@ -195,20 +150,6 @@ h2.text-center {
 }
 .card-text{
   font-size: 1.2rem;
-}
-
-.card:hover {
-  transform: scale(1.00) ;
-  width: 90%;
-  background: url('../../../../assets/leonardo-b-card.jpg') no-repeat center center;
-  background-size: cover; /* Ajusta la imagen al tamaño de la tarjeta */
-  /*Ajustaelalfaparalatransparencia*/color: #c0c0c0	;
-  border: 1.5px solid rgba(232, 232, 232, 0.6)!important;
-  /*Bordedelmismocolorquelalínea*/border-radius: 20px !important;
-  -webkit-transform: scale(1.00) ;
-  -moz-transform: scale(1.00) ;
-  -ms-transform: scale(1.00) ;
-  -o-transform: scale(1.00) ;
 }
 
 }

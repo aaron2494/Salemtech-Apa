@@ -1,40 +1,33 @@
 /* Estilo del contenido del modal */
 
-.modal-content {
-  color: #00ccff;;
-  border-radius: 10px; /* Reduce el radio del borde */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8); /* Menor sombra */
-  padding: 15px ; /* Menos padding */
-  background-color: rgba(0, 0, 0, 0.9); /* Fondo con opacidad */
+.modal {
   border: 1px solid rgba(232, 232, 232, 0.6);
+  max-height: 100vh; /* Altura máxima del modal del 100% de la vista */
+  height: auto; /* La altura del modal será ajustada por su contenido */
+  overflow: hidden; /* Para que no haya scroll */
 }
+.modal-body {
+  max-height: 100vh; /* Limita la altura máxima del modal */
+
+ }
 
 /* Color del texto de las etiquetas */
 .modal-body label {
-  color: #00ccff; /* Cambia el color del texto de las etiquetas a blanco */
-}
-
-/* Ajusta el espaciado entre los campos */
-.form-group {
-  margin-bottom: 0.5rem ; /* Espacio reducido entre los campos */
-}
-
-.modal-dialog.modal-sm {
-  max-width: 500px; /* Tamaño del modal */
+  color: #000000; /* Cambia el color del texto de las etiquetas a blanco */
 }
 
 /* Ajusta el tamaño del área de texto */
 textarea.form-control {
   resize: vertical; /* Permite el ajuste vertical */
   height: 50px;
-  background-color: rgba(255, 255, 255);  /* Fondo igual al del modal */
+  background-color: rgb(199, 199, 199);  /* Fondo igual al del modal */
   color: rgb(0, 0, 0); /* Texto dentro del área de texto en blanco */
   border-color: transparent; /* Opcional: para asegurar que no haya bordes visibles */
 }
 
 /* Estilo para los campos de entrada */
 input.form-control {
-  background-color: rgba(255, 255, 255); /* Fondo igual al del modal */
+  background-color: rgb(199, 199, 199); /* Fondo igual al del modal */
   color: rgb(0, 0, 0); /* Texto dentro del campo en blanco */
   border-color: transparent; /* Opcional: para asegurar que no haya bordes visibles */
 }
@@ -44,8 +37,9 @@ input::placeholder, textarea::placeholder {
   color: rgb(0, 0, 0); /* Color del texto del placeholder en blanco */
 }
 .btn-primary {
-  color: white;
-  background-color: #00ccff;
+  color: rgb(0, 0, 0);
+  background-color: rgb(199, 199, 199);
+  border-color: #fff;
 }
 
 /* Estilo del botón de contacto */
@@ -60,7 +54,7 @@ input::placeholder, textarea::placeholder {
 }
 
 .btn-contacto:hover {
-  background-color: #00ccff;
+  background-color: #ffffff;
   color: #000000;
   transition: background-color 1s ease, color 1s ease;
   -webkit-transition: background-color 1s ease, color 1s ease;
