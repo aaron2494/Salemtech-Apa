@@ -7,20 +7,12 @@
 html, body {
     font-family: "Josefin Sans", sans-serif;
     min-height: 100vh;
-   
     overflow-x: auto; /* Asegura que no haya desplazamiento horizontal */
     scroll-behavior: smooth;
     box-sizing: border-box;
     
   }
-  body{ 
-    min-height: calc(100vh - 1px); 
-    background: url('assets/4884273.jpg') fixed; /* Ruta de la imagen en tu proyecto */
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    
-  }
+  
 
   @keyframes fadeIn {
     from {

@@ -36,6 +36,7 @@
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Título */
@@ -58,6 +59,7 @@ h2.text-center {
       &:hover {
         color:#00c2f3; /* Color al hacer hover */
         text-shadow: #000000 0 5px 5px;
+     
         
       }
 }
@@ -112,11 +114,19 @@ h2.text-center {
 .card:hover {
   z-index: 1;
   transform: translateY(-10px) rotateX(10deg) rotateY(10deg) scale(1.05) ;
-  background:rgba(0, 0, 0, 0.8); /* Ajusta el alfa para la transparencia */
+  background: url('../../../../assets/leonardo-b-card.jpg') no-repeat center center;
+  background-size: cover; /* Ajusta la imagen al tamaño de la tarjeta */
   color: #ffffff;
   border: 1.5px solid rgba(214, 214, 214, 0.6)!important; /* Borde del mismo color que la línea */
   border-radius: 20px !important; /* Bordes redondeados */
   box-shadow: 0 3px 8px rgba(6, 10, 41, 0.81)!important; /* Sombra más pronunciada */
+  transition: all 0.6s ease-in-out; /* Transición suave para los efectos del hover */
+}
+.card-body {
+  transition: opacity 0.6s ease-in-out; /* Transición más suave para el contenido */
+}
+.card:hover .card-body {
+  opacity: 0; /* Desaparece el contenido cuando está en hover */
 }
 /* Animación secuencial: Añadiendo retrasos */
 .card:nth-child(1) {

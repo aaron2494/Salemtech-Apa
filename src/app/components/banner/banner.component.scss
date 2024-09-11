@@ -1,7 +1,7 @@
 
 #home {
   flex: 1;
-  background: url('../../../assets/mano-humana-escribiendo-teclado-computadora-noche-generada-ai.jpg') no-repeat center center;
+  background: url('../../../assets/leonardo-banner-negro.jpg') no-repeat center center;
   background-size: cover; /* Asegura que la imagen cubra todo el área del banner */
   display: flex;
   flex-direction: column;
@@ -12,25 +12,9 @@
   object-fit: cover;
   z-index: -1;
   }
-
-
-
-#banner-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #c0c0c0; /* Ajusta el color del texto según sea necesario */
-  z-index: 2; /* Asegura que el contenido esté sobre el overlay */
- 
-}
-
-
-
-
 @media (max-width: 768px) {
-  #banner{
-    height: 300px;
+  #home{
+   
+    height: 450px;
   }
   }

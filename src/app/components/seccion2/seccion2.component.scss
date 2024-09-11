@@ -1,9 +1,16 @@
 /* Estilos generales para la sección */
 #equipo {
-  padding: 2rem 0;
-  text-align: center;
-  margin-top: 80px;
-  overflow-x: hidden;
+    min-height: calc(100vh - 1px); 
+    background: url('../../../assets/leonardo-banner.jpg'); /* Ruta de la imagen en tu proyecto */
+    background-size: cover; /* Ajusta la imagen para que se vea completamente sin recortarse */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen quede fija mientras se hace scroll */
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 80px;
+    overflow-x: hidden;
+    
  }
   h2 {
       text-align: center;
@@ -28,10 +35,11 @@
   }
 
   .container{
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+   
     padding-top: 10px;
     width: 100%;
+    max-width: 100%;
 
   }
   .intro-text {
@@ -91,7 +99,7 @@
       height: 300px; /* Tamaño por defecto */
       margin: 1rem;
       perspective: 1000px;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.9);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9), 0 6px 20px rgba(0, 0, 0, 0.9) ; /* Añade sombra para más profundidad */
       border-radius: 10px; /* Mejora las esquinas redondeadas */
       

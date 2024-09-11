@@ -1,17 +1,18 @@
 .divider {
     width: 80%;
     height: 2px;
-    background-color: rgba(232, 232, 232, 0.6); /* Color dorado claro para la línea */
+    background-color: rgba(232, 232, 232, 0.0); /* Color dorado claro para la línea */
     margin: 40px auto; /* Espacio alrededor de la línea y centrado horizontal */
     
   }
   /* Ajustes para la tarjeta descriptiva */
   .content-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 90%;
-    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
   }
   
   /* Imagen personalizada */
@@ -22,7 +23,7 @@
     height: auto ;
     object-fit: cover;
     border: 2px solid rgba(232, 232, 232, 0.6); /* Borde del mismo color que la línea */
-    border-radius: 15px; /* Bordes redondeados */
+    border-radius: 5px; /* Bordes redondeados */
     transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
   }
   #imagescarousel {

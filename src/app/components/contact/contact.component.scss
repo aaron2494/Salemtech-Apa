@@ -5,7 +5,7 @@
   border-radius: 10px; /* Reduce el radio del borde */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8); /* Menor sombra */
   padding: 15px ; /* Menos padding */
-  background-color: rgba(0, 0, 0, 0.4); /* Fondo con opacidad */
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo con opacidad */
   border: 1px solid rgba(232, 232, 232, 0.6);
 }
 
@@ -73,11 +73,11 @@ input::placeholder, textarea::placeholder {
   background-color: #fff;
 }
 .container2 {
-  background-color: rgba(0, 0, 0, 0.3) !important; // Fondo negro con 0.7 de transparencia
+  background-color: rgba(0, 0, 0, 0.9) !important; // Fondo negro con 0.7 de transparencia
   color: white !important; // Texto en blanco
   padding: 50px 0; // Añade algo de padding para espaciar el contenido
   text-align: center;
-  border-radius: 20px;
+  margin-bottom:10px ;
 }
   h2, p {
     color: white; // Asegura que el texto dentro del h2 y p sea blanco

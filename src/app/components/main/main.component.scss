@@ -1,0 +1,9 @@
+.home{ 
+    min-height: calc(100vh - 1px); 
+    background: url('../../../assets/leonardo-banner.jpg'); /* Ruta de la imagen en tu proyecto */
+    background-size: cover; /* Ajusta la imagen para que se vea completamente sin recortarse */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen quede fija mientras se hace scroll */
+   
+}
