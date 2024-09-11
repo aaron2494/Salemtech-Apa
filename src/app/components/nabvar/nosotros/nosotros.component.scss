@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    
   }
   
   /* Imagen personalizada */
@@ -49,14 +49,14 @@
   
   /* Contenedor de texto */
   .text-content { 
-    color: #ffffff	;
+    color: #000000	;
     max-width: 600px; 
     margin-bottom: 50px;
   }
   
   /* Título de la sección */
   .section-title {
-    color: #ffffff	; 
+    color: #000000	; 
     text-shadow: #000000 0 4px 4px;
    /* Fuente serif para un toque formal */
     font-size: 2.5rem; /* Tamaño de fuente más grande */
