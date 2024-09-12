@@ -99,3 +99,25 @@ input[type="tel"] {
   font-size: 0.875rem;
 }
 
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    flex-direction: column; /* Hace que la imagen esté encima del formulario */
+    height: auto; /* Permite que el contenedor se ajuste dinámicamente */
+  }
+
+  .contact-image, .contact-form-container {
+    flex: none;
+    width: 100%; /* Hace que tanto la imagen como el formulario ocupen el 100% del ancho */
+    border-radius: 0; /* Elimina los bordes redondeados en pantallas pequeñas */
+  }
+
+  .contact-image img {
+    border-radius: 0; /* Asegura que la imagen no tenga bordes redondeados en móviles */
+    height: 350px; /* Permite que la imagen se ajuste dinámicamente en pantallas más pequeñas */
+  }
+
+  .contact-form-container {
+    padding: 15px; /* Reduce el padding en móviles para un mejor ajuste */
+    box-shadow: none; /* Puedes eliminar o ajustar el shadow si es necesario en pantallas pequeñas */
+  }
+}
