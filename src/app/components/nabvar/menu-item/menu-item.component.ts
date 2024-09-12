@@ -119,7 +119,7 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     const cardsCarouselElement = this.el.nativeElement.querySelector('#cardsCarousel');
     if (cardsCarouselElement) {
       this.cardsCarouselInstance = new Carousel(cardsCarouselElement, {
-        interval: 5000, // Intervalo automático de 5 segundos
+        interval: 3000, // Intervalo automático de 5 segundos
         ride: 'carousel'
       });
     }
@@ -164,7 +164,7 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     this.cardsCarouselInstance.pause();
     setTimeout(() => {
       this.cardsCarouselInstance.cycle();  // Reanuda el carrusel automático después de 1 segundo
-    }, 300);  // Temporizador más corto para el swipe manual
+    }, 200);  // Temporizador más corto para el swipe manual
   }
 
 }

@@ -7,7 +7,7 @@
   }
   /* Ajustes para la tarjeta descriptiva */
   .content-wrapper {
-    background-color: rgba(247, 247, 247, 0.1); ;
+    background-color: rgba(0, 0, 0, 0.5); ;
     justify-content: center;
     padding-top: 10px;
     display: flex;
@@ -50,7 +50,7 @@
   
   /* Contenedor de texto */
   .text-content { 
-    color: #000000	;
+    color: #d2d2d2	;
     max-width: 600px; 
     margin-bottom: 50px;
   }
@@ -119,6 +119,7 @@
           margin-right: 50px;
           padding-left: 0;
           text-align: center;
+          color: #d2d2d2;
         }
 
   }
