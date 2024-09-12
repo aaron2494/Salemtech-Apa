@@ -7,8 +7,9 @@
   }
   /* Ajustes para la tarjeta descriptiva */
   .content-wrapper {
+    background-color: rgba(247, 247, 247, 0.1); ;
+    justify-content: center;
     padding-top: 10px;
-    padding-bottom: 10px;
     display: flex;
     align-items: center;
     width: 100%;
@@ -28,7 +29,7 @@
   }
   #imagescarousel {
     width: 50%; /* Este valor debe coincidir con el ancho de .custom-img */
-    max-width: 600px;
+    max-width: 500px;
     min-height: 400px; /* Ajusta este valor según la altura de tus imágenes */
     overflow: hidden;
   
@@ -76,7 +77,7 @@
     border-radius: 5px;
     font-size: 1.2rem;
     line-height: 1.8;
-    text-align: left;
+    text-align: justify; /* Justifica el texto para un borde derecho uniforme */
   }
   
   @media (max-width: 768px) {

@@ -35,7 +35,7 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     {
       icon: '/iconos_tecno.png',
       title: 'Soporte de Clase Mundial',
-      text: 'Contamos con un soporte de elite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no un proveedor más.'
+      text: 'Tenemos a disposicion un soporte de elite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no otro proveedor más.'
     }
   ];
 

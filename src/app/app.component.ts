@@ -9,6 +9,7 @@ import { NabvarComponent } from "./components/nabvar/nabvar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { Meta, Title } from '@angular/platform-browser';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,7 +19,7 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MainComponent, ContactComponent, Seccion2Component, NabvarComponent, FooterComponent,NgbModalModule, NgbModule],
+  imports: [CommonModule,HttpClientModule, RouterOutlet, MainComponent, Seccion2Component, NabvarComponent, FooterComponent,NgbModalModule, NgbModule],
   templateUrl: './app.component.html',
   
   styleUrls: ['./app.component.scss'],

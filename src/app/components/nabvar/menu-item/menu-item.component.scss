@@ -70,7 +70,7 @@ h2.text-center {
 /* Estilos de la tarjeta */
 .card {
   opacity: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   transform: translateY(20px) rotateX(0) rotateY(0);
   /*Posicióninicial*/overflow: hidden;
   background: url('../../../../assets/leonardo-background-white.jpg') no-repeat center center;
@@ -83,7 +83,7 @@ h2.text-center {
 }
 
 .card-title{
-  color: #000000;
+  color: #18246b;
 }
 .card-text{
   font-size: 1rem;

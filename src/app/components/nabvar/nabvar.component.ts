@@ -1,12 +1,12 @@
 import { CommonModule, NgClass, NgIf } from '@angular/common';
-import {  ChangeDetectorRef, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import {  ChangeDetectorRef, Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
-
+import { Collapse } from 'bootstrap';
 
 @Component({
   selector: 'app-nabvar',
@@ -16,12 +16,12 @@ import Swal from 'sweetalert2';
   imports: [NgIf, NgClass,FormsModule, CommonModule], // Asegúrate de que NgIf esté aquí
 })
 export class NabvarComponent implements OnInit{
-  @ViewChild('contactModal') contactModal!: TemplateRef<any>;
+  @ViewChild('contactModal') contactModal!: ElementRef;
   isNavbarCollapsed = true;
   public isInSeccion2: boolean = false;
   public router: Router;
  
-  
+  @ViewChild('navbarNavDropdown', { static: false }) navbarNavDropdown!: ElementRef
   constructor(private http: HttpClient,router: Router, private cdr: ChangeDetectorRef, private modalService:NgbModal) {
     this.router = router;
   }
@@ -32,30 +32,35 @@ export class NabvarComponent implements OnInit{
     asunto: '',
     mensaje: ''
   };
-  openContactModal() {
+  openContactModal(): void {
     const modalRef = this.modalService.open(this.contactModal, {
       ariaLabelledBy: 'contactModalLabel',
       size: 'lg'
     });
-
-  } 
+    this.closeNavbar(); // Colapsar navbar después de abrir el modal
+  }
   
 
   ngOnInit(): void {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        // Verifica si la URL actual corresponde a '/seccion2'
-        this.isInSeccion2 = event.urlAfterRedirects.includes('/seccion2');
-        console.log('isInSeccion2: ', this.isInSeccion2); // Para verificar
-
-        // Forzamos la detección de cambios con un pequeño retraso
-        setTimeout(() => {
-          this.cdr.detectChanges();
-        }, 0);
-      }
-    });
   
   }
+
+  toggleNavbar(navbar: HTMLElement): void {
+    const navbarCollapse = new Collapse(navbar, {
+      toggle: true // Alterna entre abrir y cerrar
+    });
+  }
+  closeNavbar(): void {
+    const navbarCollapse = this.navbarNavDropdown.nativeElement;
+    if (navbarCollapse.classList.contains('show')) {
+      // Usar Bootstrap's Collapse JavaScript para asegurar el cierre
+      const collapseInstance = new (window as any).bootstrap.Collapse(navbarCollapse, {
+        toggle: false
+      });
+      collapseInstance.hide();
+    }
+  }
+
   enviarConsulta(form: any) {
     if (form.valid) {
       this.http.post<{ message: string }>('https://backend-email.vercel.app/send-email', this.consulta)
@@ -86,20 +91,13 @@ export class NabvarComponent implements OnInit{
     }
 }
 
-  toggleNavbar(): void {
-    this.isNavbarCollapsed = !this.isNavbarCollapsed;
-  }
-
-  handleNavClick(section: string): void {
-    this.router.navigate(['/'], { fragment: section });
-    this.isNavbarCollapsed = true; // Colapsa el navbar después de la navegación
-  }
-
+   // Método para alternar el estado de colapso del navbar
+  
   navigateToSeccion2() {
     this.router.navigate(['/seccion2']).then(() => {
       window.scrollTo(0, 0); // Fuerza el scroll a la parte superior de la página
     });
-    this.isNavbarCollapsed = true; // Colapsa el navbar después de la navegación
+    this.closeNavbar(); // Colapsar navbar después de abrir el modal
   }
   // Método para manejar el scroll hacia una sección específica
   scrollToSection(section: string): void {
@@ -110,7 +108,7 @@ export class NabvarComponent implements OnInit{
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-      this.isNavbarCollapsed = true; // Colapsa el navbar después de hacer clic
+      this.closeNavbar(); // Colapsar navbar después de abrir el modal
     });
   }
  

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, TemplateRef, ViewChild} from '@angular/core';
+import { Component} from '@angular/core';
 import {  FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent{
-  @ViewChild('contactModal', { static: true }) contactModal!: TemplateRef<any>;
+ 
   constructor(private http: HttpClient) { }
   
 

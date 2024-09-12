@@ -1,98 +1,101 @@
-/* Estilo del contenido del modal */
 
-.modal {
-  border: 1px solid rgba(232, 232, 232, 0.6);
-  max-height: 100vh; /* Altura máxima del modal del 100% de la vista */
-  height: auto; /* La altura del modal será ajustada por su contenido */
-  overflow: hidden; /* Para que no haya scroll */
+.back{
+  background-color: rgba(255, 255, 255, 0.1);  
 }
-.modal-body {
-  max-height: 100vh; /* Limita la altura máxima del modal */
-
- }
-
-/* Color del texto de las etiquetas */
-.modal-body label {
-  color: #000000; /* Cambia el color del texto de las etiquetas a blanco */
+.container {
+  width: 100%;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: stretch; /* Asegura que los elementos hijos tengan la misma altura */
+  height: 100%; /* Asegura que el contenedor ocupe toda la altura de la ventana */
 }
 
-/* Ajusta el tamaño del área de texto */
-textarea.form-control {
-  resize: vertical; /* Permite el ajuste vertical */
-  height: 50px;
-  background-color: rgb(199, 199, 199);  /* Fondo igual al del modal */
-  color: rgb(0, 0, 0); /* Texto dentro del área de texto en blanco */
-  border-color: transparent; /* Opcional: para asegurar que no haya bordes visibles */
+.contact-form-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Ajusta según sea necesario */
+  height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
 }
 
-/* Estilo para los campos de entrada */
-input.form-control {
-  background-color: rgb(199, 199, 199); /* Fondo igual al del modal */
-  color: rgb(0, 0, 0); /* Texto dentro del campo en blanco */
-  border-color: transparent; /* Opcional: para asegurar que no haya bordes visibles */
+.contact-image {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Centra la imagen verticalmente dentro del contenedor */
 }
 
-/* Placeholder en blanco */
-input::placeholder, textarea::placeholder {
-  color: rgb(0, 0, 0); /* Color del texto del placeholder en blanco */
-}
-.btn-primary {
-  color: rgb(0, 0, 0);
-  background-color: rgb(199, 199, 199);
-  border-color: #fff;
+.contact-image img {
+  width: 100%;
+  height: 100%; /* Asegura que la imagen tenga la misma altura que su contenedor */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin deformarse */
+  border-radius: 5px 0 0 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo del botón de contacto */
-.btn-contacto {
-  padding: 15px 30px;
-  font-size: 1.25rem;
-  font-weight: bold;
-  border-radius: 50px;
-  background-color:#000000; 
-  border: none;
-  color: white; /* Color del texto del botón en blanco */
-}
-
-.btn-contacto:hover {
-  background-color: #ffffff;
-  color: #000000;
-  transition: background-color 1s ease, color 1s ease;
-  -webkit-transition: background-color 1s ease, color 1s ease;
-  -moz-transition: background-color 1s ease, color 1s ease;
-  -ms-transition: background-color 1s ease, color 1s ease;
-  -o-transition: background-color 1s ease, color 1s ease;
-}
-.btn-close{
-  color: #fff;
+.contact-form-container {
+  flex: 1;
+  padding: 20px;
   background-color: #fff;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Asegura que el contenido del formulario esté centrado verticalmente */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
 }
-.container2 {
-  background-color: rgba(0, 0, 0, 0.9) !important; // Fondo negro con 0.7 de transparencia
-  color: white !important; // Texto en blanco
-  padding: 50px 0; // Añade algo de padding para espaciar el contenido
-  text-align: center;
-  margin-bottom:10px ;
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los elementos del formulario */
 }
-  h2, p {
-    color: white; // Asegura que el texto dentro del h2 y p sea blanco
-    text-align: center;
-  }
 
-  h2 {
-    font-size: 2.5rem; // Ajusta el tamaño del título
-  }
+.form-group {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
 
-  p {
-    font-size: 1.2rem; // Ajusta el tamaño del párrafo
-    margin-top: 15px;
-  }
+.form-group label {
+  
+  display: flex;
+  align-items: center; /* Alinea el icono y el texto verticalmente */
+  margin-bottom: 5px;
+}
 
-/* Color del borde para campos válidos e inválidos */
-input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  padding-left: 40px; /* Espacio para el icono */
+}
+
+.form-group input.ng-touched.ng-invalid,
+.form-group textarea.ng-touched.ng-invalid {
   border-color: red;
 }
 
-input.ng-touched.ng-valid, textarea.ng-touched.ng-valid {
-  border-color: rgb(0, 255, 0);
-  
+.form-group input.ng-touched.ng-valid,
+.form-group textarea.ng-touched.ng-valid {
+  border-color: green;
 }
+
+.text-danger {
+  color: red;
+  font-size: 0.875rem;
+}
+

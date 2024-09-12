@@ -1,49 +1,22 @@
-/* nabvar.component.scss */
-/* Estilo general del navbar */
-.navbar {
-  padding: 0.5rem 1rem; /* Ajusta el padding según tus necesidades */
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
-
-/* Estilo para el logo */
-.navbar-brand {
-  margin-right: auto; /* Alinea el logo a la izquierda */
-}
-
-/* Estilo para el contenido expandible del navbar */
-.navbar-collapse {
-  display: flex; /* Usa flexbox para alinear los elementos */
-  justify-content: flex-end; /* Alinea los elementos a la derecha */
-}
-
-/* Estilo para la lista de navegación */
-.navbar-nav {
-  display: flex; /* Usa flexbox para alinear los elementos de la lista */
-  margin-left: auto !important; /* Alinea los botones a la izquierda */
- 
-}
-.navbar-toggler {
-  margin-left: auto; /* Alinea el botón de toggler a la derecha */
-}
-/* Asegúrate de que el navbar-toggler tenga el espacio adecuado */
-
 .img {
   height: 60px;
 }
 
-
-.modal-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+#mensaje{
+  height: 20px;
 }
-
 .modal-dialog {
   z-index: 9999; 
    /* Ajusta según lo necesario */
 }
 /* Evita el scroll en el body cuando el modal está abierto */
 .modal-header {
-  background-color: #f7f7f7; /* Cambia el color del fondo */
+  background-color: #cbcbcb; /* Cambia el color del fondo */
   padding: 10px 15px; /* Ajusta el padding de la cabecera */
 }
 

@@ -8,14 +8,6 @@
 
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  color: #ffffff;
-  max-width: 100%;
-}
 
 .overlay {
   position: fixed;
@@ -33,11 +25,14 @@
 }
 /* Estilos para la imagen y el texto */
 .image-text-wrapper {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.1); 
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 0 1rem;
+ 
 }
 
 .image-container {
@@ -47,9 +42,10 @@
 }
 
 .enlargable-image {
+  
   box-shadow: 0 4px 6px rgba(124, 124, 124, 0.4), 0 2px 6px rgba(233, 233, 233, 0.4) !important;
   border: 2px solid rgba(232, 232, 232, 0.6);
-  border-radius: 15px;
+  border-radius: 5px;
   max-width: 600px;
   transition: transform 0.5s ease-in-out, z-index 2s 0.5s;
   cursor: pointer;
@@ -58,13 +54,13 @@
 }
 
 .enlargable-image.expanded {
-  transform: scale(1.3) translateY(-15%) translateX(34%);
+  transform: scale(1.2) translateY(-15%) translateX(34%);
   z-index: 10;
 }
 .text-content {
   max-width: 500px;
   /* Ajusta el ancho máximo del texto */
-  text-align: left;
+  text-align: justify; /* Justifica el texto para un borde derecho uniforme */
   /* Alinea el texto a la izquierda */
 }
 
@@ -81,6 +77,18 @@
 strong{
   color: #000000;
 }
+h2{
+  color: #ffffff	; 
+  text-shadow: #000000 0 4px 4px;
+ /* Fuente serif para un toque formal */
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+  text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
+
+  position: relative;
+  display: inline-block;
+}
 
 @keyframes fadeInUp {
   0% {
@@ -95,16 +103,6 @@ strong{
 }
 
 @media (max-width: 768px) {
-  .icon-wrapper img {
-    max-width: 100px;
-    /* Reducir el tamaño en tablets */
-    max-height: 100%;
-  }
-
-  .icon-wrapper:hover {
-    transform: scale(0.8) rotateY(180deg 0.10s);
-    /* Mantener el hover más pequeño en móviles */
-  }
 
   .two-column-list {
     display: grid;
@@ -118,11 +116,7 @@ strong{
   }
 
   .enlargable-image.expanded {
-    transform: scale(1.3);
-    -webkit-transform: scale(1.3);
-    -moz-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    -o-transform: scale(1.3);
+    transform: scale(1.2);
   }
 
   .image-text-wrapper {

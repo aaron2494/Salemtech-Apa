@@ -7,17 +7,7 @@
 }
  
 
-.black-stripe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 5% 5%, rgba(0, 0, 0, 1 ) 15%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0) 70%);
-  mix-blend-mode: multiply; /* Mezclar el fondo para que se integre mejor *
-  pointer-events: none; /* No interferir con los elementos interactivos */
-  z-index: -1; /* Colocar la franja negra detrás del contenido */
-}
+
   h2 {
       text-align: center;
       color: #ffffff; 
@@ -29,48 +19,48 @@
       margin-bottom: 30px;
       position: relative;
       display: inline-block;
-      transition: color 0.5s ease-in-out;
-      text-decoration:underline 1px ; 
-      text-underline-offset: 10px;
   }
 
   .container{
-   
+    background-color: rgba(255, 255, 255, 0.2);  
+    margin-top: 80px;
     padding-top: 10px;
     width: 100%;
     max-width: 100%;
 
   }
   .intro-text {
-    font-size: 1.2rem;
-    color: #00c2f3;
-    font-weight: bold;
-    line-height: 1.6;
-    text-align: left;
+    font-size: 1.5rem;
+    color: #ffffff;
+    align-items: start;
+    margin-bottom: 100px;
+    
   }
 
   .team-details {
     list-style-type: none;
-    padding-left: 0;
-    margin-left: 0;
-    color: #ffffff ;
+    padding-right: 10px;
+    color: #000000 ;
+    text-align: justify ; 
     
     li {
       display: flex;
       align-items: baseline; // Alinea el texto del título con el texto de la descripción
       margin-bottom: 0.5rem; // Espaciado entre elementos
-        text-align: left;
-      strong {
-        text-decoration:underline 1px ; 
-        text-underline-offset: 5px;
+      text-align: start; 
 
-        color: #00c2f3;
+      strong {
+
+        color: #2c2a8d;
         min-width: 200px; // Ajusta el ancho mínimo del título para alinear los textos
         display: inline-block; // Asegura que todos los títulos ocupen el mismo ancho
-        text-align: left; // Alinea el texto a la izquierda
+        text-align: right; // Alinea el texto a la izquierda
+        padding-right: 20px;
+    
       }
   
       p {
+        text-align: right;
         flex-grow: 1; // Permite que el texto ocupe el resto del espacio disponible
         margin-left: 0.5rem; // Añade un pequeño espacio entre el título y la descripción
      
@@ -94,106 +84,77 @@
   }
 
   .card {
-      width: 400px; /* Tamaño por defecto */
-      height: 300px; /* Tamaño por defecto */
-      margin: 1rem;
-      perspective: 1000px;
-      background-color: rgba(0, 0, 0, 0.9);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9), 0 6px 20px rgba(0, 0, 0, 0.9) ; /* Añade sombra para más profundidad */
-      border-radius: 10px; /* Mejora las esquinas redondeadas */
-      
+    
+    height: auto; /* Altura automática para adaptarse al contenido */
+    margin: 1rem;
+    perspective: 1000px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px; /* Mejora las esquinas redondeadas */
   }
-
+  
   .card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-      transform-origin: center;
-      cursor: pointer;
-      transition: 1s ease-in-out;
-      -webkit-transition: 1s ease-in-out;
-      -moz-transition: 1s ease-in-out;
-      -ms-transition: 1s ease-in-out;
-      -o-transition: 1s ease-in-out;
-}
-
-  .card:hover .card-inner {
-      transform: rotateY(180deg);
-      
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
-
-  .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-  }
-
+  
   .card-front {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(0, 0, 0, 0.1);
-      border:1px  #000000;
-      border-radius: 8px;
-      overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto; /* Altura automática para adaptarse al contenido */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Asegura que los elementos comiencen desde la parte superior */
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 1rem;
   }
+  
   .card-front h5 {
-    margin: 2rem 2rem 1rem;
-    color: #00c2f3;
-    text-shadow: #ffffff   0 0.3px 0.3px;
-}
-
-
+    margin-bottom: 1rem; /* Espacio debajo del nombre */
+    color:#000000;
+    text-align: center; /* Centra el nombre */
+  }
+  
   .card-front img {
-    margin-top: auto;
-      width: 100%;
-      height: auto;
-      border-bottom-left-radius: 8px; /* Coincide con las esquinas redondeadas */
-      border-bottom-right-radius: 8px;
-      object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 8px; /* Coincide con las esquinas redondeadas */
+    border-bottom-right-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1rem; /* Espacio entre la imagen y el cargo */
   }
-
-  .card-back {
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.0);
-      border-radius: 8px;
-      transform: rotateY(180deg);
-      padding: 1rem;
-  }
-
+  
   .cargo {
-    justify-content: flex-start; /* Coloca el contenido al principio */
     font-size: 1.3rem !important;
-      margin: 0.2rem 0;
-      color: #00c2f3;
-      text-decoration: underline; 
+    margin-bottom: 0.5rem; /* Espacio entre el cargo y la descripción */
+    color: #2c2a8d;
+    text-align: center; /* Centra el cargo */
   }
-  .descripcion{
-    justify-content: center;
-    font-size: 1rem ;
+  
+  .descripcion {
+    font-size: 1rem;
+    text-align: center; /* Centra la descripción */
+    margin-bottom: 0; /* Evita márgenes adicionales */
   }
-
- 
-    h2, p {
-      color: white; // Asegura que el texto dentro del h2 y p sea blanco
-      text-align: center;
-    }
   
-    h2 {
-      font-size: 2.5rem; // Ajusta el tamaño del título
-    }
+  h2, p {
+    color: white; /* Asegura que el texto dentro del h2 y p sea blanco */
+    text-align: center;
+  }
   
-    p {
-      font-size: 1.2rem; // Ajusta el tamaño del párrafo
-      margin-top: 15px;
-    }
+  h2 {
+    font-size: 2.5rem; /* Ajusta el tamaño del título */
+  }
+  
+  p {
+    font-size: 1.2rem; /* Ajusta el tamaño del párrafo */
+    margin-top: 15px;
+  }
     @media (min-width: 769px) {
         #read-more-btn {
           display: none;
@@ -202,29 +163,11 @@
 
   @media (max-width: 768px) {
     
-   
-        .card {
-            width: 150px; /* Tamaño reducido para pantallas más pequeñas */
-            height: 250px;
-        }
-  
-      
-      .container-card {
-          display: grid; /* Cambia a grid para mayor control */
-          grid-template-columns: repeat(2, 1fr); /* Dos cartas por fila */
-          gap: 1rem; /* Espacio entre cartas */
-          max-width: 100%;
-      }
-
-      .card {
-          width: 140px; /* Ajuste adicional en pantallas más pequeñas */
-          height: 220px;
-      }
       .intro-text {
         font-size: 15px;
         line-height: 1.5em;
         margin-bottom: 15px;
-        color: #ffffff;
+        color: #000000;
       }
       
       .team-details {
@@ -247,12 +190,12 @@
         display: block;
         font-weight: bold;
         margin-bottom: 5px;
-        color: #00ccff;
+        color: #252d85;
       }
       
       .team-details li span {
         display: block;
-        color: #ffffff;
+        color: #000000;
       }
       
       #read-more-btn {
