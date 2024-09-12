@@ -62,7 +62,7 @@ h2.text-center {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si es necesario */
-  gap: 20px; /* Espacio entre las tarjetas */
+  gap: 10px; /* Espacio entre las tarjetas */
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
  overflow:  hidden ;
 }
