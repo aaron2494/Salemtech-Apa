@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BannerComponent } from '../banner/banner.component';
 import { MenuItemComponent } from '../nabvar/menu-item/menu-item.component';
-import { NabvarComponent } from '../nabvar/nabvar.component';
+
 import { NosotrosComponent } from "../nabvar/nosotros/nosotros.component";
 import { NuestraManeraComponent } from "../nabvar/nuestra-manera/nuestra-manera.component";
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [NabvarComponent,
+  imports: [
     BannerComponent,
     MenuItemComponent, NosotrosComponent, NuestraManeraComponent],
   templateUrl: './main.component.html',

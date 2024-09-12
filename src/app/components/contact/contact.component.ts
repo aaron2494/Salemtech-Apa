@@ -1,19 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component} from '@angular/core';
+import { Component, TemplateRef, ViewChild} from '@angular/core';
 import {  FormsModule } from '@angular/forms';
-
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule,HttpClientModule,],
+  imports: [FormsModule, CommonModule,HttpClientModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent{
-  constructor(private http: HttpClient ) { }
+  @ViewChild('contactModal', { static: true }) contactModal!: TemplateRef<any>;
+  constructor(private http: HttpClient) { }
   
 
     consulta = {
@@ -37,9 +38,6 @@ export class ContactComponent{
                 text: response.message,
                 confirmButtonText: 'OK'
               });
-    
-              // Reiniciar el formulario
-              form.reset();
             },
             error => {
               // Mostrar SweetAlert de error

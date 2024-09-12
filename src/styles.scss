@@ -7,12 +7,15 @@
 html, body {
     font-family: "Josefin Sans", sans-serif;
     min-height: 100vh;
-    overflow-x: auto; /* Asegura que no haya desplazamiento horizontal */
     scroll-behavior: smooth;
     box-sizing: border-box;
     
   }
-  
+
+  body.modal-open {
+    padding-right: 0 !important;
+    
+  }
 
   @keyframes fadeIn {
     from {

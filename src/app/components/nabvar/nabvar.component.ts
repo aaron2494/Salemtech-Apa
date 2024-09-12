@@ -1,21 +1,45 @@
-import { NgClass, NgIf } from '@angular/common';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { CommonModule, NgClass, NgIf } from '@angular/common';
+import {  ChangeDetectorRef, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-nabvar',
   standalone: true,
   templateUrl: './nabvar.component.html',
   styleUrls: ['./nabvar.component.scss'],
-  imports: [NgIf, NgClass], // Asegúrate de que NgIf esté aquí
+  imports: [NgIf, NgClass,FormsModule, CommonModule], // Asegúrate de que NgIf esté aquí
 })
-export class NabvarComponent implements OnInit {
+export class NabvarComponent implements OnInit{
+  @ViewChild('contactModal') contactModal!: TemplateRef<any>;
   isNavbarCollapsed = true;
   public isInSeccion2: boolean = false;
   public router: Router;
-  constructor(router: Router, private cdr: ChangeDetectorRef) {
+ 
+  
+  constructor(private http: HttpClient,router: Router, private cdr: ChangeDetectorRef, private modalService:NgbModal) {
     this.router = router;
   }
+  consulta = {
+    nombre: '',
+    email: '',
+    telefono: '',
+    asunto: '',
+    mensaje: ''
+  };
+  openContactModal() {
+    const modalRef = this.modalService.open(this.contactModal, {
+      ariaLabelledBy: 'contactModalLabel',
+      size: 'lg'
+    });
+
+  } 
+  
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
@@ -30,7 +54,37 @@ export class NabvarComponent implements OnInit {
         }, 0);
       }
     });
+  
   }
+  enviarConsulta(form: any) {
+    if (form.valid) {
+      this.http.post<{ message: string }>('https://backend-email.vercel.app/send-email', this.consulta)
+        .subscribe(
+          response => {
+            // Mostrar SweetAlert de éxito
+            Swal.fire({
+              icon: 'success',
+              title: 'Correo enviado con éxito',
+              text: response.message,
+              confirmButtonText: 'OK'
+            });
+  
+            // Reiniciar el formulario
+            this.modalService.dismissAll();
+          },
+          error => {
+            // Mostrar SweetAlert de error
+            Swal.fire({
+              icon: 'error',
+              title: 'Error al enviar el correo',
+              text: 'Ocurrió un problema al intentar enviar el correo. Por favor, intenta nuevamente.',
+              confirmButtonText: 'OK'
+            });
+            console.log(error);
+          }
+        );
+    }
+}
 
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
@@ -59,4 +113,5 @@ export class NabvarComponent implements OnInit {
       this.isNavbarCollapsed = true; // Colapsa el navbar después de hacer clic
     });
   }
+ 
 }

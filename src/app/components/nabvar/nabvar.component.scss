@@ -1,33 +1,74 @@
 /* nabvar.component.scss */
-#navbar {
-  position: fixed ;
-  padding-right: 20px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.95); /* Fondo transparente */
-  z-index: 1000 ; /* Asegúrate de que esté por encima de otros elementos */
-  transition: all 0.3s ease ; /* Suaviza la transición del tamaño */
-  }
-
-.navbar-brand,
-.nav-link {
-  background-color: rgba(0, 0, 0, 0);
-  color: #000000;
-  transition: color 0.3 ease;
-  border-radius: 10px;
+/* Estilo general del navbar */
+.navbar {
+  padding: 0.5rem 1rem; /* Ajusta el padding según tus necesidades */
 }
 
-.navbar-brand:hover,
-.nav-link:hover {
-  border-radius: 10px;
- background-color: rgb(194, 194, 194);
- color: #000000;
- transition: background-color 0,3s ease, color 0,3s ease;
-}
-.navbar-toggler{
-  background-color: #ffffffe0;
+/* Estilo para el logo */
+.navbar-brand {
+  margin-right: auto; /* Alinea el logo a la izquierda */
 }
 
+/* Estilo para el contenido expandible del navbar */
+.navbar-collapse {
+  display: flex; /* Usa flexbox para alinear los elementos */
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+}
+
+/* Estilo para la lista de navegación */
+.navbar-nav {
+  display: flex; /* Usa flexbox para alinear los elementos de la lista */
+  margin-left: auto !important; /* Alinea los botones a la izquierda */
+ 
+}
+.navbar-toggler {
+  margin-left: auto; /* Alinea el botón de toggler a la derecha */
+}
+/* Asegúrate de que el navbar-toggler tenga el espacio adecuado */
 
 .img {
   height: 60px;
+}
+
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.modal-dialog {
+  z-index: 9999; 
+   /* Ajusta según lo necesario */
+}
+/* Evita el scroll en el body cuando el modal está abierto */
+.modal-header {
+  background-color: #f7f7f7; /* Cambia el color del fondo */
+  padding: 10px 15px; /* Ajusta el padding de la cabecera */
+}
+
+.modal-title {
+  font-size: 1.25rem; /* Ajusta el tamaño del título */
+  font-weight: bold;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+}
+
+/* Color del borde para campos válidos e inválidos */
+input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+input.ng-touched.ng-valid, textarea.ng-touched.ng-valid {
+  border-color: rgb(0, 255, 0);
+  
+}
+@media (max-width: 768px) {
+  .modal-dialog {
+    position: relative;
+    top: 100%; /* Ajusta el valor según sea necesario */
+  }
 }

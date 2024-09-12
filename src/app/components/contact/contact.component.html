@@ -2,17 +2,7 @@
 <div class="container2">
   <h2 class="text-center">Si te interesa la propuesta o tenes alguna consulta </h2>
   <p class="text-center parrafo2">O si te interesa formar parte de nuestro equipo, envíanos un mensaje con tus datos y nos pondremos en contacto.</p>
-<div id="contact" class="text-center my-5">
-  <button type="button" class="btn btn-primary btn-lg btn-contacto" data-bs-toggle="modal" data-bs-target="#contactModal">
-    Contactanos!
-  </button>
-</div>
-</div>
-
-<ng-template #contactModal let-modal>
   <div class="modal-header">
-    <h5 class="modal-title" id="contactModalLabel">Formulario de Contacto</h5>
-    <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
     <form (ngSubmit)="enviarConsulta(contactForm)" #contactForm="ngForm" novalidate>
@@ -57,8 +47,10 @@
           El mensaje es obligatorio.
         </div>
       </div>
-
       <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Enviar Consulta</button>
     </form>
   </div>
-</ng-template>
+
+</div>
+
+

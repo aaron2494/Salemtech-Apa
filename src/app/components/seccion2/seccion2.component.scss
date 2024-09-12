@@ -1,17 +1,23 @@
 /* Estilos generales para la sección */
 #equipo {
-    min-height: calc(100vh - 1px); 
-    background: url('../../../assets/leonardo-banner.jpg'); /* Ruta de la imagen en tu proyecto */
-    background-size: cover; /* Ajusta la imagen para que se vea completamente sin recortarse */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Hace que la imagen quede fija mientras se hace scroll */
-    padding: 2rem 0;
-    text-align: center;
-    margin-top: 80px;
-    overflow-x: hidden;
-    
- }
+  background: linear-gradient(to right, blue, rgb(59, 87, 226), rgb(212, 246, 255)); /* Gradiente de azul a celeste */
+  overflow: hidden;
+  z-index: 0; /* Fondo detrás del contenido */
+  position: relative;
+}
+ 
+
+.black-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 5% 5%, rgba(0, 0, 0, 1 ) 15%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0) 70%);
+  mix-blend-mode: multiply; /* Mezclar el fondo para que se integre mejor *
+  pointer-events: none; /* No interferir con los elementos interactivos */
+  z-index: -1; /* Colocar la franja negra detrás del contenido */
+}
   h2 {
       text-align: center;
       color: #ffffff; 
@@ -26,16 +32,9 @@
       transition: color 0.5s ease-in-out;
       text-decoration:underline 1px ; 
       text-underline-offset: 10px;
-
-
-      &:hover {
-          color: #00c2f3;
-          text-shadow: #000000 0 2px 2px;
-      }
   }
 
   .container{
-    background-color: rgba(0, 0, 0, 0.9);
    
     padding-top: 10px;
     width: 100%;

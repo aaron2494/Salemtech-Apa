@@ -8,6 +8,8 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { NabvarComponent } from "./components/nabvar/nabvar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { Meta, Title } from '@angular/platform-browser';
+import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -16,8 +18,9 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MainComponent, ContactComponent, Seccion2Component, NabvarComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, MainComponent, ContactComponent, Seccion2Component, NabvarComponent, FooterComponent,NgbModalModule, NgbModule],
   templateUrl: './app.component.html',
+  
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('fadeAnimation', [
