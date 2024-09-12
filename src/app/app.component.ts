@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {  NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { ContactComponent } from './components/contact/contact.component';
+import { ContactComponent } from './components/nabvar/contact/contact.component';
 import { MainComponent } from './components/main/main.component';
 import { Seccion2Component } from './components/seccion2/seccion2.component';
 import { animate, style, transition, trigger } from '@angular/animations';

@@ -2,7 +2,7 @@ import { CommonModule, NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
 import { NabvarComponent } from "../nabvar/nabvar.component";
-import { ContactComponent } from '../contact/contact.component';
+import { ContactComponent } from '../nabvar/contact/contact.component';
 import { FooterComponent } from "../footer/footer.component";
 
 interface MiembroEquipo {
