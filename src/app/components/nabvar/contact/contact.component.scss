@@ -4,63 +4,57 @@
   background-color: rgba(0, 0, 0, 0.5);  
 }
 .container {
-  position: relative;
   width: 100%;
   padding-bottom: 20px;
   justify-content: center;
-  align-items: stretch;
-  height: 100%;
-  z-index: 0;
+  align-items: stretch; /* Asegura que los elementos hijos tengan la misma altura */
+  height: 100%; /* Asegura que el contenedor ocupe toda la altura de la ventana */
 }
 
-/* Ajusta la proporción entre la imagen y el formulario */
 .contact-form-wrapper {
-  position: relative;
-  z-index: 0;
   display: flex;
   width: 100%;
-  max-width: 1000px; /* Ajusta el ancho máximo del contenedor */
-  margin: 0 auto; /* Centra el contenedor en la página */
-  height: auto;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* Ajusta según sea necesario */
+  height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
 }
 
 .contact-image {
-  flex: 1; /* El formulario ocupará el 60% del contenedor */
+  flex: 1;
   display: flex;
-  align-items: center;
+  align-items: center; /* Centra la imagen verticalmente dentro del contenedor */
 }
-
 
 .contact-image img {
   width: 100%;
-  height: auto; /* Ajusta la altura para que se mantenga la proporción */
-  object-fit: cover;
+  height: 100%; /* Asegura que la imagen tenga la misma altura que su contenedor */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin deformarse */
   border-radius: 5px 0 0 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .contact-form-container {
-  flex: 0 0 60%; /* El formulario ocupará el 60% del contenedor */
+  flex: 1;
   padding: 20px;
   background-color: #fff;
   border-radius: 0 5px 5px 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
+  justify-content: center; /* Asegura que el contenido del formulario esté centrado verticalmente */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Reduce el espacio entre los elementos del formulario */
+  gap: 15px; /* Espacio entre los elementos del formulario */
 }
 
-.form-group input,
-.form-group textarea {
-  padding: 8px; /* Reduce el padding para hacer los campos más pequeños */
-  font-size: 0.9rem; /* Reduce el tamaño del texto */
+.form-group {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 .form-group label {
