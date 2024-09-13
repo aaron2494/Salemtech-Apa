@@ -10,6 +10,7 @@
 
 
 .overlay {
+  
   position: fixed;
   top: 0;
   left: 0;
@@ -25,12 +26,12 @@
 }
 /* Estilos para la imagen y el texto */
 .image-text-wrapper {
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.8); 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   position: relative;
  
 }
@@ -42,7 +43,7 @@
 }
 
 .enlargable-image {
-  border: 2px solid rgba(232, 232, 232, 0.6);
+
   border-radius: 5px;
   max-width: 600px;
   transition: transform 0.5s ease-in-out, z-index 2s 0.5s;
@@ -126,23 +127,22 @@ strong{
     /* Cambia la dirección de los elementos para pantallas más pequeñas */
     align-items: center;
     /* Centra los elementos verticalmente */
-    padding: 0 0.5rem;
-    /* Reduce el relleno */
+    padding-top: 10px;
   }
 
   .enlargable-image {
-    max-width: 100%;
+    max-width: 90%;
     /* Ajusta el ancho máximo de la imagen en pantallas más pequeñas */
   }
 
   .text-content {
     text-align: center;
     /* Centra el texto */
-    padding: 0.5rem;
     /* Reduce el relleno */
     color:#d2d2d2;
   }
   h2{
+    padding-top: 10px;
     margin-right: 10px;
   }
 }
