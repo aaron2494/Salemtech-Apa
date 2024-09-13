@@ -1,6 +1,6 @@
 /* Estilos generales para la sección */
 #equipo {
-  background: linear-gradient(to right,rgb(41, 74, 239), rgb(59, 87, 226) , rgb(185, 240, 255)); /* Gradiente de azul a celeste */
+  background: linear-gradient(to right, blue, rgb(152, 167, 241), rgb(185, 240, 255)); /* Gradiente de azul a celeste */
   overflow: hidden;
   z-index: 0; /* Fondo detrás del contenido */
   position: relative;
@@ -32,7 +32,7 @@
   }
 
   .container{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.8);
     margin-top: 80px;
     padding-top: 10px;
     width: 100%;
@@ -98,7 +98,7 @@
     height: auto; /* Altura automática para adaptarse al contenido */
     margin: 1rem;
     perspective: 1000px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px; /* Mejora las esquinas redondeadas */
   }
   
@@ -226,7 +226,7 @@
         opacity: 1;
       }
       .card{
-        background-color: rgba(0, 0, 0, 0.8); 
+        background-color: rgba(0, 0, 0, 0.8 ); 
       }
     
   }
