@@ -16,8 +16,12 @@
 }
 /* Evita el scroll en el body cuando el modal está abierto */
 .modal-header {
-  background-color: #cbcbcb; /* Cambia el color del fondo */
+  color: rgb(0, 0, 0);
+  background: white;
   padding: 10px 15px; /* Ajusta el padding de la cabecera */
+}
+.modal-body{
+  background: linear-gradient(to right, rgb(152, 167, 241), rgb(212, 246, 255));
 }
 
 .modal-title {

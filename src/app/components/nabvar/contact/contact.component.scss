@@ -33,6 +33,7 @@
 }
 
 .contact-form-container {
+  background: linear-gradient(to right, rgb(152, 167, 241), rgb(212, 246, 255));
   flex: 1;
   padding: 20px;
   background-color: #fff;
@@ -45,6 +46,7 @@
 }
 
 .contact-form {
+  
   display: flex;
   flex-direction: column;
   gap: 15px; /* Espacio entre los elementos del formulario */
