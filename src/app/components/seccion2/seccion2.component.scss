@@ -188,8 +188,12 @@
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-        transition: max-height 3s ease, opacity 3s ease;
-      }
+        transition: max-height 2s ease, opacity 2s ease;
+        -webkit-transition: max-height 2s ease, opacity 2s ease;
+        -moz-transition: max-height 2s ease, opacity 2s ease;
+        -ms-transition: max-height 2s ease, opacity 2s ease;
+        -o-transition: max-height 2s ease, opacity 2s ease;
+}
       
       .team-details li {
         margin-bottom: 15px;
@@ -222,7 +226,7 @@
       }
       
       .show-content {
-        max-height: 680px; /* Ajusta este valor según el contenido */
+        max-height: 700px; /* Ajusta este valor según el contenido */
         opacity: 1;
       }
       .card{
