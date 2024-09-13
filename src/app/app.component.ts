@@ -1,7 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {  NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { ContactComponent } from './components/nabvar/contact/contact.component';
 import { MainComponent } from './components/main/main.component';
 import { Seccion2Component } from './components/seccion2/seccion2.component';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -21,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule,HttpClientModule, RouterOutlet, MainComponent, Seccion2Component, NabvarComponent, FooterComponent,NgbModalModule, NgbModule],
   templateUrl: './app.component.html',
-  
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('fadeAnimation', [
@@ -38,6 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
 })
 
 export class AppComponent implements OnInit ,AfterViewInit {
+
+  footerLoaded = false;
   constructor(private cdr:ChangeDetectorRef, private meta: Meta,private title: Title, private router: Router ){}
 
   ngOnInit(): void {
@@ -46,9 +46,16 @@ export class AppComponent implements OnInit ,AfterViewInit {
         this.updateMetaTagsBasedOnRoute(event.urlAfterRedirects);
       }
     });
-
+    
   }
- 
+  onUserScroll() {
+    window.addEventListener('scroll', () => {
+      if (!this.footerLoaded && window.scrollY > 1500) {  // Condición de scroll
+        this.footerLoaded = true;
+        this.cdr.detectChanges();  // Forzar detección de cambios cuando se cargue el footer
+      }
+    });
+  }
   getRouteAnimation() {
     // Devuelve el nombre del trigger de animación que quieres usar
     return "fadeAnimation"; // Usar la propiedad del trigger directamente
@@ -56,6 +63,7 @@ export class AppComponent implements OnInit ,AfterViewInit {
   ngAfterViewInit() {
     // Forzar la detección de cambios después de que la vista se ha inicializado
     this.cdr.detectChanges();
+    this.onUserScroll();
   }
 
   private updateMetaTagsBasedOnRoute(url: string): void {

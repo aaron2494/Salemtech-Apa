@@ -2,5 +2,8 @@
 <div [@fadeAnimation]="getRouteAnimation()">
     <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>
+  <ng-container *ngIf="footerLoaded">
+    <app-footer></app-footer>
+  </ng-container>
+ 
  

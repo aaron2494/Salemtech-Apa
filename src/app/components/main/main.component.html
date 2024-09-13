@@ -9,8 +9,15 @@
     <app-menu-item></app-menu-item>
   </section>
   <app-nosotros></app-nosotros>
-  <app-nuestra-manera></app-nuestra-manera>
- <app-contact></app-contact>
+   <!-- Cargar NuestraManeraComponent de manera diferida -->
+   <ng-container *ngIf="nuestraManeraLoaded">
+    <app-nuestra-manera></app-nuestra-manera>
+  </ng-container>
+
+  <!-- Cargar ContactComponent de manera diferida -->
+  <ng-container *ngIf="contactLoaded">
+    <app-contact></app-contact>
+  </ng-container>
 </div>
 
 }
