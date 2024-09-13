@@ -10,8 +10,8 @@ import { Carousel } from 'bootstrap';
   styleUrl: './nosotros.component.scss'
 })
 export class NosotrosComponent implements AfterViewInit{
-  @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
-  constructor(private el:ElementRef) {};
+ 
+  constructor() {};
   images = [
     '../../../../assets/calidad.jpg',
     '../../../../assets/concepto-control-calidad-estandar-m.jpg',
@@ -20,17 +20,6 @@ export class NosotrosComponent implements AfterViewInit{
 
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.initializeCarousels();
-    }, 0);
+   
   }
-  private initializeCarousels() {
-  const imagesCarouselElement = this.el.nativeElement.querySelector('#imagescarousel');
-  if (imagesCarouselElement) {
-    new Carousel(imagesCarouselElement, {
-      interval: 3000,
-      ride: 'carousel'
-    });
-  }
-}
 }

@@ -23,11 +23,11 @@
     max-width: 600px;
     height: auto ;
     object-fit: cover;
-    border: 2px solid rgba(232, 232, 232, 0.6); /* Borde del mismo color que la línea */
+   
     border-radius: 5px; /* Bordes redondeados */
     transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
   }
-  #imagescarousel {
+  #imagesCarousel {
     width: 50%; /* Este valor debe coincidir con el ancho de .custom-img */
     max-width: 500px;
     min-height: 400px; /* Ajusta este valor según la altura de tus imágenes */
@@ -81,12 +81,16 @@
   }
   
   @media (max-width: 768px) {
-    .custom-img, #imagescarousel {
-        width: 90%; /* La imagen y el carrusel ocupan el ancho completo */
-        min-height: auto; /* Permite que la altura sea flexible */
-        transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1); /* Transición suave en el cambio de imágenes */
-      
-      }
+    .custom-img, #imagesCarousel {
+        width: 90%;
+        /*Laimagenyelcarruselocupanelanchocompleto*/min-height: auto;
+        /*Permitequelaalturaseaflexible*/transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+         /* Transición suave en el cambio de imágenes */            ;
+        -webkit-transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
+        -moz-transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
+        -ms-transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
+        -o-transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
         .content-wrapper {
           background-color: rgba(0, 0, 0, 0.8); 
           flex-direction: column;
