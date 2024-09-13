@@ -124,9 +124,3 @@ input[type="tel"] {
     box-shadow: none; /* Puedes eliminar o ajustar el shadow si es necesario en pantallas pequeñas */
   }
 }
-@media (min-width: 992px) {
-  .container, .container-lg, .container-md, .container-sm {
-      height: 500px;
-      max-width: 700px;
-  }
- }
