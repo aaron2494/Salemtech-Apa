@@ -28,7 +28,7 @@ export class NosotrosComponent implements AfterViewInit{
   const imagesCarouselElement = this.el.nativeElement.querySelector('#imagescarousel');
   if (imagesCarouselElement) {
     new Carousel(imagesCarouselElement, {
-      interval: 7000,
+      interval: 3000,
       ride: 'carousel'
     });
   }

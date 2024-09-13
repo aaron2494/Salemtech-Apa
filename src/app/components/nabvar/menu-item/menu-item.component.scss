@@ -1,31 +1,5 @@
 
 
-/* Animación de aparición */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(
-      20px
-    ); /* Puedes ajustar la posición inicial si quieres */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
 /* Sección de presentación */
 #presentation {
   flex: 1;
@@ -69,19 +43,12 @@ h2.text-center {
 
 /* Estilos de la tarjeta */
 .card {
-  opacity: 0;
+  opacity: 1;
   border-radius: 5px;
-  transform: translateY(20px) rotateX(0) rotateY(0);
-  /*Posicióninicial*/overflow: hidden;
+  overflow: hidden;
   background: url('../../../../assets/leonardo-background-white.jpg') no-repeat center center;
   background-size: cover; /* Ajusta la imagen al tamaño de la tarjeta */
 }
-.card.show {
-  opacity: 1 ;
-  transform: translateY(0) rotateX(0) rotateY(0); /* Asegura que las tarjetas se muestren sin rotación */
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
 .card-title{
   color: #18246b;
 }
@@ -89,42 +56,10 @@ h2.text-center {
   font-size: 1rem;
 }
 
-/* Animación secuencial: Añadiendo retrasos */
-.card:nth-child(1) {
-  animation-delay: 2s; /* Sin retraso para la primera card */
-}
 
-.card:nth-child(2) {
-  animation-delay: 3s; /* 0.2 segundos de retraso */
-}
-
-.card:nth-child(3) {
-  animation-delay: 5s; /* 0.4 segundos de retraso */
-}
-
-/* Añadir sombra al texto para mejorar la legibilidad */
-
-
-/*SECCION NUESTRAS FORMAS*/
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-  @media (min-width: 768px) {
-    .row .card {
-      animation: fadeInUp 5s ease-in-out forwards;
-      -webkit-animation: fadeInUp 5s ease-in-out forwards;
-}
-  }
 
 @media (max-width: 768px) {
+
   #presentation {
     padding: 20px;
   }
@@ -134,9 +69,7 @@ h2.text-center {
     margin-bottom: 20px;
   }
 
-  .carousel-item {
-    transition: transform 3s ease-in-out !important;
-  }
+ 
   .card-container {
     flex-direction:column;
     align-items: center;
@@ -145,11 +78,13 @@ h2.text-center {
   .card {
     width: 90%;
     /*Ajustaeltamañodelastarjetas*/margin-bottom: 10px;
-    /*Añadeespacioentrelastarjetas*/animation: fadeIn 2s ease-in-out forwards;
-    -webkit-animation: fadeIn 2s ease-in-out forwards;
+  
 }
 .card-text{
   font-size: 1.2rem;
+}
+.carousel-indicators{
+padding-top: 20px !important;
 }
 
 }
