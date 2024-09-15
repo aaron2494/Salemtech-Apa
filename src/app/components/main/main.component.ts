@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { BannerComponent } from '../banner/banner.component';
 import { MenuItemComponent } from '../nabvar/menu-item/menu-item.component';
 
@@ -19,10 +19,11 @@ import { NgIf } from '@angular/common';
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
-export class MainComponent {
+export class MainComponent implements OnDestroy {
   nuestraManeraLoaded = false;
   contactLoaded = false;
-  constructor(private route: ActivatedRoute ,private cdr:ChangeDetectorRef) {}
+
+  constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.route.fragment.subscribe(fragment => {
@@ -34,24 +35,29 @@ export class MainComponent {
     this.cdr.detectChanges();
     this.onUserScroll();  // Iniciar la escucha del evento de scroll
   }
+
   onUserScroll() {
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-
-      // Condiciones para cargar NuestraManeraComponent
-      if (!this.nuestraManeraLoaded && scrollY > 300) {
-        this.nuestraManeraLoaded = true;
-        this.cdr.detectChanges();
-      }
-
-      // Condiciones para cargar ContactComponent
-      if (!this.contactLoaded && scrollY > 800) {
-        this.contactLoaded = true;
-        this.cdr.detectChanges();
-      }
-    });
+    window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
- 
-  
+  handleScroll() {
+    const scrollY = window.scrollY;
+
+    // Condiciones para cargar NuestraManeraComponent
+    if (!this.nuestraManeraLoaded && scrollY > 300) {
+      this.nuestraManeraLoaded = true;
+      this.cdr.detectChanges();
+    }
+
+    // Condiciones para cargar ContactComponent
+    if (!this.contactLoaded && scrollY > 800) {
+      this.contactLoaded = true;
+      this.cdr.detectChanges();
+    }
+  }
+
+  ngOnDestroy() {
+    // Eliminar el event listener cuando se destruye el componente
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
+  }
 }
