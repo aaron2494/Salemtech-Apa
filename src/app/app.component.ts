@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {  NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
@@ -9,6 +9,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { Meta, Title } from '@angular/platform-browser';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 
 
@@ -35,9 +36,10 @@ import { HttpClientModule } from '@angular/common/http';
   ]
 })
 
-export class AppComponent implements OnInit ,AfterViewInit {
+export class AppComponent implements OnInit ,AfterViewInit , OnDestroy{
 
   footerLoaded = false;
+  routerSubscription!: Subscription;
   constructor(private cdr:ChangeDetectorRef, private meta: Meta,private title: Title, private router: Router ){}
 
   ngOnInit(): void {
@@ -46,15 +48,42 @@ export class AppComponent implements OnInit ,AfterViewInit {
         this.updateMetaTagsBasedOnRoute(event.urlAfterRedirects);
       }
     });
+      // Detectar scroll del usuario
+      this.onUserScroll();
+       // Escuchar los cambios de ruta
+       this.routerSubscription = this.router.events.subscribe(event => {
+        if (event instanceof NavigationEnd) {
+          this.checkIfFooterShouldLoad();
+        }
+      });
     
   }
-  onUserScroll() {
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  }
+  onUserScroll(): void {
     window.addEventListener('scroll', () => {
-      if (!this.footerLoaded && window.scrollY > 1500) {  // Condición de scroll
-        this.footerLoaded = true;
-        this.cdr.detectChanges();  // Forzar detección de cambios cuando se cargue el footer
+      if (!this.footerLoaded && window.scrollY > 1500) {
+        this.loadFooter();
       }
     });
+  }
+  checkIfFooterShouldLoad(): void {
+    // Verificamos la altura de la página actual
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Si la altura de la página es menor que 1500px o si el usuario ya ha scrolleado lo suficiente
+    if (scrollableHeight < 1500 || window.scrollY > 1500) {
+      this.loadFooter();
+    }
+  }
+  loadFooter(): void {
+    if (!this.footerLoaded) {
+      this.footerLoaded = true;
+      this.cdr.detectChanges(); // Forzar la detección de cambios
+    }
   }
   getRouteAnimation() {
     // Devuelve el nombre del trigger de animación que quieres usar

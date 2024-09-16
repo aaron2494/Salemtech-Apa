@@ -1,7 +1,7 @@
 
 .back{
   padding-top: 10px;
-  background-color: rgba(0, 0, 0, 0.8);  
+  background: linear-gradient(to right, rgb(0, 21, 255,0.5), rgb(0, 0, 0)); 
 }
 .container {
   display: flex;
@@ -44,20 +44,20 @@
   flex-direction: column;
   justify-content: center; /* Asegura que el contenido del formulario esté centrado verticalmente */
   overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  max-width: 50%;
 }
 
 .contact-form {
   
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Espacio entre los elementos del formulario */
+ 
 }
 
 .form-group {
-  padding: 10px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+ 
 }
 
 .form-group label {
