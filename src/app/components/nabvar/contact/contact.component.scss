@@ -121,6 +121,7 @@ input[type="tel"] {
   }
 
   .contact-form-container {
+    max-width: 100%;
     padding: 15px; /* Reduce el padding en móviles para un mejor ajuste */
     box-shadow: none; /* Puedes eliminar o ajustar el shadow si es necesario en pantallas pequeñas */
   }
