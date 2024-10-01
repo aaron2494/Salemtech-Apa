@@ -1,0 +1,76 @@
+.section-process {
+    background: linear-gradient(to bottom, #000 60%, #fff 40%);
+   padding-bottom: 40px;
+  }
+  
+  h3 {
+    
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .carousel {
+    width: 80%;
+  }
+  
+  .process-step {
+    background-color: #0015ff;
+    /*Fondoazulparalastarjetas*/color: white;
+    padding: 10px;
+    border-radius: 0px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    margin: 0 10px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+}
+  
+  .step-number {
+    color: #000;
+    font-size: 5rem;
+    font-weight: bold;
+  }
+  
+  .card h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-weight: 300;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    align-items: center;
+  }
+  
+
+  
+  .carousel-item.active .card-animated {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+}
+.carousel-item-next.carousel-item-left,
+.carousel-item-prev.carousel-item-right {
+  transform: translateX(-100vw); /* Mueve las tarjetas hacia la izquierda cuando cambian */
+}
+
+.carousel-item-prev.carousel-item-left,
+.carousel-item-next.carousel-item-right {
+  transform: translateX(100vw); /* Mueve las tarjetas hacia la derecha cuando cambian */
+}
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    opacity: 0;
+  }
+  

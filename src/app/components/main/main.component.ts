@@ -2,11 +2,12 @@ import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { BannerComponent } from '../banner/banner.component';
 import { MenuItemComponent } from '../nabvar/menu-item/menu-item.component';
 
-import { NosotrosComponent } from "../nabvar/nosotros/nosotros.component";
-import { NuestraManeraComponent } from "../nabvar/nuestra-manera/nuestra-manera.component";
+import { NosotrosComponent } from "../nabvar/que-hacemos/nosotros.component";
+import { NuestraManeraComponent } from "../nabvar/integraciones/nuestra-manera.component";
 import { ActivatedRoute } from '@angular/router';
 import { ContactComponent } from '../nabvar/contact/contact.component';
 import { NgIf } from '@angular/common';
+import { ProcesosComponent } from "../nabvar/procesos/procesos.component";
 
 
 
@@ -15,7 +16,9 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [
     BannerComponent,
-    MenuItemComponent, NosotrosComponent, NuestraManeraComponent,ContactComponent,NgIf],
+    MenuItemComponent, NosotrosComponent, NuestraManeraComponent, ContactComponent, NgIf,
+    ProcesosComponent
+],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

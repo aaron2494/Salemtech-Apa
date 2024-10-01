@@ -52,11 +52,15 @@
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.5s ease, opacity 0.5s ease;
-  }
+    -webkit-transition: max-height 0.5s ease, opacity 0.5s ease;
+    -moz-transition: max-height 0.5s ease, opacity 0.5s ease;
+    -ms-transition: max-height 0.5s ease, opacity 0.5s ease;
+    -o-transition: max-height 0.5s ease, opacity 0.5s ease;
+}
   p{
     
-    margin-left: 40px;
-    padding-right: 50px;
+    margin-left: 30px;
+    padding-right: 30px;
   }
   
   .accordion-content.active {
@@ -81,6 +85,8 @@
   }
   
   .bt-service p {
+    font-weight: 600;
+    color: rgb(188, 20, 255);
    margin-left: 20px;
     margin: 0;                  /* Elimina el margen del párrafo */
     white-space: nowrap;
