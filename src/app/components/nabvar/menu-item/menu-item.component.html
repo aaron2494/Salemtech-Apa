@@ -1,9 +1,9 @@
-    <section id="presentation" class="py-5">
-      <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
-      <!-- Vista en pantallas grandes -->
+<section id="presentation" class="py-5">
+  <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
+  <!-- Vista en pantallas grandes -->
   <div class="row justify-content-center d-none d-md-flex">
-    <div class="col-md-3 " *ngFor="let card of cards; let i = index">
-      <div class="card border-2 shadow-sm">
+    <div class="col-md-3 card-container" *ngFor="let card of cards; let i = index">
+      <div class="card  shadow-sm">
         <div class="card-body">
           <h5 class="card-title">{{ card.title }}</h5>
           <p class="card-text">{{ card.text }}</p>
@@ -12,12 +12,15 @@
     </div>
   </div>
 
-
   <!-- Carrusel para pantallas pequeñas -->
-  <div id="cardsCarousel" class="carousel slide d-block d-md-none" >
+  <div id="cardsCarousel" class="carousel slide d-block d-md-none">
     <div class="carousel-inner">
-      <div class="carousel-item" *ngFor="let card of cards; let i = index" [class.active]="i === 0">
-        <div class="card border-0 shadow-sm mx-auto">
+      <div
+        class="carousel-item"
+        *ngFor="let card of cards; let i = index"
+        [class.active]="i === 0"
+      >
+        <div class="card  shadow-sm mx-auto">
           <div class="card-body">
             <h5 class="card-title">{{ card.title }}</h5>
             <p class="card-text">{{ card.text }}</p>
@@ -25,25 +28,26 @@
         </div>
       </div>
     </div>
-    <div class="carousel-indicators">
-      <button *ngFor="let card of cards; let i = index" 
-      [class.active]="i === 0"
+
+
+    <!-- Botones de control del carrusel -->
+    <button
+      class="carousel-control-prev"
       type="button"
       data-bs-target="#cardsCarousel"
-      [attr.data-bs-slide-to]="i">
-</button>
-    </div>
-  
-    
-    <!-- Botones de control del carrusel -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#cardsCarousel" data-bs-slide="prev" aria-label="Previous">
+      data-bs-slide="prev"
+      aria-label="Previous"
+    >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#cardsCarousel" data-bs-slide="next" aria-label="Next">
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#cardsCarousel"
+      data-bs-slide="next"
+      aria-label="Next"
+    >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </button>
   </div>
-
-  </section>
-
-
+</section>

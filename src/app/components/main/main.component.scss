@@ -9,11 +9,11 @@
    
 /*  }*/
 
-.home {
+/*
+ .home {
     position: relative;
-    background: linear-gradient(to right, blue, rgb(152, 167, 241), rgb(212, 246, 255)); /* Gradiente de azul a celeste */
-    overflow: hidden;
-    z-index: 0; /* Fondo detrás del contenido */
+    background: linear-gradient(to right, blue, rgb(152, 167, 241), rgb(212, 246, 255)); 
+    z-index: 0; 
   }
   
   .black-stripe {
@@ -23,10 +23,11 @@
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 5% 5%, rgba(0, 0, 0, 1 ) 15%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0) 70%);
-    mix-blend-mode: multiply; /* Mezclar el fondo para que se integre mejor *
-    pointer-events: none; /* No interferir con los elementos interactivos */
-    z-index: -1; /* Colocar la franja negra detrás del contenido */
-  }
+    mix-blend-mode: multiply; 
+    pointer-events: none;
+    z-index: -1; 
+  } 
+  */
   
   #presentation,
   app-nosotros,

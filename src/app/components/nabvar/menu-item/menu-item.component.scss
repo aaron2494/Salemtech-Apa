@@ -2,6 +2,7 @@
 
 /* Sección de presentación */
 #presentation {
+  background-color: #000000;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -15,45 +16,40 @@
 
 /* Título */
 h2.text-center {
-
-    text-align: center;
     color: #fcfcfc; 
     text-shadow: #000000 0 4px 4px;
     font-size: 2.5rem; /* Tamaño de fuente más grande */
     font-weight: bold;
     letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
-    text-transform: uppercase; /* Todo en mayúsculas para un impacto visual mayor */
     margin-bottom: 30px; /* Espacio inferior ajustado */
-    position: relative;
-    display: inline-block;
-    transition: color 0.5s ease-in-out; /* Transición suave del color */
-}
-
-
-
-/* Contenedor de las tarjetas */
-.card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si es necesario */
-  gap: 10px; /* Espacio entre las tarjetas */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
- overflow:  hidden ;
+  
 }
 
 /* Estilos de la tarjeta */
 .card {
   opacity: 1;
-  border-radius: 5px;
   overflow: hidden;
-  background: url('../../../../assets/leonardo-background-white.jpg') no-repeat center center;
-  background-size: cover; /* Ajusta la imagen al tamaño de la tarjeta */
+
 }
+  /* Color para cada card utilizando nth-child */
+  .card-container:nth-child(1) .card {
+    background-color: #1525EA; /* Rojo claro */
+  }
+
+  .card-container:nth-child(2) .card {
+    background-color: #CB00D1; /* Azul claro */
+  }
+
+  .card-container:nth-child(3) .card {
+    background-color: #5100D5; /* Verde claro */
+  }
+
 .card-title{
-  color: #18246b;
+  color: #ffffff;
 }
 .card-text{
   font-size: 1rem;
+  color: #ffffff;
 }
 
 
@@ -64,8 +60,9 @@ h2.text-center {
     padding: 20px;
   }
 
-  h2.text-center {
-    font-size: 1.8rem;
+  .card-title{
+    margin-top: 20px;
+    font-size: 2rem;
     margin-bottom: 20px;
   }
 
@@ -76,15 +73,39 @@ h2.text-center {
   }
 
   .card {
+    border-radius: 0;
     width: 90%;
-    /*Ajustaeltamañodelastarjetas*/margin-bottom: 10px;
+    margin-bottom: 10px;
+    min-height: 400px; /* Aumenta la altura de las tarjetas */
   
 }
+  /* Color para cada card utilizando nth-child */
+
 .card-text{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .carousel-indicators{
-padding-top: 20px !important;
+display: none;
+}
+
+  /* Color para cada card utilizando nth-child */
+  .carousel-item:nth-child(1) .card {
+    background-color: #1525EA; /* Rojo claro */
+  }
+
+  .carousel-item:nth-child(2) .card {
+    background-color: #5100D5; /* Azul claro */
+  }
+  
+  .carousel-item:nth-child(3) .card {
+    background-color: #CB00D1; /* Verde claro */
+  }
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  pointer-events: auto;
+  display: hide;
 }
 
 }

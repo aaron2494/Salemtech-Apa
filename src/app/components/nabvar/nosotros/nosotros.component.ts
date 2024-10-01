@@ -1,25 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { Carousel } from 'bootstrap';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { Component, HostListener } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-nosotros',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgFor,NgIf,NgOptimizedImage],
   templateUrl: './nosotros.component.html',
   styleUrl: './nosotros.component.scss'
 })
-export class NosotrosComponent implements AfterViewInit{
- 
-  constructor() {};
-  images = [
-    '../../../../assets/calidad.jpg',
-    '../../../../assets/concepto-control-calidad-estandar-m.jpg',
-    '../../../../assets/concepto-collage-control-calidad-estandar.jpg'
-  ];
+export class NosotrosComponent {
+  isOpen = [false, false, false]; // Maneja el estado de cada acordeón
 
-
-  ngAfterViewInit(): void {
-   
+  toggleAccordion(index: number) {
+    this.isOpen[index] = !this.isOpen[index];
   }
 }

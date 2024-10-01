@@ -1,44 +1,36 @@
-<div class="divider"></div>
+  <div class="accordion-container">
+    <img ngSrc="../../../../assets/contacto mobile.png" alt="" fill>
+    <h2><strong>¿Qué<br> hacemos?</strong></h2>
 
-      <div id="manera" class="content-wrapper ">
-        <div id="imagesCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div
-              class="carousel-item"
-              *ngFor="let image of images; let i = index"
-              [class.active]="i === 0"
-            >
-              <img [src]="image" class="d-block w-100 custom-img" [alt]="'Imagen ' + (i + 1)" />
-            </div>
-          </div>
-          <div class="carousel-indicators">
-            <button *ngFor="let image of images; let i = index" 
-            [class.active]="i === 0"
-            type="button"
-            data-bs-target="#imagesCarousel"
-            [attr.data-bs-slide-to]="i">
+    <div class="accordion-item">
+      <button class="accordion-btn" (click)="toggleAccordion(0)">
+        <i [ngClass]="isOpen[0] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'"></i><strong>CIBERSEGURIDAD OT</strong> 
       </button>
-          </div>
-        
-          <!-- Botones de control del carrusel -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#imagesCarousel" data-bs-slide="prev" aria-label="Previous">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#imagesCarousel" data-bs-slide="next" aria-label="Next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </button>
-        </div>
-      <div class="text-content ms-5">
-        <h2 class="section-title">Nosotros</h2>
-        <p class="section-text">
-          Contamos con una amplia red de profesionales internos y externos que
-          nos permite integrar soluciones en todos los ámbitos de la
-          automatización y control, como en integraciones a la capa intermedia
-          entre el piso de planta y los ERPs.
-          <br/><br/>
-          Realizamos implementaciones tecnológicas en control de procesos,
-          excelencia operacional, optimización de plantas de procesos de la
-          industria mediana, pesada y desarrollo de sistemas informáticos.
-        </p>
+      <div class="accordion-content" [ngClass]="{ 'active': isOpen[0] }">
+        <p>Detección temprana y respuesta a amenazas de ciberseguridad.</p>
       </div>
     </div>
+
+  <div class="accordion-item">
+    <button class="accordion-btn" (click)="toggleAccordion(1)">
+      <i [ngClass]="isOpen[1] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'"></i><strong>CONSULTORÍA EN AUTOMATIZACIÓN</strong>
+    </button>
+    <div class="accordion-content" [ngClass]="{ 'active': isOpen[1] }">
+      <p>Soluciones para optimización y automatización de procesos industriales.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-btn" (click)="toggleAccordion(2)">
+      <i [ngClass]="isOpen[2] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'"></i><strong>SOLUCIONES AVANZADAS</strong>
+    </button>
+    <div class="accordion-content" [ngClass]="{ 'active': isOpen[2] }">
+      <p>Implementación de tecnologías avanzadas para industria 4.0.</p>
+    </div>
+  </div>
+ 
+    <button type="button" class="btn btn-light bt-service">
+     <p>DESCUBRE TODOS LOS SERVICIOS</p> 
+    </button>
+  
+</div>
