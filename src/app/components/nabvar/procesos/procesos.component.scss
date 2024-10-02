@@ -4,8 +4,7 @@
   }
   
   h3 {
-    
-    font-weight: bold;
+    font-family: "GutonSemBd", Georgia; 
     text-transform: uppercase;
   }
   
@@ -33,13 +32,16 @@
   }
   
   .card h4 {
-    font-size: 1.3rem;
+    font-family: "GutonMed", Georgia;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
   }
   
   .card p {
+    padding-right: 30px;
+    font-family: "Guton", Georgia;
     font-weight: 300;
   }
   

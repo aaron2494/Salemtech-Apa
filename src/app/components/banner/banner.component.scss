@@ -1,9 +1,3 @@
-#home {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
-}
 
 #home img {
   width: 100%;
@@ -13,5 +7,65 @@
 }
 
 @media (max-width: 768px) {
- 
+  #home {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .banner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .banner-content {
+    position: absolute;
+    bottom: 5%;
+    color: white;
+    text-align: start;
+    padding: 20px;
+
+  }
+  
+  .banner-content h1 {
+    font-family: "GutonExtBd", Georgia; 
+    font-size: 55px;
+    margin: 0;
+  }
+  
+  .banner-content p {
+    font-family: "GutonSemBd", Georgia; 
+    font-size: 25px;
+    margin: 10px 0;
+    padding-right: 20px;
+  }
+  
+  .bt-service {
+    display: flex;               /* Utiliza flexbox para alinear el contenido */
+    justify-content: center;     /* Centra el contenido horizontalmente */
+    align-items: center;         /* Centra el contenido verticalmente */
+    height: 25px;               /* Ajusta la altura del botón según sea necesario */               /* Elimina el padding interno para evitar que el texto se desplace */
+    border: none;   
+    border-radius: 0px;
+  }
+  
+  .bt-service a {
+    font-family: "GutonMed", Georgia;
+    font-weight: 600;
+    color: rgb(20, 39, 255);
+    margin: 0;                  /* Elimina el margen del párrafo */
+    white-space: nowrap;
+    padding:10px 10px;        /* Evita que el texto se divida en múltiples líneas */
+  }
+  
   }

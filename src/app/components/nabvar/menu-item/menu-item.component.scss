@@ -16,10 +16,10 @@
 
 /* Título */
 h2.text-center {
+    font-family: "GutonSemBd", Georgia; 
     color: #fcfcfc; 
     text-shadow: #000000 0 4px 4px;
-    font-size: 2.5rem; /* Tamaño de fuente más grande */
-    font-weight: bold;
+    font-size: 3rem; /* Tamaño de fuente más grande */
     letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
     margin-bottom: 30px; /* Espacio inferior ajustado */
   
@@ -45,9 +45,13 @@ h2.text-center {
   }
 
 .card-title{
+  font-family: "GutonMed", Georgia;
+  font-weight: 600;
   color: #ffffff;
 }
 .card-text{
+  font-family: "Guton", Georgia;
+  font-weight: 400;
   font-size: 1rem;
   color: #ffffff;
 }
@@ -61,7 +65,7 @@ h2.text-center {
   }
 
   .card-title{
-    font-weight: bold;
+
     margin-top: 20px;
     font-size: 2rem;
     margin-bottom: 20px;

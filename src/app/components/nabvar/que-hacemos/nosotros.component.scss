@@ -19,6 +19,7 @@
     font-size: bold;
   }
   .accordion-container h2 {
+    font-family: "GutonSemBd", Georgia; 
     font-size: 50px;
     margin-top: 5px;
     margin-bottom: 30px;
@@ -30,6 +31,7 @@
   }
   
   .accordion-btn {
+    font-family: "GutonMed", Georgia;
     background: none;
     border: none;
     font-size: 22px;
@@ -58,8 +60,17 @@
     -o-transition: max-height 0.5s ease, opacity 0.5s ease;
 }
   p{
-    
+    font-family: "Guton", Georgia;
+  }
+  .p1{
+  
     margin-left: 30px;
+    padding-right: 40px;
+  }
+  .p2{
+    padding-right: 40px;
+  }
+  .p3{
     padding-right: 30px;
   }
   
@@ -85,8 +96,9 @@
   }
   
   .bt-service p {
+    font-family: "GutonMed", Georgia;
     font-weight: 600;
-    color: rgb(188, 20, 255);
+    color: rgb(38, 0, 255);
    margin-left: 20px;
     margin: 0;                  /* Elimina el margen del párrafo */
     white-space: nowrap;

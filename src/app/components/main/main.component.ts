@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ContactComponent } from '../nabvar/contact/contact.component';
 import { NgIf } from '@angular/common';
 import { ProcesosComponent } from "../nabvar/procesos/procesos.component";
+import { PersonalComponent } from "../nabvar/personal/personal.component";
 
 
 
@@ -17,7 +18,8 @@ import { ProcesosComponent } from "../nabvar/procesos/procesos.component";
   imports: [
     BannerComponent,
     MenuItemComponent, NosotrosComponent, NuestraManeraComponent, ContactComponent, NgIf,
-    ProcesosComponent
+    ProcesosComponent,
+    PersonalComponent
 ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
@@ -25,7 +27,8 @@ import { ProcesosComponent } from "../nabvar/procesos/procesos.component";
 export class MainComponent implements OnDestroy {
   nuestraManeraLoaded = false;
   contactLoaded = false;
-
+  procesosLoaded = false;
+  personalLoaded =false;
   constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
@@ -46,11 +49,21 @@ export class MainComponent implements OnDestroy {
   handleScroll() {
     const scrollY = window.scrollY;
 
-    // Condiciones para cargar NuestraManeraComponent
-    if (!this.nuestraManeraLoaded && scrollY > 300) {
+    if (!this.nuestraManeraLoaded && scrollY > 400) {
       this.nuestraManeraLoaded = true;
       this.cdr.detectChanges();
     }
+    if (!this.procesosLoaded && scrollY > 500) {
+      this.procesosLoaded = true;
+      this.cdr.detectChanges();
+    }
+    // Condiciones para cargar NuestraManeraComponent
+    if (!this.personalLoaded && scrollY > 600) {
+      this.personalLoaded = true;
+      this.cdr.detectChanges();
+    }
+   
+   
 
     // Condiciones para cargar ContactComponent
     if (!this.contactLoaded && scrollY > 800) {
