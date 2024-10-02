@@ -36,3 +36,33 @@
     white-space: nowrap;
     padding:10px 10px;        /* Evita que el texto se divida en múltiples líneas */
   }
+  @media (min-width: 768px) {
+    .image-text {
+      flex-wrap: wrap;
+      align-content: flex-start;
+      justify-content: flex-end;
+      align-items: center;
+      display: flex;              
+      width: 100%;                 
+     
+    }
+    
+    .image {
+      width: 55%;                 
+      height: auto;                 
+      object-fit: cover;   
+          
+    }
+    .text{
+      font-size: 34px;
+      padding: 1px;
+      width: 45%;
+      font-family: "GutonMed", Georgia;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+    }
+   
+  
+  }

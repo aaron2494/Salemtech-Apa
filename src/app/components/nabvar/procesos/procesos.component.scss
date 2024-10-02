@@ -8,21 +8,25 @@
     text-transform: uppercase;
   }
  
-  
+  .carousel {
+    width: 90%;
+    position: relative;
+  }
   
   .process-step {
+   
     background-color: #0015ff;
-    /*Fondoazulparalastarjetas*/color: white;
-    padding: 10px;
-    height: 100%; /* Asegura que todas las tarjetas ocupen el 100% del espacio vertical */
-    min-height: 300px; 
+    color: white;
+    padding-left: 10px;
+    height: 100%;
+    margin: 0 10px;
+    min-height: 300px;
     border-radius: 0px;
     transition: transform 0.5s ease, opacity 0.5s ease;
-    margin: 0 10px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    -o-border-radius: 0px;
+    -webkit-transition: transform 0.5s ease, opacity 0.5s ease;
+    -moz-transition: transform 0.5s ease, opacity 0.5s ease;
+    -ms-transition: transform 0.5s ease, opacity 0.5s ease;
+    -o-transition: transform 0.5s ease, opacity 0.5s ease;
 }
   
   .step-number {
@@ -49,8 +53,6 @@
     display: flex;
     align-items: center;
   }
-  
-
   
   .carousel-item.active .card-animated {
     opacity: 1;
@@ -83,5 +85,8 @@
     .carousel {
       width: 60%;
     }
+  h3{
+    padding-left: 50px;
+  }
   }
   
