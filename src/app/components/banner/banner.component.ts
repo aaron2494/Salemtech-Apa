@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NabvarComponent } from '../nabvar/nabvar.component';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [NabvarComponent,CommonModule],
+  imports: [NabvarComponent,CommonModule,NgOptimizedImage],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss'
 })

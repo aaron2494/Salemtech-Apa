@@ -9,6 +9,7 @@ import { ContactComponent } from '../nabvar/contact/contact.component';
 import { NgIf } from '@angular/common';
 import { ProcesosComponent } from "../nabvar/procesos/procesos.component";
 import { PersonalComponent } from "../nabvar/personal/personal.component";
+import { JefesComponent } from "../nabvar/jefes/jefes.component";
 
 
 
@@ -19,7 +20,8 @@ import { PersonalComponent } from "../nabvar/personal/personal.component";
     BannerComponent,
     MenuItemComponent, NosotrosComponent, NuestraManeraComponent, ContactComponent, NgIf,
     ProcesosComponent,
-    PersonalComponent
+    PersonalComponent,
+    JefesComponent
 ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'

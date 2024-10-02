@@ -1,0 +1,63 @@
+.carousel{
+  padding: 40px;
+}
+
+.team-member {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+  transform: scale(1.2);
+}
+
+.team-member h3 {
+  font-family: "GutonMed", Georgia;
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin-top: 10px;
+}
+
+.team-member p {
+  font-family: "Guton", Georgia;
+  font-size: 1rem;
+ 
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Hace que los íconos de navegación sean más visibles */
+  opacity: 0;
+}
+
+.container{
+  padding: 50px;
+  background-color: #1525EA
+  ;
+}
+
+
+
+@media (max-width: 768px) {
+  h2{
+    font-family: "GutonMed", Georgia;
+    font-weight: 600;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+}
