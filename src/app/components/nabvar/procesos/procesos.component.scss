@@ -7,15 +7,15 @@
     font-family: "GutonSemBd", Georgia; 
     text-transform: uppercase;
   }
+ 
   
-  .carousel {
-    width: 80%;
-  }
   
   .process-step {
     background-color: #0015ff;
     /*Fondoazulparalastarjetas*/color: white;
     padding: 10px;
+    height: 100%; /* Asegura que todas las tarjetas ocupen el 100% del espacio vertical */
+    min-height: 300px; 
     border-radius: 0px;
     transition: transform 0.5s ease, opacity 0.5s ease;
     margin: 0 10px;
@@ -74,5 +74,14 @@
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     opacity: 0;
+  }
+  @media (min-width: 768px) { /* Para pantallas medianas hacia arriba */
+    .carousel-item .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .carousel {
+      width: 60%;
+    }
   }
   

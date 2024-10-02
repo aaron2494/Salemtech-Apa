@@ -1,9 +1,60 @@
-
-#home img {
+#home {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-img{
+  width: 100%;
+  background-size: cover; /* Ajusta la imagen para que cubra toda el área */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+.banner-container {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ocupará todo el ancho sin deformarse */
-  object-position: center; /* Centra la imagen */
+}
+
+.banner-content {
+  position: absolute;
+  top: 20%;
+  bottom: 5%;
+  color: white;
+  text-align: start;
+  padding: 20px;
+
+}
+
+.banner-content h1 {
+  font-family: "GutonExtBd", Georgia; 
+  font-size: 5rem;
+  margin: 0;
+}
+
+.banner-content p {
+  font-family: "GutonSemBd", Georgia; 
+  font-size: 1.8rem;
+  margin: 10px 0;
+  padding-right: 40%;
+}
+
+.bt-service {
+  display: flex;               /* Utiliza flexbox para alinear el contenido */
+  justify-content: center;     /* Centra el contenido horizontalmente */
+  align-items: center;         /* Centra el contenido verticalmente */
+  height: 25px;               /* Ajusta la altura del botón según sea necesario */               /* Elimina el padding interno para evitar que el texto se desplace */
+  border: none;   
+  border-radius: 0px;
+}
+
+.bt-service a {
+  font-family: "GutonMed", Georgia;
+  font-weight: 600;
+  color: rgb(20, 39, 255);
+  margin: 0;                  /* Elimina el margen del párrafo */
+  white-space: nowrap;
+  padding:10px 10px;        /* Evita que el texto se divida en múltiples líneas */
 }
 
 @media (max-width: 768px) {
@@ -14,22 +65,24 @@
     justify-content: center;
     align-items: center;
   }
-  
-  .banner-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  .banner-img {
+    content: url("../../../assets/banner\ principal\ mobile.png"); /* Cambia a la imagen de escritorio */
   }
-  
   #home img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
   }
+  .banner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
   
   .banner-content {
     position: absolute;
+    top: 50% !important;
     bottom: 5%;
     color: white;
     text-align: start;

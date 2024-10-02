@@ -19,7 +19,7 @@ h2.text-center {
     font-family: "GutonSemBd", Georgia; 
     color: #fcfcfc; 
     text-shadow: #000000 0 4px 4px;
-    font-size: 3rem; /* Tamaño de fuente más grande */
+    font-size: 4rem; /* Tamaño de fuente más grande */
     letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
     margin-bottom: 30px; /* Espacio inferior ajustado */
   
@@ -27,9 +27,13 @@ h2.text-center {
 
 /* Estilos de la tarjeta */
 .card {
+  border-radius: 0px;
   opacity: 1;
   overflow: hidden;
-
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
 }
   /* Color para cada card utilizando nth-child */
   .card-container:nth-child(1) .card {

@@ -3,7 +3,7 @@
   padding: 40px;
   color: white;
   text-align: center;
-  overflow: hidden; /* Asegura que no haya desplazamientos si la imagen es más grande */
+ 
 }
 
 .accordion-container img {
@@ -81,9 +81,10 @@
   
   .accordion-btn i {
 
-  font-size: 24px;
+    font-size: 24px;
     margin-right: 10px;
   }
+
   .bt-service {
     display: flex;               /* Utiliza flexbox para alinear el contenido */
     justify-content: center;     /* Centra el contenido horizontalmente */
@@ -95,12 +96,77 @@
       margin-left: 10px;
   }
   
-  .bt-service p {
+  .bt-service a {
     font-family: "GutonMed", Georgia;
     font-weight: 600;
     color: rgb(38, 0, 255);
-   margin-left: 20px;
+    margin-left: 20px;
     margin: 0;                  /* Elimina el margen del párrafo */
     white-space: nowrap;
     padding:10px 20px 10px 20px;        /* Evita que el texto se divida en múltiples líneas */
+  }
+  @media (min-width: 768px) {
+
+.accordion-btn{
+  font-size: 2rem !important;
+}
+  .accordion-container h2 {
+    font-size: 4rem !important;
+  }
+  .accordion-btn i {
+
+    font-size: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  p{
+    font-family: "Guton", Georgia;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .p1{
+  
+    padding-left: 28px;
+  }
+  .p2{
+    padding-left: 58px;
+  }
+  .p3{
+    padding-left: 58px;
+  }
+  
+  .accordion-content.active {
+    max-height: 100px; /* Ajusta según el contenido */
+    opacity: 1;
+  }
+ .btn-container{
+  align-items: center;
+  display: flex;  
+  text-align: center !important; 
+  flex-direction: column;
+ }     
+  .bt-service {
+   
+    justify-content: center;     
+    align-items: center;         /* Alinea verticalmente */
+    height: 40px;                /* Asegúrate de que el botón tenga suficiente altura */
+    padding: 0 20px;             /* Ajusta el padding para dar más espacio a los lados */
+    border: none;   
+    border-radius: 20px;
+    margin-left: 10px;
+        /* Centro el texto */
+  }
+  
+  .bt-service a {
+    font-family: "GutonMed", Georgia;
+    font-weight: 600;
+    color: rgb(38, 0, 255);
+    text-decoration: none;       /* Elimina el subrayado en el enlace */
+  }
+  
+  .bt-service a:hover {
+    color: rgb(0, 0, 150);       /* Cambia el color al hacer hover */
+  }
+  
   }
