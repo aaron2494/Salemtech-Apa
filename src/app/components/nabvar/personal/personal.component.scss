@@ -17,25 +17,29 @@
     font-weight: 400;
     font-size:1.3rem ;
   }
-
+  .btn-container{
+    align-items: center;
+    display: flex;  
+    text-align: center !important; 
+    flex-direction: column;
+   }     
   .bt-service {
-    display: flex;               /* Utiliza flexbox para alinear el contenido */
-    justify-content: center;     /* Centra el contenido horizontalmente */
-    align-items: center;         /* Centra el contenido verticalmente */
-                         /* Elimina el padding interno para evitar que el texto se desplace */
-    border: none;   
-    margin-left: 35px;
-    border-radius: 0px;
-  }
-  
-  .bt-service a {
-    font-family: "GutonMed", Georgia;
-    font-weight: 600;
-    color: rgb(20, 39, 255);
-    margin: 0;                  /* Elimina el margen del párrafo */
-    white-space: nowrap;
-    padding:10px 10px;        /* Evita que el texto se divida en múltiples líneas */
-  }
+height: 40px;               /* Ajusta la altura del botón según sea necesario */
+padding: 0;                 /* Elimina el padding interno para evitar que el texto se desplace */
+border: none;   
+border-radius: 20px ;
+
+}
+
+.bt-service a {
+font-family: "GutonMed", Georgia;
+font-weight: 500;
+color: rgb(38, 0, 255);
+margin-left: 20px;
+margin: 0;                  /* Elimina el margen del párrafo */
+white-space: nowrap;
+padding:10px 20px 10px 20px;        /* Evita que el texto se divida en múltiples líneas */
+}
   @media (min-width: 768px) {
     .image-text {
      
@@ -70,26 +74,27 @@
       text-align: center !important; 
       flex-direction: column;
      }     
-      .bt-service {
-       
-        justify-content: center;     
-        align-items: center;         /* Alinea verticalmente */
-        height: 80px;                /* Asegúrate de que el botón tenga suficiente altura */
-        padding: 0 20px;             /* Ajusta el padding para dar más espacio a los lados */
-        border: none;   
-        margin-left: 10px;
-            /* Centro el texto */
-      }
-      
-      .bt-service a {
-        font-size: 23px;
-        font-family: "GutonMed", Georgia;
-        font-weight: 600;
-        color: rgb(38, 0, 255);
-        text-decoration: none;       /* Elimina el subrayado en el enlace */
-      }
-      
-      .bt-service a:hover {
-        color: rgb(0, 0, 150);       /* Cambia el color al hacer hover */
-      }
+     .bt-service {
+   
+      justify-content: center;     
+      align-items: center;         /* Alinea verticalmente */
+      height: 80px;                /* Asegúrate de que el botón tenga suficiente altura */
+      padding: 0 20px;             /* Ajusta el padding para dar más espacio a los lados */
+      border: none;   
+      border-radius: 20px;
+      margin-left: 10px;
+          /* Centro el texto */
+    }
+    
+    .bt-service a {
+      font-family: "GutonMed", Georgia;
+      font-weight: 500;
+      color: rgb(38, 0, 255);
+      text-decoration: none;       /* Elimina el subrayado en el enlace */
+    }
+    
+    .bt-service a:hover {
+      color: rgb(0, 0, 150);       /* Cambia el color al hacer hover */
+    }
+   
   }

@@ -12,8 +12,8 @@
 
 .banner-content {
   position: absolute;
-  top: 20%;
   bottom: 5%;
+  left: 10%;
   color: white;
   text-align: start;
   padding: 20px;
@@ -34,23 +34,25 @@
 }
 
 .bt-service {
-  display: flex;               /* Utiliza flexbox para alinear el contenido */
-  justify-content: center;     /* Centra el contenido horizontalmente */
-  align-items: center; 
-  width: 40%;        /* Centra el contenido verticalmente */
-  height: 50px;               /* Ajusta la altura del botón según sea necesario */               /* Elimina el padding interno para evitar que el texto se desplace */
+   
+  justify-content: center;     
+  align-items: center;         /* Alinea verticalmente */
+  height: 80px;                /* Asegúrate de que el botón tenga suficiente altura */
+  padding: 0 20px;             /* Ajusta el padding para dar más espacio a los lados */
   border: none;   
-  border-radius: 0px;
+  border-radius: 20px;
+     
 }
 
 .bt-service a {
-  font-size: 25px;
   font-family: "GutonMed", Georgia;
-  font-weight: 600;
-  color: rgb(20, 39, 255);
-  margin: 0;                  /* Elimina el margen del párrafo */
-  white-space: nowrap;
-  padding:10px 10px;        /* Evita que el texto se divida en múltiples líneas */
+  font-weight: 500;
+  color: rgb(38, 0, 255);
+  text-decoration: none;       /* Elimina el subrayado en el enlace */
+}
+
+.bt-service a:hover {
+  color: rgb(0, 0, 150);       /* Cambia el color al hacer hover */
 }
 
 @media (max-width: 768px) {
@@ -100,22 +102,21 @@
   }
   
   .bt-service {
-    display: flex;               /* Utiliza flexbox para alinear el contenido */
-    justify-content: center;     /* Centra el contenido horizontalmente */
-    align-items: center;         /* Centra el contenido verticalmente */
-    height: 40px;               /* Ajusta la altura del botón según sea necesario */               /* Elimina el padding interno para evitar que el texto se desplace */
+    height: 40px;               /* Ajusta la altura del botón según sea necesario */
+    padding: 0;                 /* Elimina el padding interno para evitar que el texto se desplace */
     border: none;   
-    border-radius: 0px;
-  }
-  
-  .bt-service a {
-    font-size: 16px;
+    border-radius: 20px ;
+    
+    }
+    
+    .bt-service a {
     font-family: "GutonMed", Georgia;
-    font-weight: 600;
-    color: rgb(20, 39, 255);
+    font-weight: 500;
+    color: rgb(38, 0, 255);
+    margin-left: 20px;
     margin: 0;                  /* Elimina el margen del párrafo */
     white-space: nowrap;
-    padding:10px 10px;        /* Evita que el texto se divida en múltiples líneas */
-  }
+    padding:10px 20px 10px 20px;        /* Evita que el texto se divida en múltiples líneas */
+    }
   
   }
