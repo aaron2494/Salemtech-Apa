@@ -1,5 +1,5 @@
 .blank{
-  background: #ddd;
+  background: #ffffff;
   height: 30px;
   width: 100%;
 }
@@ -59,7 +59,7 @@ textarea::placeholder{
 .btn{
   background-color: #ddd !important;
   color: blue !important; 
-  border-radius: 0px;
+  border-radius: 20px;
   border: none;
   font-family: "Guton", Georgia;
   font-weight: 500;
@@ -88,6 +88,72 @@ input[type="tel"] {
   font-size: 0.875rem;
 }
 
-@media (max-width: 768px) {
-
+@media (min-width: 768px) {
+  .contact-form-container {
+    background-image: url('./../../../../assets/que\ hacemos\ desktop.png');
+    background-size: cover; /* Ajusta la imagen para que cubra toda el área */
+    background-position: center; /* Centra la imagen en el contenedor */
+    padding: 20px;
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  }
+  h1{
+    font-size: 3ram;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #ddd;
+    font-family: "GutonExtBd", Georgia; 
+    flex-direction: column;
+  }
+  .contact-form {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  
+  .form-group {
+    background: none;
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 451px;
+    color: white;
+    font-family: "Guton", Georgia;
+    font-weight: 600;
+    background: none;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 0px;
+  }
+  input::placeholder {
+    font-family: "Guton", Georgia;
+    font-weight: 600;
+    color: rgb(197, 197, 197);
+  }
+  textarea::placeholder{
+    font-family: "Guton", Georgia;
+    font-weight: 600;
+    color: rgb(197, 197, 197);
+  }
+  .form-group textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  .btn{
+    height: 80px;
+    background-color: #ddd !important;
+    color: blue !important; 
+    border-radius: 20px;
+    border: none;
+    font-family: "Guton", Georgia;
+    font-weight: 500;
+  }
+  
+  
+  
 }
