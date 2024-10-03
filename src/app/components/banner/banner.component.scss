@@ -42,8 +42,9 @@
 .bt-service {
   display: flex;               /* Utiliza flexbox para alinear el contenido */
   justify-content: center;     /* Centra el contenido horizontalmente */
-  align-items: center;         /* Centra el contenido verticalmente */
-  height: 25px;               /* Ajusta la altura del botón según sea necesario */               /* Elimina el padding interno para evitar que el texto se desplace */
+  align-items: center; 
+  width: 40%;        /* Centra el contenido verticalmente */
+  height: 50px;               /* Ajusta la altura del botón según sea necesario */               /* Elimina el padding interno para evitar que el texto se desplace */
   border: none;   
   border-radius: 0px;
 }
@@ -82,8 +83,8 @@
   
   .banner-content {
     position: absolute;
-    top: 50% !important;
-    bottom: 5%;
+    top: 30% !important;
+    bottom: 10%;
     color: white;
     text-align: start;
     padding: 20px;
@@ -107,7 +108,7 @@
     display: flex;               /* Utiliza flexbox para alinear el contenido */
     justify-content: center;     /* Centra el contenido horizontalmente */
     align-items: center;         /* Centra el contenido verticalmente */
-    height: 25px;               /* Ajusta la altura del botón según sea necesario */               /* Elimina el padding interno para evitar que el texto se desplace */
+    height: 40px;               /* Ajusta la altura del botón según sea necesario */               /* Elimina el padding interno para evitar que el texto se desplace */
     border: none;   
     border-radius: 0px;
   }
