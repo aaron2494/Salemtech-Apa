@@ -1,38 +1,53 @@
-  <div class="accordion-container">
- 
-    <h2><strong>¿Qué hacemos?</strong></h2>
+<div class="accordion-container">
+  <h2><strong>¿Qué hacemos?</strong></h2>
 
-    <div class="accordion-item">
-      <button class="accordion-btn" (click)="toggleAccordion(0)">
-        <i [ngClass]="isOpen[0] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'"></i><strong>CIBERSEGURIDAD OT</strong> 
+  <div class="accordion-item">
+    <button class="accordion-btn" (click)="toggleAccordion(0)">
+      <i
+        [ngClass]="
+          isOpen[0] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'
+        "
+      ></i
+      ><strong>CIBERSEGURIDAD OT</strong>
+    </button>
+    <div class="accordion-content" [ngClass]="{ active: isOpen[0] }">
+      <p class="p1">
+        Detección temprana y respuesta a amenazas de ciberseguridad.
+      </p>
+    </div>
+      <button class="accordion-btn" (click)="toggleAccordion(1)">
+        <i
+          [ngClass]="
+            isOpen[1] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'
+          "
+        ></i
+        ><strong>CONSULTORÍA EN AUTOMATIZACIÓN</strong>
       </button>
-      <div class="accordion-content" [ngClass]="{ 'active': isOpen[0] }">
-        <p class="p1">Detección temprana y respuesta a amenazas de ciberseguridad.</p>
+      <div class="accordion-content" [ngClass]="{ active: isOpen[1] }">
+        <p class="p2">
+          Soluciones para optimización y automatización de procesos
+          industriales.
+        </p>
+      </div>
+        <button class="accordion-btn" (click)="toggleAccordion(2)">
+          <i
+            [ngClass]="
+              isOpen[2] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'
+            "
+          ></i
+          ><strong>SOLUCIONES AVANZADAS</strong>
+        </button>
+        <div class="accordion-content" [ngClass]="{ active: isOpen[2] }">
+          <p class="p3">
+            Implementación de tecnologías avanzadas para industria 4.0.
+          </p>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button type="button" class="btn btn-light bt-service">
+          <a>DESCUBRE TODOS LOS SERVICIOS</a>
+        </button>
       </div>
     </div>
 
-  <div class="accordion-item">
-    <button class="accordion-btn" (click)="toggleAccordion(1)">
-      <i [ngClass]="isOpen[1] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'"></i><strong>CONSULTORÍA EN AUTOMATIZACIÓN</strong>
-    </button>
-    <div class="accordion-content" [ngClass]="{ 'active': isOpen[1] }">
-      <p class="p2">Soluciones para optimización y automatización de procesos industriales.</p>
-    </div>
-  </div>
 
-  <div class="accordion-item">
-    <button class="accordion-btn" (click)="toggleAccordion(2)">
-      <i [ngClass]="isOpen[2] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'"></i><strong>SOLUCIONES AVANZADAS</strong>
-    </button>
-    <div class="accordion-content" [ngClass]="{ 'active': isOpen[2] }">
-      <p class="p3">Implementación de tecnologías avanzadas para industria 4.0.</p>
-    </div>
-  </div>
- <div class="btn-container">
-  <button type="button" class="btn btn-light bt-service">
-    <a>DESCUBRE TODOS LOS SERVICIOS</a> 
-   </button>
- </div>
-    
-  
-</div>

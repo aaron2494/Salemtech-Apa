@@ -1,10 +1,4 @@
-#home {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .banner-img{
   width: 100%;
   background-size: cover; /* Ajusta la imagen para que cubra toda el área */
@@ -50,6 +44,7 @@
 }
 
 .bt-service a {
+  font-size: 25px;
   font-family: "GutonMed", Georgia;
   font-weight: 600;
   color: rgb(20, 39, 255);
@@ -114,6 +109,7 @@
   }
   
   .bt-service a {
+    font-size: 16px;
     font-family: "GutonMed", Georgia;
     font-weight: 600;
     color: rgb(20, 39, 255);
