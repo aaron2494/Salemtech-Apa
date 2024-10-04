@@ -65,10 +65,8 @@ export class MainComponent implements OnDestroy {
       this.cdr.detectChanges();
     }
    
-   
-
     // Condiciones para cargar ContactComponent
-    if (!this.contactLoaded && scrollY > 800) {
+    if (!this.contactLoaded && scrollY > 100) {
       this.contactLoaded = true;
       this.cdr.detectChanges();
     }

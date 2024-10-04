@@ -28,7 +28,7 @@
         <li class="nav-item">
           <button
             class="nav-link text-white"
-            (click)="openContactModal()"
+            (click)="scrollToSection('contact')"
           >
             Contáctanos
           </button>
@@ -36,8 +36,9 @@
         <li class="nav-item text-white">
           <button
             class="nav-link text-white"
-            (click)="scrollToSection('seccion2')"
-            (click)="navigateToSeccion2()"
+            (click)="scrollToSection('teamCarousel')"
+            (click)="scrollToSection('teamRow')"
+            
           >
             Sobre Nosotros
           </button>
@@ -55,67 +56,4 @@
   </div>
 </nav>
 
-<ng-template #contactModal let-modal>
-  <div class="modal-content ">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Formulario de Contacto</h5>
-        <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
-      </div>
-      <div class="modal-body">
-        <form (ngSubmit)="enviarConsulta(contactForm)" #contactForm="ngForm" novalidate>
-          <div class="form-group mb-3">
-            <label for="nombre">
-              <i class="fas fa-user"></i> Nombre
-            </label>
-            <input type="text" id="nombre" name="nombre" class="form-control"
-                   [(ngModel)]="consulta.nombre" #nombre="ngModel" placeholder="Juan" required>
-            <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">
-              El nombre es obligatorio.
-            </div>
-          </div>
 
-          <div class="form-group mb-3">
-            <label for="email">
-              <i class="fas fa-envelope"></i> Correo Electrónico
-            </label>
-            <input type="email" id="email" name="email" placeholder="juan@gmail.com" class="form-control"
-                   [(ngModel)]="consulta.email" #email="ngModel" required email>
-            <div *ngIf="email.invalid && email.touched" class="text-danger">
-              Ingresa un correo electrónico válido.
-            </div>
-          </div>
-
-          <div class="form-group mb-3">
-            <label for="telefono">
-              <i class="fas fa-phone"></i> Teléfono (Opcional)
-            </label>
-            <input type="tel" id="telefono" name="telefono" placeholder="1122334455" class="form-control"
-                   [(ngModel)]="consulta.telefono" #telefono="ngModel">
-          </div>
-
-          <div class="form-group mb-3">
-            <label for="asunto">
-              <i class="fas fa-tag"></i> Asunto
-            </label>
-            <input type="text" id="asunto" name="asunto" placeholder="Consulta de presupuesto" class="form-control"
-                   [(ngModel)]="consulta.asunto" #asunto="ngModel" required>
-            <div *ngIf="asunto.invalid && asunto.touched" class="text-danger">
-              El asunto es obligatorio.
-            </div>
-          </div>
-
-          <div class="form-group mb-3">
-            <label for="mensaje">
-              <i class="fas fa-comment-dots"></i> Mensaje
-            </label>
-            <textarea id="mensaje" rows="5" name="mensaje" class="form-control"
-                      [(ngModel)]="consulta.mensaje" placeholder="Buenas tardes..." #mensaje="ngModel" required></textarea>
-            <div *ngIf="mensaje.invalid && mensaje.touched" class="text-danger">
-              El mensaje es obligatorio.
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Enviar Consulta</button>
-        </form>
-      </div>
-    </div>
-</ng-template>

@@ -1,11 +1,10 @@
 import { CommonModule, NgClass, NgIf } from '@angular/common';
 import {  ChangeDetectorRef, Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import Swal from 'sweetalert2';
 import { Collapse } from 'bootstrap';
 
 @Component({
@@ -16,7 +15,6 @@ import { Collapse } from 'bootstrap';
   imports: [NgIf, NgClass,FormsModule, CommonModule], // Asegúrate de que NgIf esté aquí
 })
 export class NabvarComponent implements OnInit{
-  @ViewChild('contactModal') contactModal!: ElementRef;
   isNavbarCollapsed = true;
   public isInSeccion2: boolean = false;
   public router: Router;
@@ -25,20 +23,7 @@ export class NabvarComponent implements OnInit{
   constructor(private http: HttpClient,router: Router, private cdr: ChangeDetectorRef, private modalService:NgbModal) {
     this.router = router;
   }
-  consulta = {
-    nombre: '',
-    email: '',
-    telefono: '',
-    asunto: '',
-    mensaje: ''
-  };
-  openContactModal(): void {
-    const modalRef = this.modalService.open(this.contactModal, {
-      ariaLabelledBy: 'contactModalLabel',
-      size: 'lg'
-    });
-    this.closeNavbar(); // Colapsar navbar después de abrir el modal
-  }
+ 
   
 
   ngOnInit(): void {
@@ -61,35 +46,7 @@ export class NabvarComponent implements OnInit{
     }
   }
 
-  enviarConsulta(form: any) {
-    if (form.valid) {
-      this.http.post<{ message: string }>('https://backend-email.vercel.app/send-email', this.consulta)
-        .subscribe(
-          response => {
-            // Mostrar SweetAlert de éxito
-            Swal.fire({
-              icon: 'success',
-              title: 'Correo enviado con éxito',
-              text: response.message,
-              confirmButtonText: 'OK'
-            });
-  
-            // Reiniciar el formulario
-            this.modalService.dismissAll();
-          },
-          error => {
-            // Mostrar SweetAlert de error
-            Swal.fire({
-              icon: 'error',
-              title: 'Error al enviar el correo',
-              text: 'Ocurrió un problema al intentar enviar el correo. Por favor, intenta nuevamente.',
-              confirmButtonText: 'OK'
-            });
-            console.log(error);
-          }
-        );
-    }
-}
+ 
 
    // Método para alternar el estado de colapso del navbar
   
