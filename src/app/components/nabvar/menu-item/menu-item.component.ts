@@ -25,19 +25,16 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
 
   cards = [
     {
-      icon: '/iconos_procesos.png',
-      title: 'Experiencia en Procesos',
-      text: 'Contamos con la experiencia en procesos, automatización, tecnología de operación y de información para integrar las necesidades de los clientes del mercado energético en forma efectiva y segura.'
+      title: 'Innovación<br> & experiencia',
+      text: 'Con mas de una década de experiencia en automatización y control de procesos, combinamos innovación y tecnología para ofrecer soluciones avanzadas que optimizan operaciones industriales.'
+    },
+    { 
+      title: 'Ciberceguridad Avanzada',
+      text: 'Protegemos tus sistemas críticos con una plataforma inteligente de detección y respuesta temprana de amenazas, desarrollada en alianza con lideres globales como DRAGOS.'
     },
     {
-      icon: '/iconos_performance.png',
-      title: 'Estándares de Calidad',
-      text: 'Seguimos los más altos estándares en ejecución de proyectos de ingeniería y consultoría del mercado. Alineamos los equipos de trabajo a las necesidades del proyecto en forma escalable y flexible.'
-    },
-    {
-      icon: '/iconos_tecno.png',
-      title: 'Soporte de Clase Mundial',
-      text: 'Tenemos a disposición un soporte de élite. Definimos en conjunto métricas de rentabilidad en cada desafío en el que apoyamos a nuestros clientes. Elegimos ser su socio tecnológico y no otro proveedor más.'
+      title: 'Optimización<br> & Sostenibilidad',
+      text: 'Transformamos digitalmente tus procesos, mejorando la competitividad y reduciendo costos, siempre enfocados en la eficiencia y sostenibilidad.'
     }
   ];
 
