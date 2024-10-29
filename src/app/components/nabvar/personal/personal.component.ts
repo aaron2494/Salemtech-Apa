@@ -1,10 +1,11 @@
-import { NgOptimizedImage } from '@angular/common';
+
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-personal',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [RouterLink],
   templateUrl: './personal.component.html',
   styleUrl: './personal.component.scss'
 })

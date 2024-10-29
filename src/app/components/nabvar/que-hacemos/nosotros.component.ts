@@ -1,12 +1,12 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-nosotros',
   standalone: true,
-  imports: [CommonModule,NgFor,NgIf,NgOptimizedImage],
+  imports: [CommonModule,NgFor,NgIf],
   templateUrl: './nosotros.component.html',
   styleUrl: './nosotros.component.scss'
 })

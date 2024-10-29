@@ -1,44 +1,33 @@
+<div class="seccion1">
+  <div class="content">  
+  <p class="info">NUESTROS SERVICIOS</p>
+  <H1 class="tittle">Automatizamos <br> y protegemos <br> tu industria</H1>
+  <p class="text">
+    En Salem combinamos <strong>ciberseguridad</strong> de alto nivel y <strong>consultoría en
+      automatización</strong> para transformar digitalmente los sectores más exigentes: <strong>Oil
+        & Gas, minería, y generación eléctrica.</strong> Nuestros servicios garantizan la
+    <strong>eficiencia</strong>, la  <strong>protección</strong> y la <strong>optimización</strong> de tus procesos industriales.
+  </p>
+</div>
+</div> 
 
-<section id="equipo">
-  <div class="black-stripe"></div>
-  <!-- Sección de descripción del equipo -->
-  <div class="container">
-    <div class="row">
-      <h2>Nuestro Equipo</h2>
-      <div class="col-md-6">
-        <p class="intro-text">
-          Nuestro equipo está formado por personal multidisciplinario experimentado y dotados de una fuerte orientación al Cliente sobre una cultura de trabajo bajo normas internacionales de Calidad, Seguridad, Salud y Ambiente.
-        </p>
-      </div>
-      <div class="col-md-6">
-        <ul class="team-details" [ngClass]="{'show-content': isExpanded}">
-          <li class="hidden-content"><strong>Ingenieros Químicos</strong> con experiencia en simulación dinámica de procesos fisicoquímicos y modelamiento avanzado.</li>
-          <li class="hidden-content"><strong>Ingenieros de control</strong> de procesos fisicoquímicos con experiencia en optimización en tiempo real de procesos.</li>
-          <li class="hidden-content"><strong>Ingenieros Electrónicos</strong> orientados a redes industriales y empresariales con conocimiento en soluciones de integración de datos.</li>
-          <li class="hidden-content"><strong>Ingenieros informáticos</strong> con conocimientos en data analytics y big data focalizados en plataformas de gestión integradas.</li>
-          <li class="hidden-content"><strong>Personal dedicado</strong> para la ejecución de programas de gestión de cambio.</li>
-          
-        </ul>
-        <button id="read-more-btn" class="btn btn-primary" (click)="toggleContent()" *ngIf="isMobile">
-          {{ isExpanded ? 'Leer menos' : 'Leer más' }}
-        </button>
-     </div>
-    </div>
+<div class="seccion2">
+  <div class="cta-button">
+    CONECTÁ CON EXPERTOS 
+     <span class="arrow">→</span>
+  
+  </div>
+  <div class="content">
+    <img src="../../../assets/Candado.png" alt="Icono de seguridad" class="icon">
+    <h2 class="title">Ciberseguridad OT <br> y Defensa Avanzada</h2>
+    <p class="description">
+      Protege tus sistemas críticos contra amenazas globales con nuestras soluciones de ciberseguridad OT. Nos aliamos con Dragos, líder mundial en defensa de infraestructuras estratégicas, para ofrecerte:
+    </p>
+    <ul class="features">
+      <li>Detección y respuesta temprana ante ataques cibernéticos.</li>
+      <li>Plataforma inteligente para gestión de amenazas.</li>
+      <li>Seguridad proactiva y protección integral para tecnologías de operación.</li>
+    </ul>
   </div>
 
-  <!-- Sección de las tarjetas del equipo -->
-  <div class="row container-card">
-    <div class=" col-6 col-md-6 col-lg-3" *ngFor="let miembro of miembros">
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <h5 class="card-title">{{ miembro.nombre }}</h5>
-            <img src="{{ miembro.imagen }}" class="card-img-top" alt="{{ miembro.nombre }}">
-            <p class="card-text cargo">{{ miembro.cargo }}</p>
-            <p class="card-text descripcion">{{ miembro.descripcion }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>

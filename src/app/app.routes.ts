@@ -6,7 +6,7 @@
                 loadComponent: () => import('./components/main/main.component').then(m => m.MainComponent)
             },
             {
-                path: 'seccion2',
+                path: 'servicios',
                 loadComponent: () => import('./components/seccion2/seccion2.component').then(m => m.Seccion2Component)
             },
 
