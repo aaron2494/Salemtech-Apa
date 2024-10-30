@@ -100,6 +100,7 @@ p {
   }
 
   .bt-service {
+    
         /* Centra el contenido verticalmente */
     height: 40px;               /* Ajusta la altura del botón según sea necesario */
     padding: 0;                 /* Elimina el padding interno para evitar que el texto se desplace */
@@ -109,6 +110,7 @@ p {
   }
   
   .bt-service a {
+    text-decoration: none;
     font-family: "GutonMed", Georgia;
     font-weight: 500;
     color: rgb(38, 0, 255);
