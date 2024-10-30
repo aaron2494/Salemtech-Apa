@@ -14,7 +14,11 @@
   overflow: hidden; /* Oculta cualquier contenido que se desborde */
 }
 h1{
-  padding: 10px;
+  display: flex;
+    justify-content: center;
+    padding-top: 55px;
+    padding-bottom: 25px;
+    font-size: 33pt;
   color: #ddd;
   font-family: "GutonExtBd", Georgia; 
   

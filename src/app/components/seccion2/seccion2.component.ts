@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
+import { ContactComponent } from "../nabvar/contact/contact.component";
 
 
 interface MiembroEquipo {
@@ -13,7 +14,7 @@ interface MiembroEquipo {
 @Component({
   selector: 'app-seccion2',
   standalone: true,
-  imports: [CommonModule ],
+  imports: [CommonModule, ContactComponent],
   templateUrl: './seccion2.component.html',
   styleUrls: ['./seccion2.component.scss']
 })

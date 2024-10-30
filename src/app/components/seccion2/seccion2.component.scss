@@ -18,7 +18,7 @@
     }
 
     .info {
-      font-family: "Guton", Georgia;
+      font-family: "Guton";
       font-weight: 400;
       font-size: 16pt;
       letter-spacing: 0.1em;
@@ -43,6 +43,163 @@
     line-height: 22pt;
   }
 }
+.seccion2 {
+  background: #1525EA;
+  color: white;
+ text-align: center;
+  max-width: 100%;
+  position: relative;
+}
+.seccion3 {
+  background: #CB00D1;
+  color: white;
+ text-align: center;
+  max-width: 100%;
+  position: relative;
+}
+.seccion4 {
+  background: #5100D5;
+  color: white;
+ text-align: center;
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+.seccion5 {
+  background-image: url('../../../assets/Banner nube.png');
+  background-size: cover;
+  background-position: center;
+  padding-top: 15vh;
+  padding-bottom: 20px;
+  color: white;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  .title{
+    line-height: 37pt;
+    font-size: 25pt;
+    font-family: "Guton" !important;
+    font-weight: bold !important;
+  }
+  .description{
+    font-size: 16pt;
+    line-height: 20pt;
+
+  }
+}
+.seccion6 {
+   
+  color: rgb(0, 0, 0);
+  text-align: center;
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+  .description{
+    font-size: 16pt;
+    line-height: 20pt;
+    padding-top: 40px;
+
+  }
+}
+
+
+.content {
+  margin-top: -50px;
+  padding: 0 22px;
+  max-width: 100%;
+}
+.cta-button {
+  background-color: white;
+  color: #1f2cd6;
+font-family: "GutonMed"; 
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 22pt; /* Interlineado */
+  letter-spacing: 0.1em; /* Kerning */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.cta-button {
+  background-color: white;
+  color: #1f2cd6;
+font-family: "GutonMed"; 
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 22pt; /* Interlineado */
+  letter-spacing: 0.1em; /* Kerning */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.cta-button2 {
+  height: 75px;
+  width: 80%;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+font-family: "GutonMed"; 
+  padding: 10px 20px;
+  font-size: 17pt;
+  line-height: 22pt; /* Interlineado */
+  letter-spacing: 0.1em; /* Kerning */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.arrow {
+  font-size: 22px; /* Tamaño de la flecha */
+  margin-top: -10px; /* Espacio entre texto y flecha */
+}
+
+.icon {
+ 
+  margin: 50px auto;
+}
+
+.title {
+  font-family: "GutonSemBd";
+  font-size: 24pt;
+  margin: 10px 0;
+  line-height: 36pt;
+  display: flex;
+  text-align: start;
+  }
+
+.description {
+  font-family: "Guton";
+  font-size: 15pt;
+  margin-top: 15px;
+  display: flex;
+  text-align: start;
+  line-height: 27pt;
+}
+
+.features {
+  line-height: 27pt;
+  font-family: "Guton";
+  font-size: 15pt;
+  display: flex;
+  text-align: start;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
 }
 
 @media (max-width: 768px) and (min-width: 361px) {
@@ -63,7 +220,7 @@
     }
 
     .info {
-      font-family: "Guton", Georgia;
+      font-family: "Guton";
       font-weight: 400;
       font-size: 16pt;
       letter-spacing: 0.1em;
@@ -85,7 +242,7 @@
     }
 
     .text {
-      font-family: "Guton", Georgia;
+      font-family: "Guton";
       font-weight: 400;
       font-size: 18pt;
       line-height: 27pt;
@@ -95,19 +252,72 @@
     }
   }
   .seccion2 {
-    background: blue;
+    background: #1525EA;
+    color: white;
+   text-align: center;
+    max-width: 100%;
+    position: relative;
+  }
+  .seccion3 {
+    background: #CB00D1;
+    color: white;
+   text-align: center;
+    max-width: 100%;
+    position: relative;
+  }
+  .seccion4 {
+    background: #5100D5;
     color: white;
     text-align: center;
     max-width: 100%;
     position: relative;
+    margin-bottom: 20px;
+  }
+  .seccion5 {
+    background-image: url('../../../assets/Banner nube.png');
+    background-size: cover;
+    background-position: center;
+    padding-top: 15vh;
+    padding-bottom: 20px;
+    color: white;
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    .title{
+      line-height: 37pt;
+      font-size: 32pt;
+      font-family: "Guton" !important;
+      font-weight: bold !important;
+    }
+    .description{
+      font-size: 20pt;
+      line-height: 24pt;
+
+    }
+  }
+  .seccion6 {
+   
+    color: rgb(0, 0, 0);
+    text-align: center;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    .description{
+      font-size: 20pt;
+      line-height: 24pt;
+      padding-top: 40px;
+    }
   }
   
-
+  .content {
+    margin-top: -50px;
+    padding: 0 22px;
+    max-width: 100%;
+  }
   .cta-button {
     background-color: white;
     color: #1f2cd6;
-  font-family: "GutonMed";
-    
+  font-family: "GutonMed"; 
     padding: 10px 20px;
     font-size: 16px;
     line-height: 22pt; /* Interlineado */
@@ -121,42 +331,60 @@
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+  .cta-button2 {
+    height: 75px;
+    width: 80%;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+  font-family: "GutonMed"; 
+    padding: 10px 20px;
+    font-size: 17pt;
+    line-height: 22pt; /* Interlineado */
+    letter-spacing: 0.1em; /* Kerning */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .arrow {
     font-size: 22px; /* Tamaño de la flecha */
     margin-top: -10px; /* Espacio entre texto y flecha */
   }
   
   .icon {
-    width: 80px;
-    margin: 20px auto;
+   
+    margin: 50px auto;
   }
   
   .title {
-    font-family: "Guton", Georgia, serif;
-    font-size: 24px;
-    font-weight: bold;
+    font-family: "GutonSemBd";
+    font-size: 29pt;
     margin: 10px 0;
-    line-height: 1.2;
-  }
+    line-height: 36pt;
+    display: flex;
+    text-align: start;
+    }
   
   .description {
-    font-family: "Guton", Georgia, serif;
-    font-size: 14px;
+    font-family: "Guton";
+    font-size: 18pt;
     margin-top: 15px;
+    display: flex;
+    text-align: start;
+    line-height: 27pt;
   }
   
   .features {
+    line-height: 27pt;
+    font-family: "Guton";
+    font-size: 18pt;
+    display: flex;
+    text-align: start;
     list-style: none;
     padding: 0;
     margin-top: 20px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .features li::before {
-    content: "• "; /* Agrega el punto como marcador */
-    color: #1f2cd6;
   }
 }
-
