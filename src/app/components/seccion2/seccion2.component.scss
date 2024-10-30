@@ -1,10 +1,10 @@
-@media (max-width: 360px) {
+@media (max-width: 390px) {
  
   .seccion1 {
     background-image: url('../../../assets/contacto mobile.png');
     background-size: cover;
     background-position: center;
-    padding-top: 15vh;
+    padding-top: 25vh;
     padding-bottom: 20px;
     color: white;
     position: relative;
@@ -69,7 +69,7 @@
   background-image: url('../../../assets/Banner nube.png');
   background-size: cover;
   background-position: center;
-  padding-top: 15vh;
+  padding-top: 9vh;
   padding-bottom: 20px;
   color: white;
   position: relative;
@@ -202,7 +202,7 @@ font-family: "GutonMed";
 
 }
 
-@media (max-width: 768px) and (min-width: 361px) {
+@media (max-width: 768px) and (min-width: 391px) {
   .seccion1 {
     background-image: url('../../../assets/contacto mobile.png');
     background-size: cover;
