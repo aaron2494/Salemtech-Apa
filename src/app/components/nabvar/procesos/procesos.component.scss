@@ -65,18 +65,29 @@
 }
 .carousel-item-next.carousel-item-left,
 .carousel-item-prev.carousel-item-right {
-  transform: translateX(-100vw); /* Mueve las tarjetas hacia la izquierda cuando cambian */
+  transform: translateX(-100vw);
+  /*Muevelastarjetashacialaizquierdacuandocambian*/;
+  -webkit-transform: translateX(-100vw);
+  -moz-transform: translateX(-100vw);
+  -ms-transform: translateX(-100vw);
+  -o-transform: translateX(-100vw);
 }
 
 .carousel-item-prev.carousel-item-left,
 .carousel-item-next.carousel-item-right {
-  transform: translateX(100vw); /* Mueve las tarjetas hacia la derecha cuando cambian */
+  transform: translateX(100vw);
+  /*Muevelastarjetashacialaderechacuandocambian*/;
+  -webkit-transform: translateX(100vw);
+  -moz-transform: translateX(100vw);
+  -ms-transform: translateX(100vw);
+  -o-transform: translateX(100vw);
 }
   
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
-    opacity: 0;
+    opacity: 1;
   }
+  
   @media (min-width: 768px) { /* Para pantallas medianas hacia arriba */
     .carousel-item .col-md-6 {
       flex: 0 0 50%;
@@ -88,7 +99,13 @@
   h3{
     padding-left: 50px;
   }
-
+  .carousel-control-prev-icon{
+    margin-left:-40px;
+  }
+  .carousel-control-next-icon {
+    margin-right: -40px;
+    
+  }
   
   }
   
