@@ -85,7 +85,20 @@
   
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
+    
     opacity: 1;
+  }
+  
+  .carousel-indicators [data-bs-target] {
+    
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc; /* Color para los indicadores inactivos */
+    margin: 0 4px; /* Espaciado entre los indicadores */
+  }
+  .carousel-indicators .active {
+    background-color: #000; /* Color negro para el indicador activo */
   }
   
   @media (min-width: 768px) { /* Para pantallas medianas hacia arriba */

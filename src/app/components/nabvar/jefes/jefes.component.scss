@@ -4,11 +4,7 @@
   z-index: 1; /* Controlar la superposición */
   text-align: center;
 }
-.container{
-  background-color: #1525EA;
-  width: 100%;
-  max-width: 100%;
-}
+
 
 
 .team-member img {
@@ -84,27 +80,7 @@
     width: 100%;
     height: auto;
   }
-  .container{
-    background-color: #1525EA;
-  }
   
-  h2{
-    padding: 20px;
-    font-family: "GutonMed", Georgia;
-    font-weight: 600;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 20px;
-    font-size: 3rem;
-  }
-  .img-fluid{
-  
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
  }
 
 
@@ -116,7 +92,7 @@
     left: -9999px;
   }
   .carousel{
-    padding: 40px;
+    padding-top: 40px;
   }
   
   .team-member {
@@ -144,27 +120,21 @@
     font-size: 1rem;
    
   }
-  
-  .carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Hace que los íconos de navegación sean más visibles */
-    opacity: 0;
+  .carousel-indicators {
+    bottom: -30px; /* Ajusta este valor para mover los indicadores hacia abajo */
+  }
+  .carousel-indicators [data-bs-target] {
+    
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc; /* Color para los indicadores inactivos */
+    margin: 0 4px; /* Espaciado entre los indicadores */
   }
   
-
-  h2{
-    padding: 20px;
-    font-family: "GutonMed", Georgia;
-    font-weight: 600;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 20px;
+  .carousel-indicators .active {
+    background-color: #000; /* Color negro para el indicador activo */
   }
-  .img-fluid{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
+  
+  
 }
