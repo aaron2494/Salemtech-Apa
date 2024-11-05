@@ -1,0 +1,35 @@
+.container {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Guton';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.alianza-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+
+    h1 {
+       padding-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 280px;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    p {
+        text-align: left;
+        font-size: 1.3rem
+    }
+}

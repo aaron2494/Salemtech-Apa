@@ -10,6 +10,7 @@ import { NgIf } from '@angular/common';
 import { ProcesosComponent } from "../nabvar/procesos/procesos.component";
 import { PersonalComponent } from "../nabvar/personal/personal.component";
 import { JefesComponent } from "../nabvar/jefes/jefes.component";
+import { DragosComponent } from "../nabvar/dragos/dragos.component";
 
 
 
@@ -21,7 +22,8 @@ import { JefesComponent } from "../nabvar/jefes/jefes.component";
     MenuItemComponent, NosotrosComponent, NuestraManeraComponent, ContactComponent, NgIf,
     ProcesosComponent,
     PersonalComponent,
-    JefesComponent
+    JefesComponent,
+    DragosComponent
 ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
