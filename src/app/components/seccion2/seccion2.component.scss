@@ -42,7 +42,7 @@
     .text {
       font-family: "Guton";
       font-weight: 400;
-      font-size: 19pt;
+      font-size: 1.3rem;
       line-height: 20pt;
       text-align: left;
       margin-top: 10px;
@@ -75,8 +75,6 @@
   background-image: url('../../../assets/Banner nube.png');
   background-size: cover;
   background-position: center;
-  padding-top: 9vh;
-  padding-bottom: 20px;
   color: white;
   position: relative;
   height: 100vh;
@@ -88,8 +86,8 @@
     font-weight: bold !important;
   }
   .description{
-    font-size: 16pt;
-    line-height: 16pt;
+    font-size: 1.3rem;
+    
 
   }
 }
@@ -101,9 +99,7 @@
   position: relative;
   margin-bottom: 20px;
   .description{
-    font-size: 16pt;
-    line-height: 18pt;
-    padding-top: 40px;
+    font-size: 1.3rem;
 
   }
 }
@@ -173,7 +169,7 @@ font-family: "GutonMed";
 
 .icon {
  
-  margin: 50px auto;
+  margin-top: 30px;
 }
 
 .title {
@@ -187,17 +183,17 @@ font-family: "GutonMed";
 
 .description {
   font-family: "Guton";
-  font-size: 16pt;
+  font-size: 1.3rem;
   margin-top: 15px;
   display: flex;
   text-align: start;
-  line-height: 18pt;
+
 }
 
 .features {
-  line-height: 18pt;
+  
   font-family: "Guton";
-  font-size: 16pt;
+  font-size: 1.3rem;
   display: flex;
   text-align: start;
   list-style: none;
@@ -250,7 +246,7 @@ font-family: "GutonMed";
     .text {
       font-family: "Guton";
       font-weight: 400;
-      font-size: 19pt;
+      font-size: 1.3rem;
       line-height: 20pt;
       text-align: left;
       margin-top: 10px;
@@ -283,15 +279,15 @@ font-family: "GutonMed";
     background-image: url('../../../assets/Banner nube.png');
     background-size: cover;
     background-position: center;
-    padding-top: 15vh;
-    padding-bottom: 20px;
+    padding-top: 10vh;
+    
     color: white;
     position: relative;
     height: 100vh;
     overflow-x: hidden;
     .title{
      
-      font-size: 28pt;
+      font-size: 25pt;
       font-family: "Guton" !important;
       font-weight: bold !important;
     }
@@ -304,8 +300,8 @@ font-family: "GutonMed";
     position: relative;
     margin-bottom: 20px;
     .description{
-      font-size: 19pt;
-      padding-top: 40px;
+      font-size: 1.3rem;
+  
     }
   }
   
@@ -355,14 +351,12 @@ font-family: "GutonMed";
   }
   
   .icon {
-   
-    margin: 50px auto;
+   margin-top: 30px;
   }
   
   .title {
     font-family: "GutonSemBd";
     font-size: 25pt;
-    margin: 10px 0;
     line-height: 30pt;
     display: flex;
     text-align: start;
@@ -370,17 +364,16 @@ font-family: "GutonMed";
   
   .description {
     font-family: "Guton";
-    font-size: 19pt;
+    font-size: 1.3rem;
     margin-top: 15px;
     display: flex;
     text-align: start;
-    line-height: 20pt;
   }
   
   .features {
-    line-height: 20pt;
+    
     font-family: "Guton";
-    font-size: 19pt;
+    font-size: 1.3rem;
     display: flex;
     text-align: start;
     list-style: none;
