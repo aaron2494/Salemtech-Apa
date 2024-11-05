@@ -8,8 +8,9 @@ import { NabvarComponent } from "./components/nabvar/nabvar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { Meta, Title } from '@angular/platform-browser';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
+
 import { Subscription } from 'rxjs';
+import { ContactComponent } from "./components/nabvar/contact/contact.component";
 
 
 
@@ -19,7 +20,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,HttpClientModule, RouterOutlet, MainComponent, Seccion2Component, NabvarComponent, FooterComponent,NgbModalModule, NgbModule],
+  imports: [CommonModule, RouterOutlet, MainComponent, Seccion2Component, NabvarComponent, FooterComponent, NgbModalModule, NgbModule, ContactComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
