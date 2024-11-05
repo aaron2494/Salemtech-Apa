@@ -2,10 +2,13 @@
   <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
   <!-- Vista en pantallas grandes -->
   <div class="row justify-content-center d-none d-md-flex">
-    <div class="col-md-3 card-container" *ngFor="let card of cards; let i = index">
-      <div class="card  shadow-sm h-100">
+    <div
+      class="col-md-3 card-container"
+      *ngFor="let card of cards; let i = index"
+    >
+      <div class="card shadow-sm h-100">
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title"[innerHTML]="card.title">{{ card.title }}</h5>
+          <h5 class="card-title" [innerHTML]="card.title">{{ card.title }}</h5>
           <p class="card-text">{{ card.text }}</p>
         </div>
       </div>
@@ -20,15 +23,16 @@
         *ngFor="let card of cards; let i = index"
         [class.active]="i === 0"
       >
-        <div class="card  shadow-sm mx-auto">
+        <div class="card shadow-sm mx-auto">
           <div class="card-body">
-            <h5 class="card-title"[innerHTML]="card.title">{{ card.title }}</h5>
+            <h5 class="card-title" [innerHTML]="card.title">
+              {{ card.title }}
+            </h5>
             <p class="card-text">{{ card.text }}</p>
           </div>
         </div>
       </div>
     </div>
-
 
     <!-- Botones de control del carrusel -->
     <button
@@ -38,8 +42,10 @@
       data-bs-slide="prev"
       aria-label="Previous"
     >
-      <span class="carousel-control-prev-icon visually-hidden" aria-hidden="true"></span>
-      
+      <span
+        class="carousel-control-prev-icon visually-hidden"
+        aria-hidden="true"
+      ></span>
     </button>
     <button
       class="carousel-control-next"
@@ -48,8 +54,33 @@
       data-bs-slide="next"
       aria-label="Next"
     >
-      <span class="carousel-control-next-icon visually-hidden" aria-hidden="true"></span>
-      
+      <span
+        class="carousel-control-next-icon visually-hidden"
+        aria-hidden="true"
+      ></span>
     </button>
+    <!-- Indicadores del carrusel -->
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#cardsCarousel"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#cardsCarousel"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#cardsCarousel"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
   </div>
 </section>
