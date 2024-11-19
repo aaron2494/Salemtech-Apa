@@ -19,18 +19,18 @@ import { DragosComponent } from "../nabvar/dragos/dragos.component";
   standalone: true,
   imports: [
     BannerComponent,
-    MenuItemComponent, NosotrosComponent, NuestraManeraComponent, ContactComponent, NgIf,
+    MenuItemComponent, NosotrosComponent, NuestraManeraComponent, NgIf,
     ProcesosComponent,
     PersonalComponent,
     JefesComponent,
-    DragosComponent
+    DragosComponent,
+    
 ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
 export class MainComponent implements OnDestroy {
   nuestraManeraLoaded = false;
-  contactLoaded = false;
   procesosLoaded = false;
   personalLoaded =false;
   constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef) {}

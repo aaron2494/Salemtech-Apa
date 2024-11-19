@@ -7,7 +7,8 @@
             },
             {
                 path: 'servicios',
-                loadComponent: () => import('./components/seccion2/seccion2.component').then(m => m.Seccion2Component)
+                loadComponent: () => import('./components/seccion2/seccion2.component').then(m => m.Seccion2Component),
+                data: { fragment: 'seccion1' }
             },
 
         ];

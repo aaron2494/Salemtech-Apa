@@ -1,5 +1,17 @@
+#seccion1 {
+  scroll-margin-top: 70px; /* Ajusta este valor según la altura de tu navbar */
+}
 @media (max-width: 380px) {
- 
+  .seccion {
+  opacity: 0;
+  transform: translateX(-100%); /* Inicia fuera de la pantalla */
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+  .seccion.animate {
+
+opacity: 1;
+transform: translateX(0); /* Aparece en su posición final */
+}
   .seccion1 {
     background-image: url('../../../assets/contacto mobile.png');
     background-size: cover;
@@ -205,6 +217,16 @@ font-family: "GutonMed";
 }
 
 @media (max-width: 768px) and (min-width: 381px) {
+  .seccion {
+    opacity: 0;
+    transform: translateX(-100%); /* Inicia fuera de la pantalla */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  }
+    .seccion.animate {
+  
+  opacity: 1;
+  transform: translateX(0); /* Aparece en su posición final */
+  }
   .seccion1 {
     background-image: url('../../../assets/contacto mobile.png');
     background-size: cover;

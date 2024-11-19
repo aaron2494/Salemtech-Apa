@@ -20,7 +20,7 @@ import { ContactComponent } from "./components/nabvar/contact/contact.component"
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MainComponent, Seccion2Component, NabvarComponent, FooterComponent, NgbModalModule, NgbModule, ContactComponent],
+  imports: [CommonModule, RouterOutlet, NabvarComponent, FooterComponent, NgbModalModule, NgbModule, ContactComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [

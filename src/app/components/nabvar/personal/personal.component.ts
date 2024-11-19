@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-personal',
@@ -10,15 +10,22 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
   styleUrl: './personal.component.scss'
 })
 export class PersonalComponent implements OnInit {
-  constructor(private router: Router){
-    
-  }ngOnInit(): void {
-    // Al detectar la navegación, desplázate a la parte superior de la página
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): void {
+    // Escuchar eventos de navegación
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
+        // Obtener el fragmento de la ruta
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+          const element = document.getElementById(fragment);
+          if (element) {
+            // Forzar la posición directamente sobre el elemento
+            element.scrollIntoView({ behavior: 'auto', block: 'start' });
+          }
+        }
       }
     });
   }
-
 }
