@@ -25,13 +25,15 @@ export class ContactComponent{
       mensaje: ''
     };
 
-    
+    isLoading = false; // Control del spinner
+
     enviarConsulta(form: any) {
       if (form.valid) {
+        this.isLoading = true; // Activar el spinner
         this.http.post<{ message: string }>('https://backend-email.vercel.app/send-email', this.consulta)
           .subscribe(
             response => {
-              // Mostrar SweetAlert de éxito
+              this.isLoading = false; // Desactivar el spinner
               Swal.fire({
                 icon: 'success',
                 title: 'Correo enviado con éxito',
@@ -40,16 +42,15 @@ export class ContactComponent{
               });
             },
             error => {
-              // Mostrar SweetAlert de error
+              this.isLoading = false; // Desactivar el spinner
               Swal.fire({
                 icon: 'error',
                 title: 'Error al enviar el correo',
                 text: 'Ocurrió un problema al intentar enviar el correo. Por favor, intenta nuevamente.',
                 confirmButtonText: 'OK'
               });
-              console.log(error);
             }
           );
       }
-  }
+    }
  }
