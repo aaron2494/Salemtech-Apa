@@ -88,20 +88,27 @@
     
     opacity: 0;
   }
-  
+  .carousel-indicators{
+    margin-bottom: -30px !important;
+   
+  }
   .carousel-indicators [data-bs-target] {
     
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background-color: #ccc; /* Color para los indicadores inactivos */
-    margin: 0 4px; /* Espaciado entre los indicadores */
+    
   }
   .carousel-indicators .active {
     background-color: #000; /* Color negro para el indicador activo */
   }
   
   @media (min-width: 768px) { /* Para pantallas medianas hacia arriba */
+    .carousel-indicators{
+      margin-bottom: -30px !important;
+     
+    }
     .carousel-item .col-md-6 {
       flex: 0 0 50%;
       max-width: 50%;

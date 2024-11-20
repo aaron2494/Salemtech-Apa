@@ -94,7 +94,7 @@ h2.text-center {
   font-size: 1.3rem;
 }
 .carousel-indicators{
-  margin-top: 50px;
+  margin-bottom: -30px;
 }
 .carousel-indicators [data-bs-target] {
  
@@ -105,7 +105,7 @@ h2.text-center {
   margin: 0 4px; /* Espaciado entre los indicadores */
 }
 .carousel-indicators .active {
-  background-color: #000; /* Color negro para el indicador activo */
+  background-color: #ffffff; /* Color negro para el indicador activo */
 }
 
   /* Color para cada card utilizando nth-child */
