@@ -22,13 +22,6 @@
     left: -9999px;
   }
 
-  .carousel {
-    visibility: hidden; /* Ocultar el carrusel en escritorio */
-    position: absolute; 
-    top: -9999px;
-    left: -9999px;
-  }
-
   .team-row {
     padding: 50px;
     visibility: visible;
@@ -36,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 20px;
     
   }
   .team-member h3 {
@@ -53,34 +46,14 @@
   }
   /* Imágenes laterales por defecto */
   .team-row .team-member {
-    width: 150px; /* Tamaño por defecto para las imágenes laterales */
-    transition: transform 0.6s ease, z-index 0.3s ease;
-    z-index: 1; /* Para asegurarse de que el hover las lleve al frente */
+    transition: transform 0.6s ease;
   }
-
-  /* Imagen del medio más alta por defecto */
-  .team-row .team-member:nth-child(2) {
-    width: 150px; /* Imagen central más grande */
-    z-index: 2; /* Para mantenerla por encima de las otras por defecto */
-  }
-
   /* Efecto de hover: las imágenes crecen y toman el centro */
   .team-row .team-member:hover {
     transform: scale(1.2); /* Agrandar la imagen al pasar el mouse */
-    z-index: 3; /* Traer la imagen al frente */
+   
   }
 
-  /* Las imágenes que no están en hover se achican y se reordenan */
-  .team-row .team-member:not(:hover) {
-    transform: scale(1); /* Achicar imágenes no seleccionadas */
-  }
-
-  /* Tamaño de las imágenes */
-  .team-row .team-member img {
-    width: 100%;
-    height: auto;
-  }
-  
  }
 
 
