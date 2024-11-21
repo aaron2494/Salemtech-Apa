@@ -100,20 +100,20 @@ export class AppComponent implements OnInit ,AfterViewInit , OnDestroy{
     switch (url) {
       case '/home':
         this.title.setTitle('Página de Inicio');
-        this.meta.updateTag({ name: 'description', content: 'calidad , experiencia en procesos, soporte de elite' });
+        this.meta.updateTag({ name: 'description', content: 'Salem es canal oficial de Dragos en la región. Brindamos ciberceguridad avanzada ,innovación y experiencia en procesos, optimización y sostenibilidad' });
         break;
       case '/presentation':
         this.title.setTitle('Sobre Nosotros');
         this.meta.updateTag({ name: 'description', content: 'Realizamos implementaciones tecnológicas en control de procesos, excelencia operacional, optimización de plantas de procesos de la industria mediana, pesada y desarrollo de sistemas informáticos.' });
         break;
-      case '/seccion2':
-        this.title.setTitle('nuestro equipo');
-        this.meta.updateTag({ name: 'description', content: 'Nuestro equipo está formado por personal multidisciplinario experimentado y dotados de una fuerte orientación al Cliente sobre una cultura de trabajo bajo normas internacionales de Calidad, Seguridad, Salud y Ambiente.' });
+      case '/servicios':
+        this.title.setTitle('servicios');
+        this.meta.updateTag({ name: 'description', content: ' Nuestra prioridad es ofrecerte soluciones confiables, sosteniblesy seguras que impulsen tucrecimiento en un mundo digital.' });
         break;
       // Agrega más casos según sea necesario
       default:
         this.title.setTitle('Salemtech');
-        this.meta.updateTag({ name: 'description', content: 'presatdores de servicios tecnologicos a la medida del cliente' });
+        this.meta.updateTag({ name: 'description', content: 'prestadores de servicios tecnologicos a la medida del cliente. Salem es canal oficial de Dragos en la región.' });
         break;
     }
   }
