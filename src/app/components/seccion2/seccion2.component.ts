@@ -45,7 +45,7 @@ export class Seccion2Component implements AfterViewInit {
         if (window.innerWidth > 768) {
           setTimeout(() => {
             seccion.classList.add('animate');
-          }, index * 800); // Retraso de 300ms entre cartas
+          }, index * 100); // Retraso de 300ms entre cartas
         } else {
           // En móviles, aplica la clase sin retraso
           seccion.classList.add('animate');
