@@ -1,11 +1,11 @@
-
+<section id="banner">
+  <app-banner/>
+</section>
+<section id="presentation">
+  <app-menu-item></app-menu-item>
+</section>
 @defer( ) {
-  <section id="banner">
-    <app-banner/>
-  </section>
-  <section id="presentation">
-    <app-menu-item></app-menu-item>
-  </section>
+
   <app-nosotros></app-nosotros>
    <!-- Cargar NuestraManeraComponent de manera diferida -->
    <ng-container *ngIf="nuestraManeraLoaded">
