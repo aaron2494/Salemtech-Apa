@@ -1,18 +1,55 @@
 .section-process {
-    background: linear-gradient(to bottom, #000 60%, #fff 40%);
+    background: linear-gradient(to bottom, #000 70%, #fff 30%);
    padding-bottom: 40px;
   }
-  
-  h3 {
-    font-family: "GutonSemBd", Georgia; 
-    text-transform: uppercase;
-  }
+  .alianza-container {
+    color: #fff;
+    font-family: 'Guton';
+    text-align: center;
+    padding: 20px;
+
+    h1 {
+       padding-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 280px;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    p {
+        
+        font-size: 1.3rem
+    }
+}
  
   .carousel {
     width: 90%;
-    position: relative;
   }
-  
+  .card-1{
+    background-image: url(../../../../assets/1card.png);
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    
+    }
+    .card-2{
+    background-image: url(../../../../assets/3card.png);
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    
+    }
+    .card-3{
+    background-image: url(../../../../assets/2card.png);
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    
+    }
   .process-step {
    
     background-color: #0015ff;
@@ -29,11 +66,7 @@
     -o-transition: transform 0.5s ease, opacity 0.5s ease;
 }
   
-  .step-number {
-    color: #000;
-    font-size: 5rem;
-    font-weight: bold;
-  }
+
   
   .card h4 {
     font-family: "GutonMed", Georgia;
@@ -54,35 +87,7 @@
     align-items: center;
   }
   
-  .carousel-item.active .card-animated {
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 1s ease-out;
-    -webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease-out;
-    -ms-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-}
-.carousel-item-next.carousel-item-left,
-.carousel-item-prev.carousel-item-right {
-  transform: translateX(-100vw);
-  /*Muevelastarjetashacialaizquierdacuandocambian*/;
-  -webkit-transform: translateX(-100vw);
-  -moz-transform: translateX(-100vw);
-  -ms-transform: translateX(-100vw);
-  -o-transform: translateX(-100vw);
-}
 
-.carousel-item-prev.carousel-item-left,
-.carousel-item-next.carousel-item-right {
-  transform: translateX(100vw);
-  /*Muevelastarjetashacialaderechacuandocambian*/;
-  -webkit-transform: translateX(100vw);
-  -moz-transform: translateX(100vw);
-  -ms-transform: translateX(100vw);
-  -o-transform: translateX(100vw);
-}
-  
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     
@@ -105,27 +110,59 @@
   }
   
   @media (min-width: 768px) { /* Para pantallas medianas hacia arriba */
-    .carousel-indicators{
-      margin-bottom: -30px !important;
-     
-    }
-    .carousel-item .col-md-6 {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-    .carousel {
-      width: 60%;
-    }
-  h3{
-    padding-left: 50px;
-  }
-  .carousel-control-prev-icon{
-    margin-left:-40px;
-  }
-  .carousel-control-next-icon {
-    margin-right: -40px;
-    
-  }
+    .alianza-container {
+      color: #fff;
+      font-family: 'Guton';
+      text-align: center;
+      padding: 20px;
   
+      h1 {
+         padding-top: 20px;
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 20px;
+      }
+  
+      .logo {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          width: 280px;
+          margin: 0 auto 20px;
+          display: block;
+      }
+  
+      p {
+          
+          font-size: 1.3rem
+      }
+  }
+    .card-body{
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .process-step {
+      margin: 20px 10px;
+    }
+  .card-1{
+  background-image: url(../../../../assets/1carddeskt.png);
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  
+  }
+  .card-2{
+  background-image: url(../../../../assets/3carddeskt.png);
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  
+  }
+  .card-3{
+  background-image: url(../../../../assets/2carddesk.png);
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  
+  }
   }
   

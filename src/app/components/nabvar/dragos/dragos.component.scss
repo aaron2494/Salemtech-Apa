@@ -1,78 +1,64 @@
-
-@media(min-width: 768px) {
-    .background{
-        width: 100%;
-        background-color: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .container {
-   
-        color: #fff;
-        font-family: 'Guton';
-        margin: 0;
-    
-    .alianza-container {
-        text-align: center;
-        padding: 20px;
-    
-        h1 {
-           padding-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-    
-        .logo {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            width: 280px;
-            margin: 0 auto 20px;
-            display: block;
-        }
-    
-        p {
-            
-            font-size: 1.3rem
-        }
-    }
-
-}
- }
-
-.background{
-    width: 100%;
-    background-color: #000;
-}
-
-.container {
-   
-    color: #fff;
-    font-family: 'Guton';
-    margin: 0;
-}
-.alianza-container {
+/* Estilo de la sección principal */
+.cybersecurity-section {
     text-align: center;
+    padding: 50px;
+    background: white;
+  }
+  
+  /* Título principal */
+  .cybersecurity-section h2 {
+    font-family: "GutonSemBd", Georgia; 
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #5100D5;
+  }
+  
+  /* Contenedor de las tarjetas */
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  /* Tarjetas */
+  .service-card {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
     padding: 20px;
+    min-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilo del texto en las tarjetas */
+  .service-card h3 {
+    font-family: "Guton", Georgia;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .service-card p {
+    font-family: "Guton", Georgia;
+    font-size: 14px;
+    margin: 0;
+  }
+  @media (max-width: 768px) { 
+    .service-card {
+        background-color: #000; /* Fondo negro */
+        color: #fff; /* Texto blanco */
+        padding: 20px;
+        min-width: 350px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      .service-card h3 {
 
-    h1 {
-       padding-top: 20px;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
+        font-size: 18px;
+        
+      }
+      
+  }
 
-    .logo {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        width: 280px;
-        margin: 0 auto 20px;
-        display: block;
-    }
-
-    p {
-        text-align: left;
-        font-size: 1.3rem
-    }
-}
+  

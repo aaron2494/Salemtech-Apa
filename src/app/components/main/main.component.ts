@@ -11,6 +11,7 @@ import { ProcesosComponent } from "../nabvar/procesos/procesos.component";
 import { PersonalComponent } from "../nabvar/personal/personal.component";
 import { JefesComponent } from "../nabvar/jefes/jefes.component";
 import { DragosComponent } from "../nabvar/dragos/dragos.component";
+import { ExperienciaComponent } from "../nabvar/experiencia/experiencia.component";
 
 
 
@@ -24,7 +25,7 @@ import { DragosComponent } from "../nabvar/dragos/dragos.component";
     PersonalComponent,
     JefesComponent,
     DragosComponent,
-    
+    ExperienciaComponent
 ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'

@@ -4,7 +4,7 @@ import {Component } from '@angular/core';
 @Component({
   selector: 'app-nuestra-manera',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [],
   templateUrl: './nuestra-manera.component.html',
   styleUrl: './nuestra-manera.component.scss'
 })

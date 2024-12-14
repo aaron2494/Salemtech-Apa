@@ -1,0 +1,61 @@
+/* Ajustes generales */
+#presentation {
+    background: #000000;
+    flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  }
+  h2{
+    font-family: "GutonSemBd", Georgia; 
+    color: #fcfcfc; 
+    text-shadow: #000000 0 4px 4px;
+    font-size: 3rem; /* Tamaño de fuente más grande */
+    letter-spacing: 1px; /* Espaciado entre letras para un efecto refinado */
+    margin-bottom: 30px; /* Espacio inferior ajustado */
+  }
+  .card {
+    border-radius: 0px;
+    font-family: "Guton", Georgia;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  .card-1{
+    background-color: #1525EA;
+  }
+.card-2{
+    background-color: #5100D5;
+}
+@media (max-width: 768px) {
+    
+    .card{
+        
+        min-height: 515px;
+    }
+    .carousel-indicators {
+        bottom: -50px; /* Ajusta este valor para mover los indicadores hacia abajo */
+      }
+      .carousel-indicators [data-bs-target] {
+        
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ccc; /* Color para los indicadores inactivos */
+        margin: 0 4px; /* Espaciado entre los indicadores */
+      }
+      
+      .carousel-indicators .active {
+        background-color: #ffffff; /* Color negro para el indicador activo */
+      }
+      .carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  pointer-events: auto;
+
+}
+}
+  

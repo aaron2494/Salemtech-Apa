@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 100px;
     
   }
   .team-member h3 {
@@ -65,7 +65,9 @@
     left: -9999px;
   }
   .carousel{
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    max-height: 315px;
   }
   
   .team-member {
@@ -94,7 +96,7 @@
    
   }
   .carousel-indicators {
-    bottom: -30px; /* Ajusta este valor para mover los indicadores hacia abajo */
+    bottom: -23px; /* Ajusta este valor para mover los indicadores hacia abajo */
   }
   .carousel-indicators [data-bs-target] {
     

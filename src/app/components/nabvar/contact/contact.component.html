@@ -25,14 +25,6 @@
           </div>
 
           <div class="form-group mb-3">
-            <input type="text" id="asunto" name="asunto" placeholder="ASUNTO" class="form-control"
-                   [(ngModel)]="consulta.asunto" #asunto="ngModel" required>
-            <div *ngIf="asunto.invalid && asunto.touched" class="text-danger">
-              El asunto es obligatorio.
-            </div>
-          </div>
-
-          <div class="form-group mb-3">
             <textarea id="mensaje" rows="5" name="mensaje" class="form-control"
                       [(ngModel)]="consulta.mensaje" placeholder="MENSAJE" #mensaje="ngModel" required></textarea>
             <div *ngIf="mensaje.invalid && mensaje.touched" class="text-danger">
