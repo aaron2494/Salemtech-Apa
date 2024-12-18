@@ -33,8 +33,9 @@
 @media (max-width: 768px) {
     
     .card{
-        
-        min-height: 515px;
+      margin-right: 5px;
+      margin-left: 5px;
+      min-height: 538px;
     }
     .carousel-indicators {
         bottom: -50px; /* Ajusta este valor para mover los indicadores hacia abajo */

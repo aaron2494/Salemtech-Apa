@@ -110,7 +110,7 @@ transform: translateX(0); /* Aparece en su posición final */
   text-align: center;
   max-width: 100%;
   position: relative;
-  margin-bottom: 20px;
+  padding-bottom: 35px;
   .description{
     font-size: 1.3rem;
 
@@ -122,23 +122,7 @@ transform: translateX(0); /* Aparece en su posición final */
   padding: 0 22px;
   max-width: 100%;
 }
-.cta-button {
-  background-color: white;
-  color: #1f2cd6;
-font-family: "GutonMed"; 
-  padding: 10px 20px;
-  font-size: 16px;
-  line-height: 22pt; /* Interlineado */
-  letter-spacing: 0.1em; /* Kerning */
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+
 .cta-button {
   background-color: white;
   color: #1f2cd6;
@@ -322,7 +306,7 @@ font-family: "GutonMed";
     text-align: center;
     max-width: 100%;
     position: relative;
-    margin-bottom: 20px;
+    padding-bottom: 35px;
     .description{
       font-size: 1.3rem;
   
