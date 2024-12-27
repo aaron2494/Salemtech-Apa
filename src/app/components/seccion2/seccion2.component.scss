@@ -139,10 +139,11 @@ font-family: "GutonMed";
   align-items: center;
   text-align: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 .cta-button2 {
   height: 75px;
-  width: 80%;
+
   background-color: rgb(0, 0, 0);
   color: #ffffff;
 font-family: "GutonMed"; 
@@ -152,7 +153,7 @@ font-family: "GutonMed";
   letter-spacing: 0.1em; /* Kerning */
   position: absolute;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -60%);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -334,6 +335,7 @@ font-family: "GutonMed";
     align-items: center;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
   }
   .cta-button2 {
     height: 75px;
@@ -347,7 +349,7 @@ font-family: "GutonMed";
     letter-spacing: 0.1em; /* Kerning */
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%); 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -412,7 +414,11 @@ font-family: "GutonMed";
     overflow-x: hidden;
 
     .content {
-      padding: 0 22px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+     padding-left: 200px;
+     padding-right: 200px;
       max-width: 100%;
     }
 
@@ -430,13 +436,7 @@ font-family: "GutonMed";
     .tittle {
       font-family: "Guton";
       font-weight: bold;
-      font-size: 29pt;
-      line-height: 35pt;
-      text-align: left;
       margin: 10px 0;
-      word-wrap: break-word;
-      word-break: break-word;
-      max-width: 100%;
     }
 
     .text {
@@ -449,36 +449,49 @@ font-family: "GutonMed";
       margin-bottom: 7rem;
     }
   }
-  .seccion2 {
-    background: #1525EA;
-    color: white;
-   text-align: center;
+  .seccion {
+    padding-left: 15%;
+    padding-right: 15%;
     max-width: 100%;
-    position: relative;
-  }
-  .seccion3 {
-    background: #CB00D1;
     color: white;
-   text-align: center;
-    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
     position: relative;
+  
+    &.seccion2 {
+      background: #1525ea;
+    }
+  
+    &.seccion3 {
+      background: #cb00d1;
+    }
+    &.seccion4{
+      background: #5100D5;
+    }
   }
-  .seccion4 {
-    background: #5100D5;
-    color: white;
-    text-align: center;
-    max-width: 100%;
-    position: relative;
-    margin-bottom: 20px;
-  }
+  .seccion2 .container,
+.seccion4 .container {
+  display: flex;
+  flex-direction: row-reverse; /* Invierte el orden visual */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+  .container {
+    gap: 60px;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+ }
   .seccion5 {
     background-image: url('../../../assets/Banner nube.png');
     background-size: cover;
     background-position: center;
-   display: flex;
-   align-items: center;    
     color: white;
-    position: relative;
     height: 100vh;
     overflow-x: hidden;
     .title{
@@ -487,24 +500,36 @@ font-family: "GutonMed";
       font-family: "Guton" !important;
       font-weight: bold !important;
     }
+    .content{
+      padding-top: 50px;
+      padding-bottom: 50px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+     padding-left: 200px;
+     padding-right: 200px;
+    }
   }
   .seccion6 {
    
     color: rgb(0, 0, 0);
-    text-align: center;
+   
     max-width: 100%;
     position: relative;
     margin-bottom: 20px;
     .description{
-      font-size: 1.3rem;
+      font-size: 1.1rem;
   
     }
-  }
-  
-  .content {
-   
-    padding: 0 22px;
-    max-width: 100%;
+    .content{
+      padding-top: 50px;
+      padding-bottom: 50px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+     padding-left: 200px;
+     padding-right: 200px;
+    }
   }
   .cta-button {
     background-color: white;
@@ -522,6 +547,8 @@ font-family: "GutonMed";
     align-items: center;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+   
   }
   .cta-button2 {
     background-color: rgb(0, 0, 0);
@@ -532,7 +559,9 @@ font-family: "GutonMed";
     letter-spacing: 0.1em;
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -60%);
+    z-index: 10;
+   
   }
   .arrow {
     font-size: 22px; /* Tamaño de la flecha */
@@ -540,7 +569,7 @@ font-family: "GutonMed";
   }
   
   .icon {
-    width: 200px;
+    width: 300px;
    margin-top: 30px;
   }
   
@@ -548,26 +577,22 @@ font-family: "GutonMed";
     font-family: "GutonSemBd";
     font-size: 25pt;
     line-height: 30pt;
-    display: flex;
-    text-align: start;
+  
     }
   
   .description {
     font-family: "Guton";
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-top: 15px;
-    display: flex;
-    text-align: start;
+    padding-right: 50px;
   }
   
   .features {
     
     font-family: "Guton";
-    font-size: 1.3rem;
-    display: flex;
-    text-align: start;
+    font-size: 1.1rem;
     list-style: none;
-    padding: 0;
+    padding-right: 50px;
     margin-top: 20px;
   }
 }
