@@ -15,72 +15,53 @@
     </div>
   </div>
 
-  <!-- Carrusel para pantallas pequeñas -->
-  <div id="cardsCarousel" class="carousel slide d-block d-md-none">
-    <div class="carousel-inner">
-      <div
-        class="carousel-item"
-        *ngFor="let card of cards; let i = index"
-        [class.active]="i === 0"
-      >
-        <div class="card shadow-sm mx-auto">
-          <div class="card-body">
-            <h5 class="card-title" [innerHTML]="card.title">
-              {{ card.title }}
-            </h5>
-            <p class="card-text">{{ card.text }}</p>
-          </div>
+ <div id="cardsCarousel" class="carousel slide d-block d-md-none">
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let card of cards; let i = index"
+      [class.active]="i === 0"
+    >
+      <div class="card shadow-sm mx-auto">
+        <div class="card-body">
+          <h5 class="card-title" [innerHTML]="card.title"></h5>
+          <p class="card-text">{{ card.text }}</p>
         </div>
       </div>
     </div>
-
-    <!-- Botones de control del carrusel -->
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#cardsCarousel"
-      data-bs-slide="prev"
-      aria-label="Previous"
-    >
-      <span
-        class="carousel-control-prev-icon visually-hidden"
-        aria-hidden="true"
-      ></span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#cardsCarousel"
-      data-bs-slide="next"
-      aria-label="Next"
-    >
-      <span
-        class="carousel-control-next-icon visually-hidden"
-        aria-hidden="true"
-      ></span>
-    </button>
-    <!-- Indicadores del carrusel -->
-    <div class="carousel-indicators">
-      <button
-        type="button"
-        data-bs-target="#cardsCarousel"
-        data-bs-slide-to="0"
-        class="active"
-        aria-current="true"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#cardsCarousel"
-        data-bs-slide-to="1"
-        aria-label="Slide 2"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#cardsCarousel"
-        data-bs-slide-to="2"
-        aria-label="Slide 3"
-      ></button>
-    </div>
   </div>
+
+  <!-- Botones de control del carrusel -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#cardsCarousel"
+    data-bs-slide="prev"
+    aria-label="Previous"
+  >
+    <span class="carousel-control-prev-icon visually-hidden" aria-hidden="true"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#cardsCarousel"
+    data-bs-slide="next"
+    aria-label="Next"
+  >
+    <span class="carousel-control-next-icon visually-hidden" aria-hidden="true"></span>
+  </button>
+
+  <!-- Indicadores del carrusel -->
+  <div class="carousel-indicators">
+    <button
+      *ngFor="let card of cards; let i = index"
+      type="button"
+      [attr.data-bs-target]="'#cardsCarousel'"
+      [attr.data-bs-slide-to]="i"
+      [class.active]="i === 0"
+      [attr.aria-current]="i === 0 ? 'true' : null"
+      [attr.aria-label]="'Slide ' + (i + 1)"
+    ></button>
+  </div>
+</div>
 </section>

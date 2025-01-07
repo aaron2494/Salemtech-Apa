@@ -1,6 +1,6 @@
 import {  AfterViewInit, Component, ElementRef,  OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule} from '@angular/common';
-import  { Carousel } from 'bootstrap';
+
 
 
 
@@ -11,16 +11,12 @@ import  { Carousel } from 'bootstrap';
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.scss']
 })
-export class MenuItemComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('cardsCarousel', { static: false }) carouselElement!: ElementRef;
-
-  private cardsCarouselInstance!: Carousel;
-  private swipeStartX: number | null = null;
-
+export class MenuItemComponent implements AfterViewInit {
+  private touchStartX: number = 0;
   cards = [
     {
       title: 'Innovación<br> & experiencia',
-      text: 'Con mas de una década de experiencia en automatización y control de procesos, combinamos innovación y tecnología para ofrecer soluciones avanzadas que optimizan operaciones industriales.',
+      text: 'Con más de una década de experiencia en automatización y control de procesos, combinamos innovación y tecnología para ofrecer soluciones avanzadas que optimizan operaciones industriales.',
     },
     {
       title: 'Ciberseguridad Avanzada',
@@ -32,45 +28,26 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
     },
   ];
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
-    // Inicializar la instancia del carrusel
-    this.cardsCarouselInstance = new Carousel(this.carouselElement.nativeElement, {
-      interval: false,
-    });
-
-    // Añadir listeners para swipe
-    this.addSwipeListeners();
-  }
-
-  ngOnDestroy(): void {
-    if (this.cardsCarouselInstance) {
-      this.cardsCarouselInstance.dispose();
-    }
-  }
-
-  private addSwipeListeners() {
-    const carousel = this.carouselElement.nativeElement;
+    const carousel = this.el.nativeElement.querySelector('#cardsCarousel');
 
     this.renderer.listen(carousel, 'touchstart', (event: TouchEvent) => {
-      this.swipeStartX = event.touches[0].clientX;
+      this.touchStartX = event.touches[0].clientX;
     });
 
     this.renderer.listen(carousel, 'touchend', (event: TouchEvent) => {
-      if (this.swipeStartX !== null) {
-        const swipeEndX = event.changedTouches[0].clientX;
-        const swipeDistance = this.swipeStartX - swipeEndX;
+      const touchEndX = event.changedTouches[0].clientX;
+      const diffX = this.touchStartX - touchEndX;
 
-        if (Math.abs(swipeDistance) > 50) {
-          if (swipeDistance > 0) {
-            this.cardsCarouselInstance.next();
-          } else {
-            this.cardsCarouselInstance.prev();
-          }
-        }
+      if (diffX > 40) {
+        // Swipe izquierda
+        this.renderer.selectRootElement('.carousel-control-next').click();
+      } else if (diffX < -40) {
+        // Swipe derecha
+        this.renderer.selectRootElement('.carousel-control-prev').click();
       }
-      this.swipeStartX = null;
     });
   }
-}
+   }
