@@ -1,7 +1,4 @@
 import {  AfterViewInit, Component, ElementRef,  OnDestroy, Renderer2, ViewChild } from '@angular/core';
-import { filter, Observable } from 'rxjs';
-import { NavigationEnd, Router } from '@angular/router';
-
 import { CommonModule} from '@angular/common';
 import  { Carousel } from 'bootstrap';
 
@@ -15,56 +12,52 @@ import  { Carousel } from 'bootstrap';
   styleUrls: ['./menu-item.component.scss']
 })
 export class MenuItemComponent implements AfterViewInit, OnDestroy {
-  
-  private routerSubscription: any;
-  showAnimation$!: Observable<boolean>;
-  @ViewChild('carouselExample', { static: false }) carouselElement!: ElementRef;
-  private intersectionObserver!: IntersectionObserver;
+  @ViewChild('cardsCarousel', { static: false }) carouselElement!: ElementRef;
+
   private cardsCarouselInstance!: Carousel;
   private swipeStartX: number | null = null;
 
   cards = [
     {
       title: 'Innovación<br> & experiencia',
-      text: 'Con mas de una década de experiencia en automatización y control de procesos, combinamos innovación y tecnología para ofrecer soluciones avanzadas que optimizan operaciones industriales.'
+      text: 'Con mas de una década de experiencia en automatización y control de procesos, combinamos innovación y tecnología para ofrecer soluciones avanzadas que optimizan operaciones industriales.',
     },
-    { 
-      title: 'Ciberceguridad Avanzada',
-      text: 'Protegemos tus sistemas críticos con una plataforma inteligente de detección y respuesta temprana de amenazas, desarrollada en alianza con lideres globales como DRAGOS.'
+    {
+      title: 'Ciberseguridad Avanzada',
+      text: 'Protegemos tus sistemas críticos con una plataforma inteligente de detección y respuesta temprana de amenazas, desarrollada en alianza con líderes globales como DRAGOS.',
     },
     {
       title: 'Optimización<br> & Sostenibilidad',
-      text: 'Transformamos digitalmente tus procesos, mejorando la competitividad y reduciendo costos, siempre enfocados en la eficiencia y sostenibilidad.'
-    }
+      text: 'Transformamos digitalmente tus procesos, mejorando la competitividad y reduciendo costos, siempre enfocados en la eficiencia y sostenibilidad.',
+    },
   ];
 
-  constructor(
-    private renderer: Renderer2,
-    private el: ElementRef,
-  ) {}
+  constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
-    this.addSwipeListeners(); // Añadir listeners para swipe
+    // Inicializar la instancia del carrusel
+    this.cardsCarouselInstance = new Carousel(this.carouselElement.nativeElement, {
+      interval: false,
+    });
+
+    // Añadir listeners para swipe
+    this.addSwipeListeners();
   }
 
   ngOnDestroy(): void {
-    if (this.routerSubscription) {
-      this.routerSubscription.unsubscribe();
-    }
-
-    if (this.intersectionObserver) {
-      this.intersectionObserver.disconnect();
+    if (this.cardsCarouselInstance) {
+      this.cardsCarouselInstance.dispose();
     }
   }
- 
-  private addSwipeListeners() {
-    const carouselElement = this.el.nativeElement.querySelector('#cardsCarousel');
 
-    this.renderer.listen(carouselElement, 'touchstart', (event: TouchEvent) => {
+  private addSwipeListeners() {
+    const carousel = this.carouselElement.nativeElement;
+
+    this.renderer.listen(carousel, 'touchstart', (event: TouchEvent) => {
       this.swipeStartX = event.touches[0].clientX;
     });
 
-    this.renderer.listen(carouselElement, 'touchend', (event: TouchEvent) => {
+    this.renderer.listen(carousel, 'touchend', (event: TouchEvent) => {
       if (this.swipeStartX !== null) {
         const swipeEndX = event.changedTouches[0].clientX;
         const swipeDistance = this.swipeStartX - swipeEndX;
@@ -77,7 +70,6 @@ export class MenuItemComponent implements AfterViewInit, OnDestroy {
           }
         }
       }
-
       this.swipeStartX = null;
     });
   }
