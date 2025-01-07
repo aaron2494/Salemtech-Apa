@@ -1,4 +1,4 @@
-import {  AfterViewInit, Component, ElementRef,  OnDestroy, Renderer2, ViewChild } from '@angular/core';
+import {  AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule} from '@angular/common';
 
 

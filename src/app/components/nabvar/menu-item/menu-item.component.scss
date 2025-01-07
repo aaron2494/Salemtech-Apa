@@ -75,11 +75,9 @@ h2.text-center {
     margin-bottom: 20px;
   }
 
- 
-  .card-container {
-    flex-direction:column;
-    align-items: center;
-  }
+ .card-body{
+  margin: 0 auto;
+ }
 
   .card {
     border-radius: 0;
@@ -91,8 +89,16 @@ h2.text-center {
   /* Color para cada card utilizando nth-child */
 
 .card-text{
+  display: contents;
   font-size: 1.3rem;
+  text-align: justify;
+  line-height: 1.5;
+  hyphens: auto; /* Activa la división automática de palabras */
+  overflow-wrap: break-word; /* Permite romper palabras largas si es necesario */
+  word-spacing: 0.05em; /* Ajusta el espacio entre palabras */
+  
 }
+
 .carousel-indicators{
   margin-bottom: -30px;
 }
