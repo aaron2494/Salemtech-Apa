@@ -1,63 +1,50 @@
-<section id="presentation" class="py-5">
-    <h2 class="text-center mb-4">Experiencia</h2>
-  
-    <!-- Carrusel visible solo en dispositivos móviles -->
-    <div id="experienceCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card card-1 shadow-sm h-100">
-            <div class="card-body">
-              <p class="card-text">
-                Colaboramos con una compañía nacional líder en procesamiento de gas para realizar un análisis de factibilidad de implementación de Control Avanzado, identificando mejoras en eficiencia, seguridad y rendimiento económico. Durante el proyecto, trabajamos junto a los equipos de ingeniería, operaciones y gerencias, enfocándonos en la optimización de procesos y la selección tecnológica, así como en potenciar la excelencia operativa. Además de las soluciones técnicas que aumentarán la eficiencia, nuestras propuestas facilitarán el día a día de los operadores, permitiéndoles centrarse en variables estratégicas. La experiencia se enriqueció gracias a la colaboración con un equipo humano altamente profesional, comprometido con la innovación y el cambio continuo.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card card-2 shadow-sm h-100">
-            <div class="card-body">
-              <p class="card-text">
-                Ofrecimos a la principal empresa argentina líder en energía su servicio de inteligencia de ciberseguridad Threat Intelligence en conjunto con Dragos. Esta plataforma avanzada le permite fortalecer su capacidad de detección de amenazas y mejorar la gestión de vulnerabilidades en entornos industriales (ICS/OT). A través de informes detallados, alertas en tiempo real y análisis especializados, mitigan riesgos cibernéticos, reducen tiempos de inactividad y optimizan la seguridad operativa. Con acceso 24/7 a informes globales y regionales, ayudamos a nuestros clientes a alcanzar la excelencia en ciberseguridad industrial.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="experienceCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="experienceCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-       
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+<div class="accordion-container">
+  <h2><strong>Experiencia</strong></h2>
+
+  <div class="accordion-item">
+    <h3 class="accordion-title">Procesamiento de Gas</h3>
+   
+    <div class="accordion-content" [ngClass]="{ active: isOpen[0] }">
+      <p class="p1">
+        Colaboramos con una compañía nacional líder en procesamiento de gas para realizar un análisis 
+        de factibilidad de implementación de Control Avanzado, identificando mejoras en eficiencia, seguridad y 
+        rendimiento económico. Durante el proyecto, trabajamos junto a los equipos de ingeniería, operaciones y 
+        gerencias, enfocándonos en la optimización de procesos y la selección tecnológica, así como en potenciar 
+        la excelencia operativa. Además de las soluciones técnicas que aumentarán la eficiencia, nuestras propuestas 
+        facilitarán el día a día de los operadores, permitiéndoles centrarse en variables estratégicas. La experiencia 
+        se enriqueció gracias a la colaboración con un equipo humano altamente profesional, comprometido con la innovación 
+        y el cambio continuo.
+
+      </p>
     </div>
-  
-    <!-- Vista en pantallas grandes -->
-    <div class="row justify-content-center d-none d-md-flex">
-      <div class="col-md-4">
-        <div class="card card-1 shadow-sm h-100">
-          <div class="card-body">
-            <p class="card-text">
-              Colaboramos con una compañía nacional líder en procesamiento de gas para realizar un análisis de factibilidad de implementación de Control Avanzado, identificando mejoras en eficiencia, seguridad y rendimiento económico. Durante el proyecto, trabajamos junto a los equipos de ingeniería, operaciones y gerencias, enfocándonos en la optimización de procesos y la selección tecnológica, así como en potenciar la excelencia operativa. Además de las soluciones técnicas que aumentarán la eficiencia, nuestras propuestas facilitarán el día a día de los operadores, permitiéndoles centrarse en variables estratégicas. La experiencia se enriqueció gracias a la colaboración con un equipo humano altamente profesional, comprometido con la innovación y el cambio continuo.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-2 shadow-sm h-100">
-          <div class="card-body">
-            <p class="card-text">
-              Ofrecimos a la principal empresa argentina líder en energía su servicio de inteligencia de ciberseguridad Threat Intelligence en conjunto con Dragos. Esta plataforma avanzada le permite fortalecer su capacidad de detección de amenazas y mejorar la gestión de vulnerabilidades en entornos industriales (ICS/OT). A través de informes detallados, alertas en tiempo real y análisis especializados, mitigan riesgos cibernéticos, reducen tiempos de inactividad y optimizan la seguridad operativa. Con acceso 24/7 a informes globales y regionales, ayudamos a nuestros clientes a alcanzar la excelencia en ciberseguridad industrial.
-            </p>
-          </div>
-        </div>
-      </div>
+    <button class="accordion-btn" (click)="toggleAccordion(0)">
+      <i
+        [ngClass]="
+          isOpen[0] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'
+        "
+      ></i
+      >
+    </button>
+    <h3 class="accordion-title">Ciberseguridad industrial con Treath Intelligence</h3>
+    <div class="accordion-content" [ngClass]="{ active: isOpen[1] }">
+      <p class="p2">
+        Ofrecimos a la principal empresa argentina líder en energía su servicio de inteligencia
+        de ciberseguridad Threat Intelligence en conjunto con Dragos. Esta plataforma avanzada le permite
+        fortalecer su capacidad de detección de amenazas y mejorar la gestión de vulnerabilidades en entornos
+        industriales (ICS/OT). A través de informes detallados, alertas en tiempo real y análisis especializados,
+        mitigan riesgos cibernéticos, reducen tiempos de inactividad y optimizan la seguridad operativa. Con acceso
+        24/7 a informes globales y regionales, ayudamos a nuestros clientes a alcanzar la excelencia en ciberseguridad
+        industrial.
+      </p>
     </div>
-  </section>
-  
+    <button class="accordion-btn" (click)="toggleAccordion(1)">
+      <i
+        [ngClass]="
+          isOpen[1] ? 'fa-solid fa-circle-minus' : 'fa-solid fa-circle-plus'
+        "
+      ></i>
+      
+    </button>
+      </div>
+     
+    </div>
