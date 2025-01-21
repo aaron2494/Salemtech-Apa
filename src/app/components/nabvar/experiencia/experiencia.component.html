@@ -2,6 +2,7 @@
   <h2><strong>Experiencia</strong></h2>
 
   <div class="accordion-item">
+    <div class="item1">
     <h3 class="accordion-title">Procesamiento de Gas</h3>
    
     <div class="accordion-content" [ngClass]="{ active: isOpen[0] }">
@@ -17,6 +18,7 @@
 
       </p>
     </div>
+  
     <button class="accordion-btn" (click)="toggleAccordion(0)">
       <i
         [ngClass]="
@@ -25,6 +27,8 @@
       ></i
       >
     </button>
+  </div>
+  <div class="item2">
     <h3 class="accordion-title">Ciberseguridad industrial con Treath Intelligence</h3>
     <div class="accordion-content" [ngClass]="{ active: isOpen[1] }">
       <p class="p2">
@@ -46,5 +50,5 @@
       
     </button>
       </div>
-     
+    </div>
     </div>
