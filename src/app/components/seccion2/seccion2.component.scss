@@ -198,7 +198,14 @@ font-family: "GutonMed";
   padding: 0;
   margin-top: 20px;
 }
-
+.features .items {
+  list-style-type: disc; /* Círculos como bullets */
+  padding-left: 20px; /* Espaciado izquierdo */
+  margin: 0;
+}
+.features .items li {
+ padding-bottom: 10px;
+}
 }
 
 @media (max-width: 768px) and (min-width: 381px) {
@@ -390,6 +397,15 @@ font-family: "GutonMed";
     padding: 0;
     margin-top: 20px;
   }
+  .features .items {
+    list-style-type: disc; /* Círculos como bullets */
+    padding-left: 20px; /* Espaciado izquierdo */
+    margin: 0;
+  }
+  .features .items li {
+   padding-bottom: 10px;
+  }
+ 
 }
 @media(min-width: 768px) {
   .seccion {
@@ -594,5 +610,13 @@ font-family: "GutonMed";
     list-style: none;
     padding-right: 50px;
     margin-top: 20px;
+  }
+  .features .items {
+    list-style-type: disc; /* Círculos como bullets */
+    padding-left: 20px; /* Espaciado izquierdo */
+    margin: 0;
+  }
+  .features .items li {
+   padding-bottom: 10px;
   }
 }
