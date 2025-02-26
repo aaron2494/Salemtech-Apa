@@ -35,14 +35,14 @@
   font-family: "GutonMed", Georgia;
   background: none;
   border: none;
-  font-size: 22px;
+  font-size: 20px;
   color: white;
   cursor: pointer;
   padding: 10px 0;
   text-align: left;
   display: flex;
   align-items: center;
-  padding-left: 70px;
+  padding-left: 60px;
   
   transition: color 0.3s ease;
   width: 100%; /* Asegurar que el botón ocupa todo el ancho */
@@ -55,7 +55,7 @@
 
 .accordion-content {
   width: 90%; /* Asegurar que el contenido ocupa todo el ancho */
-  padding-left: 105px;
+  padding-left: 95px;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -80,7 +80,7 @@ p {
 }
 
   .accordion-content.active {
-    max-height: 100px; /* Ajusta según el contenido */
+    max-height: 225px; /* Ajusta según el contenido */
     opacity: 1;
   }
   
@@ -135,7 +135,7 @@ p {
   }
   p{
     font-family: "Guton", Georgia;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding-left: 20px;
     
   }

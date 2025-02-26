@@ -16,7 +16,7 @@ export class MenuItemComponent implements AfterViewInit {
   cards = [
     {
       title: 'Innovación<br> & experiencia',
-      text: 'Con más de una década de experiencia en automatización y control de procesos, combinamos innovación y tecnología para ofrecer soluciones avanzadas que optimizan operaciones industriales.',
+      text: 'Con más de dos décadas de experiencia en automatización y control de procesos, combinamos innovación y tecnología para ofrecer soluciones avanzadas que optimizan operaciones industriales.',
     },
     {
       title: 'Ciberseguridad Avanzada',
